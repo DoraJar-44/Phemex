@@ -211,9 +211,10 @@ async def run_scanner():
 							validation_status=validation_status
 						)
 					
-					# Enhanced console output with validation status
-					validation_indicator = "✅" if validation_status == "OK" else "❌"
-					print(f"{validation_indicator} {res['symbol']} {res['price']:.4f} score L/S: {res['scores']['long']}/{res['scores']['short']} long? {res['signals']['long']} short? {res['signals']['short']}")
+					# Only print high scores or signals to reduce spam
+					if res['scores']['long'] >= 80 or res['scores']['short'] >= 80 or res['signals']['long'] or res['signals']['short']:
+						validation_indicator = "✅" if validation_status == "OK" else "❌"
+						print(f"{validation_indicator} {res['symbol']} {res['price']:.4f} score L/S: {res['scores']['long']}/{res['scores']['short']} long? {res['signals']['long']} short? {res['signals']['short']}")
 					# Execute when true
 					if res["signals"]["long"] or res["signals"]["short"]:
 						# Enforce max open positions
@@ -276,7 +277,7 @@ async def run_scanner():
 					if "Not enough candles" in msg or "failed to fetch ohlcv" in msg:
 						continue
 					print(f"scan error {sym}: {e}")
-			await asyncio.sleep(1)
+			await asyncio.sleep(2)  # Slower scan to reduce spam
 	except KeyboardInterrupt:
 		print("Scanner interrupted by user")
 	except Exception as e:
