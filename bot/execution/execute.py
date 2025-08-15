@@ -50,8 +50,14 @@ async def place_bracket(symbol: str, intents: Dict[str, Any]) -> Dict[str, Any]:
 	res["placed"].append({"entry": placed_entry})
 
 	# Take Profits (reduceOnly limit)
+	total_tp_qty = 0
 	for i, leg in enumerate((tp1, tp2), start=1):
 		if leg["quantity"] <= 0:
+			continue
+		# Validate TP quantity doesn't exceed position
+		total_tp_qty += leg["quantity"]
+		if total_tp_qty > entry["quantity"]:
+			print(f"Warning: TP{i} quantity {leg['quantity']} would exceed position size. Skipping.")
 			continue
 		if use_ccxt:
 			placed_tp = await client.create_order(

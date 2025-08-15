@@ -6,11 +6,11 @@ from typing import Dict, Any
 class Settings:
 	def __init__(self):
 		# Load environment from .env once at startup (does not override real env)
-		load_dotenv(override=False)
+		load_dotenv(override=True)
 		# Exchange credentials
 		self.phemex_api_key: str = os.getenv("PHEMEX_API_KEY", "")
 		self.phemex_api_secret: str = os.getenv("PHEMEX_API_SECRET", "")
-		self.phemex_base_url: str = os.getenv("PHEMEX_BASE_URL", "https://testnet-api.phemex.com")
+		self.phemex_base_url: str = os.getenv("PHEMEX_BASE_URL", "https://api.phemex.com")
 		self.phemex_testnet: bool = os.getenv("PHEMEX_TESTNET", "false").lower() in ("1", "true", "yes")
 
 		# Execution backend

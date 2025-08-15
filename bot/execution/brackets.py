@@ -2,8 +2,8 @@ from typing import Dict, Any
 from bot.signals.webhook_models import WebhookPayload
 
 
-TP1_FRACTION = 0.5
-TP2_FRACTION = 0.5
+TP1_FRACTION = 0.5  # 50% of total position
+TP2_FRACTION = 0.5  # 50% of remaining position after TP1
 
 
 def build_bracket_orders(payload: WebhookPayload, quantity: float) -> Dict[str, Any]:
@@ -40,7 +40,7 @@ def build_bracket_orders(payload: WebhookPayload, quantity: float) -> Dict[str, 
 			"side": "sell" if is_long else "buy",
 			"type": "limit",
 			"price": tp2_price,
-			"quantity": round(quantity * TP2_FRACTION, 8),
+			"quantity": round(quantity * (1 - TP1_FRACTION) * TP2_FRACTION, 8),
 			"reduceOnly": True,
 		},
 		"sl": {

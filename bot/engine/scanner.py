@@ -272,7 +272,15 @@ async def run_scanner():
 						continue
 					print(f"scan error {sym}: {e}")
 			await asyncio.sleep(1)
+	except KeyboardInterrupt:
+		print("Scanner interrupted by user")
+	except Exception as e:
+		print(f"Scanner error: {e}")
 	finally:
-		await ex.close()
+		print("Closing exchange connection...")
+		try:
+			await ex.close()
+		except Exception:
+			pass
 
 
