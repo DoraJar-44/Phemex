@@ -1,0 +1,44 @@
+Cursor Always-Applies Rules for Trading AI
+
+This MDC applies globally to this workspace. It governs how the AI and automation should act by default across all tasks and scripts.
+
+## Global Operating Rules
+- Exchange: Use Bitget Futures (Swaps) only. Do not place spot or options orders.
+- Stops and one-way mode: All stop orders must be reduce-only and positions must be managed in one-way mode (`posSide: Merged`).
+- Leverage: Never change leverage automatically. If leverage is specified by the user, keep it exactly as given.
+- Indicators/logic: Do not add indicators or new calculation logic without explicit user permission.
+- Environment: All bot scripts must load required environment variables at startup (API keys, secrets, base URLs, tokens).
+- Commands: When providing shell commands, always include a preceding `cd` into the project directory.
+- Reliability: Use idempotent client order IDs (`clOrdID`) and safe retries for transient network errors; avoid duplicates.
+- Safety: Respect exchange tick/lot constraints and convert price/qty into exchange raw units where required.
+- Client cleanup: Ensure any HTTP/WebSocket clients are closed on shutdown.
+
+## Mermaid Flow (AI Execution Path)
+```mermaid
+flowchart TD
+  A["Startup"] --> B["Load environment variables (.env/system):<br/>API keys, secrets, tokens"]
+  B --> C{"MODE?"}
+  C -->|api| D["FastAPI webhook /webhook/tradingview"]
+  C -->|scanner| S["Engine scanner loop"]
+
+  %% Webhook path
+  D --> E["Validate token -> parse WebhookPayload"]
+  E --> F["Compute quantity<br/>risk.sizing.compute_quantity"]
+  F --> G["Build bracket intents<br/>execution.brackets.build_bracket_orders"]
+  G --> H["Score signal<br/>strategy.score.compute_total_score"]
+  H --> I{"settings.live_trade?"}
+  I -->|No| DRY["Return dryRun + intents"]
+  I -->|Yes| J["Normalize symbol to unified"]
+  J --> K["Place entry Market"]
+  K --> L["Place TP1/TP2 Limit<br/>reduceOnly: true"]
+  L --> M["Place Stop Loss Stop-Market<br/>reduceOnly: true"]
+  M --> N["Ensure one-way mode<br/>posSide: Merged"]
+  N --> O["Return placements"]
+
+  %% Scanner path joins at bracket stage
+  S --> F
+
+  %% Global rules (applies to all steps)
+  A -. reference .-> R["Global Rules:<br/>- Exchange: Bitget Futures (Swaps) only<br/>- Stops are reduce-only; one-way mode (posSide: Merged)<br/>- Do not auto-change leverage<br/>- No new indicators without explicit permission<br/>- Always include 'cd' with shell commands<br/>- Load env vars on startup<br/>- Close HTTP/WS clients on shutdown"]
+```
+

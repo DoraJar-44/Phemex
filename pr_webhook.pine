@@ -1,0 +1,338 @@
+//@version=5
+indicator("Predictive Ranges — HLines+Labels [Webhook]", "PR HL+LBL WH", overlay=true, max_lines_count=200, max_labels_count=500)
+
+// Core inputs
+length       = input.int(200, "ATR Length", minval=1, maxval=1000, group="Core")
+mult         = input.float(6.0, "ATR Multiplier", minval=0.1, maxval=100.0, step=0.1, group="Core")
+
+showLbl      = input.bool(true,  "Show Signal Labels", group="Visuals")
+compactLbl   = input.bool(true,  "Compact Label Text", group="Visuals")
+showEntryPts = input.bool(false, "Show Entry Point Labels", group="Visuals")
+
+useExtras    = input.bool(false, "Enable Extra Signals", group="Extras")
+htfConfirm   = input.bool(false, "Use HTF Confirmation", group="Extras")
+htfTf        = input.string("240", "HTF (minutes)", group="Extras")
+strongOnly   = input.bool(false, "Use Strong Entries Only", group="Extras")
+useBreakouts = input.bool(true,  "Enable Breakout Entries", group="Extras")
+bufferPct    = input.float(0.10, "Strong Buffer (%)", minval=0.0, maxval=2.0, step=0.05, group="Extras")
+
+mode         = input.string("Balanced", "Display Mode", options=["Minimal","Strong-only","Breakouts-only","Balanced","Custom"], group="Display")
+showLast     = input.int(150, "Show Last (bars) for labels", minval=1, maxval=5000, group="Display")
+minGap       = input.int(25,  "Min Label Gap (bars)", minval=0, maxval=500, group="Display")
+showOuter    = input.bool(false, "Show Outer Levels (R2/S2)", group="Display")
+
+// Filters
+useTrend       = input.bool(true,  "Use Local Trend Filter", group="Filters")
+trendLen       = input.int(50,     "Local MA Length", minval=1, maxval=5000, group="Filters")
+useRsi         = input.bool(false, "Use RSI Confirmation", group="Filters")
+rsiLen         = input.int(14,     "RSI Length", minval=2, maxval=100, group="Filters")
+minBodyAtr     = input.float(0.20, "Min Body ATR Mult", minval=0.0, maxval=5.0, step=0.05, group="Filters")
+bufferAtrMult  = input.float(0.25, "Strong Buffer ATR Mult", minval=0.0, maxval=5.0, step=0.05, group="Filters")
+strongStrict   = input.bool(true,  "Strong Entries: Strict Mode", group="Filters")
+strongRsiEdge  = input.float(55.0, "Strong RSI Threshold (Long ≥, Short ≤ 100−x)", minval=50.0, maxval=70.0, step=0.5, group="Filters")
+useWickFilter  = input.bool(true,  "Strong Wick Filter", group="Filters")
+wickRatioMax   = input.float(1.00, "Max Wick/Body Ratio (Strong)", minval=0.0, maxval=3.0, step=0.05, group="Filters")
+
+// Palette
+colCyan   = color.rgb(0, 212, 255)
+colOrange = color.rgb(255, 179, 71)
+colTxt    = color.white
+
+// Core calc
+atr     = ta.atr(length)
+atrMult = atr * mult
+
+var float avg     = na
+var float holdAtr = na
+if na(avg)
+    avg := close
+
+prevAvg = avg
+if close - avg > atrMult
+    avg += atrMult
+else if avg - close > atrMult
+    avg -= atrMult
+
+if not na(prevAvg) and avg != prevAvg
+    targetHold = atrMult * 0.5
+    holdAtr := na(holdAtr[1]) ? targetHold : holdAtr[1] * 0.8 + targetHold * 0.2
+else
+    defaultHold = atrMult * 0.5
+    holdAtr := na(holdAtr[1]) ? defaultHold : holdAtr[1] * 0.9 + defaultHold * 0.1
+holdAtr := math.min(math.max(holdAtr, atr * 0.25), atrMult)
+
+pr_avg = avg
+pr_r1  = avg + holdAtr
+pr_r2  = avg + holdAtr * 2.0
+pr_s1  = avg - holdAtr
+pr_s2  = avg - holdAtr * 2.0
+
+// Signals
+longSignal   = close > pr_avg and close < pr_r1 and close[1] <= pr_avg[1]
+shortSignal  = close < pr_avg and close > pr_s1 and close[1] >= pr_avg[1]
+breakoutUp   = close > pr_r1
+breakoutDown = close < pr_s1
+
+// HTF confirm (non-repainting)
+htfClose  = htfConfirm ? request.security(syminfo.tickerid, htfTf, close, barmerge.gaps_off, barmerge.lookahead_off) : na
+htfSma50  = htfConfirm ? request.security(syminfo.tickerid, htfTf, ta.sma(close, 50), barmerge.gaps_off, barmerge.lookahead_off) : na
+htfOkLong  = not htfConfirm or (htfClose > htfSma50)
+htfOkShort = not htfConfirm or (htfClose < htfSma50)
+
+// Local confirmations
+localSma     = ta.sma(close, trendLen)
+trendOkLong  = not useTrend or close > localSma
+trendOkShort = not useTrend or close < localSma
+rsi          = ta.rsi(close, rsiLen)
+rsiOkLong    = not useRsi or (rsi > 50 and rsi > rsi[1])
+rsiOkShort   = not useRsi or (rsi < 50 and rsi < rsi[1])
+bodySize     = math.abs(close - open)
+bodyAtrOK    = bodySize >= atr * minBodyAtr
+
+// Strong filters
+upperWick      = high - math.max(close, open)
+lowerWick      = math.min(close, open) - low
+wickOkLong     = not useWickFilter or upperWick <= bodySize * wickRatioMax
+wickOkShort    = not useWickFilter or lowerWick <= bodySize * wickRatioMax
+slopeOkLong    = pr_avg > pr_avg[1]
+slopeOkShort   = pr_avg < pr_avg[1]
+rsiStrictLongOk  = not useRsi or (rsi >= strongRsiEdge)
+rsiStrictShortOk = not useRsi or (rsi <= (100.0 - strongRsiEdge))
+
+// Entry gating
+longEntry  = longSignal  and htfOkLong  and trendOkLong  and rsiOkLong  and bodyAtrOK
+shortEntry = shortSignal and htfOkShort and trendOkShort and rsiOkShort and bodyAtrOK
+
+// Mode gating
+_useStrongOnly = (mode == "Strong-only") or strongOnly
+_useBreakOnly  = (mode == "Breakouts-only")
+_minimal       = (mode == "Minimal")
+
+// Tightened breakouts
+breakoutUp   := breakoutUp   and trendOkLong  and bodyAtrOK
+breakoutDown := breakoutDown and trendOkShort and bodyAtrOK
+
+// Strong entries
+thrLong  = math.max(pr_avg * (1.0 + bufferPct/100.0), pr_avg + atr * bufferAtrMult)
+thrShort = math.min(pr_avg * (1.0 - bufferPct/100.0), pr_avg - atr * bufferAtrMult)
+strongLong   = longSignal  and close > thrLong  and trendOkLong  and rsiOkLong  and bodyAtrOK
+strongShort  = shortSignal and close < thrShort and trendOkShort and rsiOkShort and bodyAtrOK
+strongLongStrict  = strongLong  and slopeOkLong  and wickOkLong  and rsiStrictLongOk
+strongShortStrict = strongShort and slopeOkShort and wickOkShort and rsiStrictShortOk
+effStrongLong  = strongStrict ? strongLongStrict  : strongLong
+effStrongShort = strongStrict ? strongShortStrict : strongShort
+
+finalLongEntry  = (_useBreakOnly ? breakoutUp   : (_useStrongOnly ? effStrongLong  : longEntry))  or (useBreakouts and breakoutUp)
+finalShortEntry = (_useBreakOnly ? breakoutDown : (_useStrongOnly ? effStrongShort : shortEntry)) or (useBreakouts and breakoutDown)
+
+// Range stats used by extras
+rangeStrength = (pr_r1 - pr_s1) / math.max(pr_avg, 1e-10)
+bounceLong   = useExtras and (low <= pr_s1) and (close > pr_s1) and (close < pr_avg)
+bounceShort  = useExtras and (high >= pr_r1) and (close < pr_r1) and (close > pr_avg)
+extremeUp    = useExtras and (high >= pr_r2)
+extremeDown  = useExtras and (low <= pr_s2)
+compression  = useExtras and (rangeStrength < 0.002)
+
+// ============ Horizontal Levels (lines + labels only) ============
+var line ln_avg = na
+var line ln_r1  = na
+var line ln_r2  = na
+var line ln_s1  = na
+var line ln_s2  = na
+
+var label lbl_avg = na
+var label lbl_r1  = na
+var label lbl_r2  = na
+var label lbl_s1  = na
+var label lbl_s2  = na
+
+// Create on first bar
+if barstate.isfirst
+    ln_avg := line.new(bar_index - 1, pr_avg, bar_index, pr_avg, xloc=xloc.bar_index, extend=extend.right, color=colCyan, width=2)
+    ln_r1  := line.new(bar_index - 1, pr_r1,  bar_index, pr_r1,  xloc=xloc.bar_index, extend=extend.right, color=colOrange, width=2)
+    ln_s1  := line.new(bar_index - 1, pr_s1,  bar_index, pr_s1,  xloc=xloc.bar_index, extend=extend.right, color=colCyan, width=2)
+    if showOuter
+        ln_r2 := line.new(bar_index - 1, pr_r2, bar_index, pr_r2, xloc=xloc.bar_index, extend=extend.right, color=color.new(colOrange, 40), width=2, style=line.style_dotted)
+        ln_s2 := line.new(bar_index - 1, pr_s2, bar_index, pr_s2, xloc=xloc.bar_index, extend=extend.right, color=color.new(colCyan, 40), width=2, style=line.style_dotted)
+
+    lbl_avg := label.new(bar_index + 1, pr_avg, "AVG", style=label.style_label_left, textcolor=colTxt, color=color.new(colCyan, 70))
+    lbl_r1  := label.new(bar_index + 1, pr_r1,  "R1",  style=label.style_label_left, textcolor=colTxt, color=color.new(colOrange, 70))
+    lbl_s1  := label.new(bar_index + 1, pr_s1,  "S1",  style=label.style_label_left, textcolor=colTxt, color=color.new(colCyan, 70))
+    if showOuter
+        lbl_r2 := label.new(bar_index + 1, pr_r2, "R2", style=label.style_label_left, textcolor=colTxt, color=color.new(colOrange, 85))
+        lbl_s2 := label.new(bar_index + 1, pr_s2, "S2", style=label.style_label_left, textcolor=colTxt, color=color.new(colCyan, 85))
+
+// Update on last bar; handle outer toggling
+if barstate.islast
+    // Core lines
+    line.set_xy1(ln_avg, bar_index - 1, pr_avg), line.set_xy2(ln_avg, bar_index, pr_avg)
+    line.set_xy1(ln_r1,  bar_index - 1, pr_r1),  line.set_xy2(ln_r1,  bar_index, pr_r1)
+    line.set_xy1(ln_s1,  bar_index - 1, pr_s1),  line.set_xy2(ln_s1,  bar_index, pr_s1)
+
+    // Outer lines toggle
+    if showOuter
+        if na(ln_r2)
+            ln_r2 := line.new(bar_index - 1, pr_r2, bar_index, pr_r2, xloc=xloc.bar_index, extend=extend.right, color=color.new(colOrange, 40), width=2, style=line.style_dotted)
+        if na(ln_s2)
+            ln_s2 := line.new(bar_index - 1, pr_s2, bar_index, pr_s2, xloc=xloc.bar_index, extend=extend.right, color=color.new(colCyan, 40), width=2, style=line.style_dotted)
+        line.set_xy1(ln_r2, bar_index - 1, pr_r2), line.set_xy2(ln_r2, bar_index, pr_r2)
+        line.set_xy1(ln_s2, bar_index - 1, pr_s2), line.set_xy2(ln_s2, bar_index, pr_s2)
+    else
+        if not na(ln_r2)
+            line.delete(ln_r2), ln_r2 := na
+        if not na(ln_s2)
+            line.delete(ln_s2), ln_s2 := na
+
+    // Labels right-aligned with prices
+    label.set_x(lbl_avg, bar_index + 1), label.set_y(lbl_avg, pr_avg), label.set_text(lbl_avg, "AVG " + str.tostring(pr_avg, format.mintick))
+    label.set_x(lbl_r1,  bar_index + 1), label.set_y(lbl_r1,  pr_r1),  label.set_text(lbl_r1,  "R1  " + str.tostring(pr_r1,  format.mintick))
+    label.set_x(lbl_s1,  bar_index + 1), label.set_y(lbl_s1,  pr_s1),  label.set_text(lbl_s1,  "S1  " + str.tostring(pr_s1,  format.mintick))
+
+    if showOuter
+        if na(lbl_r2)
+            lbl_r2 := label.new(bar_index + 1, pr_r2, "R2", style=label.style_label_left, textcolor=colTxt, color=color.new(colOrange, 85))
+        if na(lbl_s2)
+            lbl_s2 := label.new(bar_index + 1, pr_s2, "S2", style=label.style_label_left, textcolor=colTxt, color=color.new(colCyan, 85))
+        label.set_x(lbl_r2, bar_index + 1), label.set_y(lbl_r2, pr_r2), label.set_text(lbl_r2, "R2  " + str.tostring(pr_r2, format.mintick))
+        label.set_x(lbl_s2, bar_index + 1), label.set_y(lbl_s2, pr_s2), label.set_text(lbl_s2, "S2  " + str.tostring(pr_s2, format.mintick))
+    else
+        if not na(lbl_r2)
+            label.delete(lbl_r2), lbl_r2 := na
+        if not na(lbl_s2)
+            label.delete(lbl_s2), lbl_s2 := na
+
+// ============ Signal Labels (rate-limited) ============
+var int _lastLongLbl  = na
+var int _lastShortLbl = na
+canLongLbl  = na(_lastLongLbl)  or (bar_index - _lastLongLbl  >= minGap)
+canShortLbl = na(_lastShortLbl) or (bar_index - _lastShortLbl >= minGap)
+
+// Pool for label pruning to emulate showLast
+var label[] lblPool = array.new<label>()
+newLbl(h) =>
+    array.push(lblPool, h)
+    idx = 0
+    while idx < array.size(lblPool)
+        lh = array.get(lblPool, idx)
+        lx = label.get_x(lh)
+        if bar_index - lx > showLast
+            label.delete(lh)
+            array.remove(lblPool, idx)
+        else
+            idx += 1
+    0
+
+if showLbl and mode != "Minimal"
+    if effStrongLong and canLongLbl
+        ltxt = compactLbl ? "L+" : "Strong Long"
+        l1 = label.new(bar_index, low, ltxt, style=label.style_label_up, color=color.new(colCyan, 25), textcolor=colTxt)
+        _lastLongLbl := bar_index
+        newLbl(l1)
+    else if finalLongEntry and canLongLbl
+        ltxt2 = compactLbl ? "L" : "Long"
+        l2 = label.new(bar_index, low, ltxt2, style=label.style_label_up, color=color.new(colCyan, 65), textcolor=colTxt)
+        _lastLongLbl := bar_index
+        newLbl(l2)
+
+    if effStrongShort and canShortLbl
+        stxt = compactLbl ? "S+" : "Strong Short"
+        l3 = label.new(bar_index, high, stxt, style=label.style_label_down, color=color.new(colOrange, 25), textcolor=colTxt)
+        _lastShortLbl := bar_index
+        newLbl(l3)
+    else if finalShortEntry and canShortLbl
+        stxt2 = compactLbl ? "S" : "Short"
+        l4 = label.new(bar_index, high, stxt2, style=label.style_label_down, color=color.new(colOrange, 65), textcolor=colTxt)
+        _lastShortLbl := bar_index
+        newLbl(l4)
+
+    if useBreakouts and mode != "Strong-only"
+        if breakoutUp and canLongLbl
+            btxtU = compactLbl ? "B↑" : "Breakout ↑"
+            l5 = label.new(bar_index, low, btxtU, style=label.style_label_up, color=color.new(colCyan, 10), textcolor=colTxt)
+            _lastLongLbl := bar_index
+            newLbl(l5)
+        if breakoutDown and canShortLbl
+            btxtD = compactLbl ? "B↓" : "Breakout ↓"
+            l6 = label.new(bar_index, high, btxtD, style=label.style_label_down, color=color.new(colOrange, 10), textcolor=colTxt)
+            _lastShortLbl := bar_index
+            newLbl(l6)
+
+// ============ Trade Support & Stop-Loss (HLines + Labels) ============
+showTradeLevels = input.bool(true, "Show Support/SL HLines", group="Trade Levels")
+
+var string activeDir = ""
+var float  supLevel  = na
+var float  slLevel   = na
+var line   ln_sup    = na
+var line   ln_sl     = na
+var label  lbl_sup   = na
+var label  lbl_sl    = na
+
+newLong  = finalLongEntry
+newShort = finalShortEntry
+
+// Optional explicit entry labels
+if showLbl and showEntryPts
+    if newLong
+        letxt = compactLbl ? "E L" : "Entry Long"
+        le = label.new(bar_index, low, letxt, style=label.style_label_up, color=color.new(colCyan, 0), textcolor=colTxt)
+        newLbl(le)
+    if newShort
+        setxt = compactLbl ? "E S" : "Entry Short"
+        se = label.new(bar_index, high, setxt, style=label.style_label_down, color=color.new(colOrange, 0), textcolor=colTxt)
+        newLbl(se)
+
+// Initialize or refresh on new signal
+if showTradeLevels and (newLong or newShort)
+    if newLong
+        activeDir := "long"
+        supLevel  := pr_s1
+        slLevel   := pr_s2
+    else
+        activeDir := "short"
+        supLevel  := pr_r1
+        slLevel   := pr_r2
+
+    if na(ln_sup)
+        ln_sup := line.new(bar_index - 1, supLevel, bar_index, supLevel, xloc=xloc.bar_index, extend=extend.right, color=color.new(colCyan, 0), width=2)
+    if na(ln_sl)
+        ln_sl := line.new(bar_index - 1, slLevel, bar_index, slLevel, xloc=xloc.bar_index, extend=extend.right, color=color.new(colOrange, 0), width=2, style=line.style_dashed)
+
+    if na(lbl_sup)
+        lbl_sup := label.new(bar_index + 1, supLevel, "SUP", style=label.style_label_left, textcolor=colTxt, color=color.new(colCyan, 70))
+    if na(lbl_sl)
+        lbl_sl := label.new(bar_index + 1, slLevel, "SL",  style=label.style_label_left, textcolor=colTxt, color=color.new(colOrange, 70))
+
+// Keep trade lines and labels horizontal and right-aligned
+if showTradeLevels and activeDir != "" and barstate.islast and not na(supLevel) and not na(slLevel)
+    line.set_xy1(ln_sup, bar_index - 1, supLevel), line.set_xy2(ln_sup, bar_index, supLevel)
+    line.set_xy1(ln_sl,  bar_index - 1, slLevel),  line.set_xy2(ln_sl,  bar_index, slLevel)
+
+    label.set_x(lbl_sup, bar_index + 1), label.set_y(lbl_sup, supLevel), label.set_text(lbl_sup, "SUP " + str.tostring(supLevel, format.mintick))
+    label.set_x(lbl_sl,  bar_index + 1), label.set_y(lbl_sl,  slLevel),  label.set_text(lbl_sl,  "SL  " + str.tostring(slLevel,  format.mintick))
+
+// Alerts (JSON defaults for convenience; you can override per-alert)
+alertcondition(finalLongEntry and barstate.isconfirmed, title="PR: Entry Long", 
+     message='{"action":"BUY","symbol":"{{ticker}}","price":{{close}},"signal_type":"ENTRY","is_strong":false,"timestamp":"{{time}}","levels":{"avg":{{plot_0}},"r1":{{plot_1}},"r2":{{plot_2}},"s1":{{plot_3}},"s2":{{plot_4}}},"stats":{"atr":{{plot_5}},"rsi":{{plot_6}}}}')
+alertcondition(finalShortEntry and barstate.isconfirmed, title="PR: Entry Short", 
+     message='{"action":"SELL","symbol":"{{ticker}}","price":{{close}},"signal_type":"ENTRY","is_strong":false,"timestamp":"{{time}}","levels":{"avg":{{plot_0}},"r1":{{plot_1}},"r2":{{plot_2}},"s1":{{plot_3}},"s2":{{plot_4}}},"stats":{"atr":{{plot_5}},"rsi":{{plot_6}}}}')
+alertcondition(effStrongLong and barstate.isconfirmed, title="PR: Strong Long", 
+     message='{"action":"BUY","symbol":"{{ticker}}","price":{{close}},"signal_type":"STRONG","is_strong":true,"timestamp":"{{time}}","levels":{"avg":{{plot_0}},"r1":{{plot_1}},"r2":{{plot_2}},"s1":{{plot_3}},"s2":{{plot_4}}},"stats":{"atr":{{plot_5}},"rsi":{{plot_6}}}}')
+alertcondition(effStrongShort and barstate.isconfirmed, title="PR: Strong Short", 
+     message='{"action":"SELL","symbol":"{{ticker}}","price":{{close}},"signal_type":"STRONG","is_strong":true,"timestamp":"{{time}}","levels":{"avg":{{plot_0}},"r1":{{plot_1}},"r2":{{plot_2}},"s1":{{plot_3}},"s2":{{plot_4}}},"stats":{"atr":{{plot_5}},"rsi":{{plot_6}}}}')
+alertcondition(breakoutUp and barstate.isconfirmed, title="PR: Breakout Up", 
+     message='{"action":"BUY","symbol":"{{ticker}}","price":{{close}},"signal_type":"BREAKOUT","is_strong":false,"timestamp":"{{time}}","levels":{"avg":{{plot_0}},"r1":{{plot_1}},"r2":{{plot_2}},"s1":{{plot_3}},"s2":{{plot_4}}},"stats":{"atr":{{plot_5}},"rsi":{{plot_6}}}}')
+alertcondition(breakoutDown and barstate.isconfirmed, title="PR: Breakout Down", 
+     message='{"action":"SELL","symbol":"{{ticker}}","price":{{close}},"signal_type":"BREAKOUT","is_strong":false,"timestamp":"{{time}}","levels":{"avg":{{plot_0}},"r1":{{plot_1}},"r2":{{plot_2}},"s1":{{plot_3}},"s2":{{plot_4}}},"stats":{"atr":{{plot_5}},"rsi":{{plot_6}}}}')
+
+// Add plots for webhook data access (invisible)
+// Order: 0=AVG, 1=R1, 2=R2, 3=S1, 4=S2, 5=ATR, 6=RSI
+plot(pr_avg, title="AVG Level", display=display.none)   // plot_0
+plot(pr_r1,  title="R1 Level",  display=display.none)   // plot_1
+plot(pr_r2,  title="R2 Level",  display=display.none)   // plot_2
+plot(pr_s1,  title="S1 Level",  display=display.none)   // plot_3
+plot(pr_s2,  title="S2 Level",  display=display.none)   // plot_4
+plot(atr,    title="ATR Value", display=display.none)   // plot_5
+plot(rsi,    title="RSI Value", display=display.none)   // plot_6
+
+

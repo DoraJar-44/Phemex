@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+server.log
+external/
+nohup.out
+.DS_Store
+.ipynb_checkpoints/
+*.sqlite
+*.db

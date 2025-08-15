@@ -1,0 +1,51 @@
+{
+  "info": {
+    "name": "Phemex Balance Check",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "c4e7c9c4-01b1-4b6c-8c70-6b6c5d73da11"
+  },
+  "item": [
+    {
+      "name": "Get Account Info (USDT)",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const baseUrl = pm.environment.get('baseUrl') || 'https://api.phemex.com';",
+              "const apiKey = pm.environment.get('apiKey');",
+              "const apiSecret = pm.environment.get('apiSecret');",
+              "const currency = pm.environment.get('currency') || 'USDT';",
+              "pm.expect(apiKey, 'Set env var apiKey').to.be.ok;",
+              "pm.expect(apiSecret, 'Set env var apiSecret').to.be.ok;",
+              "const path = '/accounts/accountInfo';",
+              "const query = 'currency=' + encodeURIComponent(currency);",
+              "const expiry = String(Math.floor(Date.now()/1000) + 60);",
+              "const body = '';",
+              "const msg = path + query + expiry + body;",
+              "const signature = CryptoJS.HmacSHA256(msg, apiSecret).toString(CryptoJS.enc.Hex);",
+              "pm.environment.set('computedExpiry', expiry);",
+              "pm.environment.set('computedSignature', signature);",
+              "pm.environment.set('computedUrl', baseUrl + path + '?' + query);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {"key": "x-phemex-access-token", "value": "{{apiKey}}"},
+          {"key": "x-phemex-request-expiry", "value": "{{computedExpiry}}"},
+          {"key": "x-phemex-request-signature", "value": "{{computedSignature}}"}
+        ],
+        "url": {
+          "raw": "{{computedUrl}}",
+          "host": ["{{computedUrl}}"]
+        }
+      }
+    }
+  ],
+  "event": [],
+  "variable": []
+}

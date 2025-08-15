@@ -1,0 +1,207 @@
+Phemex USDT-M (USDⓈ-Margined) Perpetual API – Endpoints, Signatures, and Gotchas
+
+## Base URLs
+- Public REST: `https://api.phemex.com`
+- VIP REST (IP-whitelisted): `https://vapi.phemex.com`
+- Testnet REST: `https://testnet-api.phemex.com`
+- Public WS: `wss://ws.phemex.com`
+- VIP WS: `wss://vapi.phemex.com/ws`
+- Testnet WS: `wss://testnet-api.phemex.com/ws`
+
+## Authentication & Signature (REST)
+- Headers required for private endpoints:
+  - `x-phemex-access-token`: API key
+  - `x-phemex-request-expiry`: Unix epoch in seconds, in the future (e.g., now + 60)
+  - `x-phemex-request-signature`: HMAC-SHA256 signature (hex)
+- String to sign (exact concatenation, in this order):
+  1) URL path (e.g., `/g-orders/create`)
+  2) Query string (raw, no leading `?`; empty if none)
+  3) Expiry (same value as `x-phemex-request-expiry`)
+  4) Request body (exact JSON string for PUT/POST; empty for GET/DELETE without body)
+- Signature = `HMAC_SHA256(secret, path + query + expiry + body)` and hex-encode.
+- Do not include the scheme/host in the string to sign.
+- The query string must match exactly what is sent on the wire (order and encoding included).
+- Body must be identical to the transmitted JSON (no extra spaces, keys, or different ordering if your server checks byte-wise).
+
+### Minimal examples
+```python
+# Python 3
+import time, hmac, hashlib, json
+
+api_key = "<KEY>"
+api_secret = "<SECRET>"
+expiry = str(int(time.time()) + 60)
+path = "/g-orders/create"
+query = ""  # e.g., "symbol=BTCUSDT" (no leading '?')
+body_obj = {
+  "symbol": "BTCUSDT",
+  "side": "Buy",
+  "ordType": "Limit",
+  "orderQtyRq": "1",
+  "priceRp": "3000000",  # example Rp (scaled int as string)
+  "timeInForce": "GoodTillCancel",
+  "posSide": "Merged"
+}
+body = json.dumps(body_obj, separators=(",", ":"))  # compact JSON
+msg = f"{path}{query}{expiry}{body}"
+signature = hmac.new(api_secret.encode(), msg.encode(), hashlib.sha256).hexdigest()
+headers = {
+  "x-phemex-access-token": api_key,
+  "x-phemex-request-expiry": expiry,
+  "x-phemex-request-signature": signature,
+  "content-type": "application/json"
+}
+```
+
+```js
+// Node.js
+const crypto = require('crypto');
+const apiKey = '<KEY>';
+const apiSecret = '<SECRET>';
+const expiry = String(Math.floor(Date.now()/1000) + 60);
+const path = '/g-orders/create';
+const query = '';
+const bodyObj = {
+  symbol: 'BTCUSDT',
+  side: 'Buy',
+  ordType: 'Limit',
+  orderQtyRq: '1',
+  priceRp: '3000000',
+  timeInForce: 'GoodTillCancel',
+  posSide: 'Merged'
+};
+const body = JSON.stringify(bodyObj);
+const msg = path + query + expiry + body;
+const signature = crypto.createHmac('sha256', apiSecret).update(msg).digest('hex');
+const headers = {
+  'x-phemex-access-token': apiKey,
+  'x-phemex-request-expiry': expiry,
+  'x-phemex-request-signature': signature,
+  'content-type': 'application/json'
+};
+```
+
+## Units, Scales, and Naming
+Phemex uses scaled integers (strings in JSON) for price/qty/value to avoid float issues:
+- `priceRp`: price in raw integer units (Rp)
+- `orderQtyRq`: quantity in raw integer units (Rq)
+- `stopPxRp`, `takeProfitRp`, `stopLossRp`: trigger prices (Rp)
+- `valueRv`: notional value in raw integer units (Rv)
+- Pull scale and precision from `GET /public/products`:
+  - Each symbol has `priceScale` and `qtyScale` (and tick/lot constraints)
+  - Convert human price to Rp: `priceRp = round(price * 10^priceScale)`
+  - Convert human qty to Rq: `orderQtyRq = round(qty * 10^qtyScale)`
+- Always round to the exchange’s tick/lot rules (rejects if off by even 1 unit).
+
+## Public Market Data Endpoints
+- Products
+  - `GET /public/products`
+  - `GET /public/products-plus`
+- Ticker
+  - `GET /md/ticker/24hr?symbol=BTCUSDT`
+- Orderbook (levels parameter may vary; depth defaults exist)
+  - `GET /md/orderbook?symbol=BTCUSDT&depth=40`
+- Trades
+  - `GET /md/trade?symbol=BTCUSDT&limit=100`
+- Klines
+  - `GET /md/kline?symbol=BTCUSDT&resolution=1&from=1698796800&to=1698883200`
+
+## Private Trading Endpoints (USDT-M Perpetual)
+Order creation and management use the "g-" endpoints and raw integer fields:
+
+- Create order
+  - `PUT /g-orders/create`
+  - Body fields (commonly used):
+    - `clOrdID` (string, <= 40)
+    - `symbol` (e.g., `BTCUSDT`)
+    - `side` (`Buy`|`Sell`)
+    - `ordType` (`Limit`|`Market`|`Stop`|`StopLimit`|`TakeProfit`|`TakeProfitLimit`|`TrailingStop`)
+    - `orderQtyRq` (string int)
+    - `priceRp` (string int; required for `Limit`)
+    - `timeInForce` (`GoodTillCancel`|`ImmediateOrCancel`|`FillOrKill`)
+    - `posSide` (`Merged` for one-way; `Long`/`Short` for hedge)
+    - `reduceOnly` (bool)
+    - `closeOnTrigger` (bool)
+    - Conditional/TP/SL/Trailing params: `stopPxRp`, `takeProfitRp`, `stopLossRp`, `triggerType`, `tpTrigger`, `slTrigger`, `pegOffsetValueRp`, `pegPriceType`
+    - Self-trade prevention: `stpInstruction` (requires STP enabled on your account)
+
+- Replace (amend) order
+  - `PUT /g-orders/replace`
+  - Amend by `orderID` or `clOrdID`; typical fields: `priceRp`, `orderQtyRq`, `timeInForce`, `takeProfitRp`, `stopLossRp`
+
+- Cancel order
+  - `DELETE /g-orders/cancel`
+  - Identify by `orderID` or `clOrdID`
+
+- Cancel all orders (optionally by symbol)
+  - `DELETE /g-orders/cancelAll?symbol=BTCUSDT`
+
+- Query active orders
+  - `GET /orders/activeList?symbol=BTCUSDT`
+
+- Query order by id / client id
+  - `GET /orders?orderID=<id>` or `GET /orders?clOrdID=<id>&symbol=BTCUSDT`
+
+- Query fills (executions)
+  - `GET /exchange/order/trade?symbol=BTCUSDT&orderID=<id>`
+
+## Accounts, Positions, Leverage, Risk
+- Account info (balances, currency = `USDT` for USDT-M)
+  - `GET /accounts/accountInfo?currency=USDT`
+
+- Positions
+  - `GET /accounts/accountPositions?currency=USDT` (optionally `&symbol=BTCUSDT`)
+
+- Set leverage
+  - `PUT /positions/leverage`
+  - Body: `{ "symbol": "BTCUSDT", "posSide": "Merged|Long|Short", "leverage": 5 }`
+
+- Change risk limit
+  - `PUT /positions/riskLimit`
+  - Body: `{ "symbol": "BTCUSDT", "posSide": "Merged|Long|Short", "riskLimit": <limitCode> }`
+
+- Set position TP/SL (attached orders)
+  - `PUT /positions/tpsl`
+  - Body: `{ "symbol": "BTCUSDT", "posSide": "Merged|Long|Short", "takeProfitRp": "…", "stopLossRp": "…", "tpTrigger": "ByMarkPrice", "slTrigger": "ByMarkPrice" }`
+
+Note: The exact payload variations depend on ordType and trigger types. Always align `posSide` with your margin mode.
+
+## WebSocket Auth (brief)
+- Authenticate by sending `{ apiKey, expire, signature }` where `signature = HMAC_SHA256(secret, path + query + expire + body)` aligned with WS spec for the login request.
+- Subscribe to private topics (orders/positions/accounts) after successful login.
+
+## Rate Limits & Reliability
+- Respect public/private REST limits; implement client-side throttling and exponential backoff on 429.
+- Build idempotency via `clOrdID` and safe retries for network errors (avoid replaying when order may have already been accepted).
+- Prefer querying order status by `clOrdID` after transient failures.
+
+## Common Gotchas (headaches to avoid)
+- Expiry is in seconds, not milliseconds. If your clock skews, auth fails. Sync via NTP.
+- The signed string uses only the path, raw query, expiry, and body. Never include scheme/host. Keep query param order consistent.
+- JSON body must be byte-identical to the transmitted payload. Use compact JSON (no spaces) to be safe.
+- Use scaled integers: `priceRp`, `orderQtyRq`, `stopPxRp` must follow each symbol’s `priceScale`/`qtyScale`. One unit off will be rejected.
+- `posSide` must match your position mode: `Merged` for one-way; `Long`/`Short` for hedge. Wrong `posSide` will reject or affect the wrong side.
+- `reduceOnly` orders cannot increase exposure; combining with TP/SL/Trailing may be constrained by exchange logic.
+- `closeOnTrigger` can cancel other same-direction orders when it triggers; set only when you intend that behavior.
+- `clOrdID` must be unique per account until the order leaves the system; reuse causes duplication errors.
+- For market orders, `timeInForce` options may be restricted; avoid sending incompatible TIFs.
+- STP requires enabling `stpGroupId` by support; sending `stpInstruction` without enablement may be ignored or rejected.
+- Testnet and mainnet products and scales can differ; fetch products dynamically from `/public/products` per environment.
+
+## Quick Create-Order checklist
+- Fetch symbol meta from `/public/products` and cache `priceScale`, `qtyScale`, tick/lot.
+- Build `priceRp`, `orderQtyRq` using precise decimal math (no binary floats). Round to tick/lot.
+- Choose correct `posSide` for your mode.
+- Set a future `x-phemex-request-expiry` (e.g., now+60s).
+- Sign `path + query + expiry + body` exactly.
+- On error, log response code/message and the exact string that was signed for troubleshooting.
+
+## Useful Responses (fields you’ll see)
+Typical order response fields include: `orderID`, `clOrdID`, `ordStatus`, `execStatus`, `cumQtyRq`, `leavesQtyRq`, `priceRp`, `orderQtyRq`, `reduceOnly`, `posSide`, `transactTimeNs`.
+
+## References
+- Official announcement on endpoints updates
+- Official docs browser for REST/WS
+- Public products contract specs
+
+(Keep this file close to code that constructs signatures and converts price/qty to Rp/Rq. Treat every mismatch as a signature or scaling issue first.)
