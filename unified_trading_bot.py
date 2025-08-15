@@ -358,32 +358,71 @@ class TradingTUI:
         self.trades: deque = deque(maxlen=20)
         self.errors: deque = deque(maxlen=10)
         self.positions: deque = deque(maxlen=10)
+        self.logs: deque = deque(maxlen=50)
         self.stats = {
             "scanned": 0, "signals": 0, "trades": 0, "pnl": 0.0,
             "account_balance": 0.0, "equity": 0.0, "margin_used": 0.0,
             "win_rate": 0.0, "avg_profit": 0.0, "max_drawdown": 0.0,
-            "daily_pnl": 0.0, "total_volume": 0.0, "open_positions": 0
+            "daily_pnl": 0.0, "total_volume": 0.0, "open_positions": 0,
+            "winning_trades": 0, "losing_trades": 0, "total_trades": 0,
+            "best_trade": 0.0, "worst_trade": 0.0, "current_streak": 0
         }
+        self.color_pairs = {}
+        self.unicode_support = True
+        self.animation_frame = 0
+        self.market_trend = "neutral"
         
     def init_colors(self):
+        """Initialize enhanced color scheme"""
         curses.start_color()
         curses.use_default_colors()
         
-        if curses.COLORS >= 256:
-            # Mint green theme
-            curses.init_pair(1, 48, curses.COLOR_BLACK)     # High scores (mint green)
-            curses.init_pair(2, 208, curses.COLOR_BLACK)    # Medium scores (orange)
-            curses.init_pair(3, 196, curses.COLOR_BLACK)    # Low scores (red)
-            curses.init_pair(4, 87, curses.COLOR_BLACK)     # Headers (cyan)
-            curses.init_pair(5, 93, curses.COLOR_BLACK)     # Signals (purple)
-            curses.init_pair(6, 255, curses.COLOR_BLACK)    # Normal text (white)
-        else:
-            curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
-            curses.init_pair(2, curses.COLOR_YELLOW, curses.COLOR_BLACK)
-            curses.init_pair(3, curses.COLOR_RED, curses.COLOR_BLACK)
-            curses.init_pair(4, curses.COLOR_CYAN, curses.COLOR_BLACK)
-            curses.init_pair(5, curses.COLOR_BLUE, curses.COLOR_BLACK)
-            curses.init_pair(6, curses.COLOR_WHITE, curses.COLOR_BLACK)
+        # Enhanced color definitions for better contrast
+        color_definitions = [
+            (1, 46, -1),    # Bright green
+            (2, 226, -1),   # Yellow
+            (3, 196, -1),   # Red
+            (4, 51, -1),    # Cyan
+            (5, 201, -1),   # Magenta
+            (6, 255, -1),   # White
+            (7, 244, -1),   # Gray
+            (8, 82, -1),    # Light green
+            (9, 208, -1),   # Orange
+            (10, 21, -1),   # Blue
+            (11, 118, -1),  # Bright green for profit
+            (12, 160, -1),  # Dark red for loss
+            (13, 220, -1),  # Gold for headers
+            (14, 87, -1),   # Light cyan for info
+            (15, 93, -1),   # Purple for special
+        ]
+        
+        for i, (pair_num, fg, bg) in enumerate(color_definitions, 1):
+            try:
+                if curses.COLORS >= 256:
+                    curses.init_pair(pair_num, fg, bg)
+                else:
+                    basic_colors = [
+                        curses.COLOR_GREEN, curses.COLOR_YELLOW, curses.COLOR_RED,
+                        curses.COLOR_CYAN, curses.COLOR_MAGENTA, curses.COLOR_WHITE
+                    ]
+                    curses.init_pair(pair_num, basic_colors[min(i-1, 5)], curses.COLOR_BLACK)
+            except:
+                curses.init_pair(pair_num, curses.COLOR_WHITE, curses.COLOR_BLACK)
+                
+        self.color_pairs = {
+            'profit': curses.color_pair(11),
+            'loss': curses.color_pair(12),
+            'header': curses.color_pair(13),
+            'info': curses.color_pair(14),
+            'special': curses.color_pair(15),
+            'success': curses.color_pair(1),
+            'warning': curses.color_pair(2),
+            'danger': curses.color_pair(3),
+            'primary': curses.color_pair(4),
+            'secondary': curses.color_pair(5),
+            'normal': curses.color_pair(6),
+            'muted': curses.color_pair(7),
+        }
 
     def get_score_color(self, score: int) -> int:
         if score >= 90:
