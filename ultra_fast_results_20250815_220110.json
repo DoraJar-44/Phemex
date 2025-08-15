@@ -1,0 +1,382 @@
+[
+  {
+    "timeframe": "4h",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 43,
+      "wins": 43,
+      "losses": 0,
+      "win_rate": 100.0,
+      "avg_profit_pct": 9.446955947509272,
+      "total_return_pct": 406.2191057428987,
+      "max_drawdown_pct": 0.29313153300559674,
+      "profit_factor": Infinity,
+      "avg_bars_held": 2.7209302325581395
+    },
+    "score": 98.77665928181631
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "ETH/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 47,
+      "wins": 45,
+      "losses": 2,
+      "win_rate": 95.74468085106383,
+      "avg_profit_pct": 8.64938530079268,
+      "total_return_pct": 406.52110913725596,
+      "max_drawdown_pct": -3.198806252073963,
+      "profit_factor": 113.65637015818245,
+      "avg_bars_held": 2.5531914893617023
+    },
+    "score": 94.74265235607493
+  },
+  {
+    "timeframe": "1h",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 45,
+      "wins": 45,
+      "losses": 0,
+      "win_rate": 100.0,
+      "avg_profit_pct": 6.888614044202413,
+      "total_return_pct": 309.9876319891086,
+      "max_drawdown_pct": 0.023709167544766162,
+      "profit_factor": Infinity,
+      "avg_bars_held": 2.6666666666666665
+    },
+    "score": 93.76774442138692
+  },
+  {
+    "timeframe": "1h",
+    "symbol": "ETH/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 42,
+      "wins": 41,
+      "losses": 1,
+      "win_rate": 97.61904761904762,
+      "avg_profit_pct": 7.233262503867888,
+      "total_return_pct": 303.7970251624513,
+      "max_drawdown_pct": -1.7330543961199782,
+      "profit_factor": 176.29572403647717,
+      "avg_bars_held": 1.8571428571428572
+    },
+    "score": 93.05901753500207
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "BTC/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 50,
+      "wins": 47,
+      "losses": 3,
+      "win_rate": 94.0,
+      "avg_profit_pct": 7.75882033519238,
+      "total_return_pct": 387.941016759619,
+      "max_drawdown_pct": -1.9511917031905124,
+      "profit_factor": 70.73578826349433,
+      "avg_bars_held": 3.04
+    },
+    "score": 92.93716398910857
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 100,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 80,
+      "wins": 80,
+      "losses": 0,
+      "win_rate": 100.0,
+      "avg_profit_pct": 6.4386552246666735,
+      "total_return_pct": 515.0924179733339,
+      "max_drawdown_pct": 0.29313153300559674,
+      "profit_factor": Infinity,
+      "avg_bars_held": 3.2
+    },
+    "score": 92.76005783613111
+  },
+  {
+    "timeframe": "15m",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 47,
+      "wins": 46,
+      "losses": 1,
+      "win_rate": 97.87234042553192,
+      "avg_profit_pct": 6.881149073383815,
+      "total_return_pct": 323.41400644903933,
+      "max_drawdown_pct": -0.99613579906153,
+      "profit_factor": 325.66859112355064,
+      "avg_bars_held": 2.8085106382978724
+    },
+    "score": 92.7255459548026
+  },
+  {
+    "timeframe": "5m",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 50,
+      "wins": 49,
+      "losses": 1,
+      "win_rate": 98.0,
+      "avg_profit_pct": 6.75726351951461,
+      "total_return_pct": 337.8631759757305,
+      "max_drawdown_pct": -1.0957075374820073,
+      "profit_factor": 309.35160334130546,
+      "avg_bars_held": 2.18
+    },
+    "score": 92.47624402403642
+  },
+  {
+    "timeframe": "1h",
+    "symbol": "BTC/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 54,
+      "wins": 53,
+      "losses": 1,
+      "win_rate": 98.14814814814815,
+      "avg_profit_pct": 6.279078892337942,
+      "total_return_pct": 339.0702601862489,
+      "max_drawdown_pct": -0.7651322621771638,
+      "profit_factor": 444.15248088145347,
+      "avg_bars_held": 3.7037037037037037
+    },
+    "score": 91.69654932424946
+  },
+  {
+    "timeframe": "5m",
+    "symbol": "ETH/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 54,
+      "wins": 53,
+      "losses": 1,
+      "win_rate": 98.14814814814815,
+      "avg_profit_pct": 6.272016790662012,
+      "total_return_pct": 338.68890669574864,
+      "max_drawdown_pct": -0.7628352190764265,
+      "profit_factor": 444.9869820192665,
+      "avg_bars_held": 3.0555555555555554
+    },
+    "score": 91.68334393813791
+  },
+  {
+    "timeframe": "5m",
+    "symbol": "BTC/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 54,
+      "wins": 53,
+      "losses": 1,
+      "win_rate": 98.14814814814815,
+      "avg_profit_pct": 6.154347586290738,
+      "total_return_pct": 332.3347696596999,
+      "max_drawdown_pct": -0.36437633156980725,
+      "profit_factor": 913.0646454393295,
+      "avg_bars_held": 3.1666666666666665
+    },
+    "score": 91.607389084398
+  },
+  {
+    "timeframe": "15m",
+    "symbol": "ETH/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 48,
+      "wins": 44,
+      "losses": 4,
+      "win_rate": 91.66666666666666,
+      "avg_profit_pct": 6.660959377192512,
+      "total_return_pct": 319.7260501052406,
+      "max_drawdown_pct": -1.1300536298946844,
+      "profit_factor": 85.98213105252509,
+      "avg_bars_held": 3.6041666666666665
+    },
+    "score": 90.36989730242715
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 3.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 76,
+      "wins": 67,
+      "losses": 9,
+      "win_rate": 88.1578947368421,
+      "avg_profit_pct": 7.672364002980992,
+      "total_return_pct": 583.0996642265554,
+      "max_drawdown_pct": -5.121822292067591,
+      "profit_factor": 22.475068659187446,
+      "avg_bars_held": 5.368421052631579
+    },
+    "score": 89.74336751018758
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "BTC/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 3.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 73,
+      "wins": 66,
+      "losses": 7,
+      "win_rate": 90.41095890410958,
+      "avg_profit_pct": 6.455104276942882,
+      "total_return_pct": 471.2226122168304,
+      "max_drawdown_pct": -2.7979511453044563,
+      "profit_factor": 81.05074651009032,
+      "avg_bars_held": 4.109589041095891
+    },
+    "score": 88.91431576699685
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 100,
+    "atr_multiplier": 3.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 123,
+      "wins": 115,
+      "losses": 8,
+      "win_rate": 93.4959349593496,
+      "avg_profit_pct": 6.1879854406153365,
+      "total_return_pct": 761.1222091956864,
+      "max_drawdown_pct": -3.94058907734351,
+      "profit_factor": 35.96051746198096,
+      "avg_bars_held": 4.5772357723577235
+    },
+    "score": 88.84851573809814
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "ETH/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 3.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 86,
+      "wins": 75,
+      "losses": 11,
+      "win_rate": 87.20930232558139,
+      "avg_profit_pct": 6.853973392265925,
+      "total_return_pct": 589.4417117348696,
+      "max_drawdown_pct": -2.9788425686887408,
+      "profit_factor": 32.113879532661045,
+      "avg_bars_held": 3.8488372093023258
+    },
+    "score": 88.67920045473078
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 50,
+    "atr_multiplier": 1.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 368,
+      "wins": 363,
+      "losses": 5,
+      "win_rate": 98.6413043478261,
+      "avg_profit_pct": 4.52789432443236,
+      "total_return_pct": 1666.2651113911086,
+      "max_drawdown_pct": -0.7961485728530319,
+      "profit_factor": 484.0760135666687,
+      "avg_bars_held": 5.304347826086956
+    },
+    "score": 88.32972052407133
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 200,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 159,
+      "wins": 159,
+      "losses": 0,
+      "win_rate": 100.0,
+      "avg_profit_pct": 4.1635676603772,
+      "total_return_pct": 662.0072579999747,
+      "max_drawdown_pct": 0.01340072597325029,
+      "profit_factor": Infinity,
+      "avg_bars_held": 3.509433962264151
+    },
+    "score": 88.3217750303651
+  },
+  {
+    "timeframe": "15m",
+    "symbol": "SOL/USDT:USDT",
+    "atr_length": 100,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 81,
+      "wins": 81,
+      "losses": 0,
+      "win_rate": 100.0,
+      "avg_profit_pct": 4.13478903561918,
+      "total_return_pct": 334.91791188515356,
+      "max_drawdown_pct": 0.005500550055014394,
+      "profit_factor": Infinity,
+      "avg_bars_held": 2.691358024691358
+    },
+    "score": 88.26737785121635
+  },
+  {
+    "timeframe": "4h",
+    "symbol": "BTC/USDT:USDT",
+    "atr_length": 100,
+    "atr_multiplier": 5.0,
+    "entry_type": "close_confirmed",
+    "metrics": {
+      "total_trades": 89,
+      "wins": 86,
+      "losses": 3,
+      "win_rate": 96.62921348314607,
+      "avg_profit_pct": 4.993063076954623,
+      "total_return_pct": 444.38261384896146,
+      "max_drawdown_pct": -2.0527614321512955,
+      "profit_factor": 86.27119852175076,
+      "avg_bars_held": 3.2134831460674156
+    },
+    "score": 88.15378562599255
+  }
+]
