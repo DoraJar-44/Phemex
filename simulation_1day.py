@@ -39,7 +39,7 @@ class TradingSimulator:
         """Initialize the trading simulator"""
         self.initial_balance = initial_balance
         self.current_balance = initial_balance
-        self.leverage = 344
+        self.leverage = 34  # CORRECTED: 34x not 344x!
         self.position_size_pct = 3.0  # 3% per position
         self.max_positions = 10
         self.maker_fee = 0.01 / 100  # 0.01% maker fee (Phemex)
@@ -393,7 +393,7 @@ def main():
     """Run the main simulation"""
     print("="*60)
     print("24-HOUR TRADING SIMULATION")
-    print("Configuration: 3% position size, 344x leverage, max 10 positions")
+    print("Configuration: 3% position size, 34x leverage, max 10 positions")
     print("="*60)
     
     # Run single detailed simulation
@@ -442,32 +442,33 @@ def main():
     
     # Warning about leverage
     print(f"\n{'='*60}")
-    print(f"⚠️  EXTREME LEVERAGE WARNING")
+    print(f"⚠️  LEVERAGE RISK ASSESSMENT")
     print(f"{'='*60}")
     print(f"""
-🔴 CRITICAL RISK FACTORS WITH 344x LEVERAGE:
+⚠️ RISK FACTORS WITH 34x LEVERAGE:
 
-1. LIQUIDATION RISK: With 344x leverage, a mere 0.29% adverse move 
-   will liquidate your entire position (100% / 344 = 0.29%)
+1. LIQUIDATION RISK: With 34x leverage, a ~2.94% adverse move 
+   will liquidate your entire position (100% / 34 = 2.94%)
 
-2. MARGIN CALLS: Even smaller moves can trigger margin calls,
-   forcing position closure at losses
+2. MARGIN MANAGEMENT: Positions require careful monitoring,
+   but 2.94% buffer is manageable in crypto markets
 
-3. FUNDING RATES: At 344x, funding costs are multiplied 344 times,
-   potentially eating significant profits even on winning trades
+3. FUNDING RATES: At 34x, funding costs are multiplied 34 times,
+   can impact profitability on longer holds
 
-4. SLIPPAGE IMPACT: A 0.1% slippage becomes 34.4% loss on your margin
+4. SLIPPAGE IMPACT: A 0.1% slippage becomes 3.4% loss on your margin
 
-5. EXCHANGE LIMITS: Most exchanges limit leverage to 100-125x for retail
+5. EXCHANGE SUPPORT: Most major exchanges support 20-50x leverage
 
-6. PSYCHOLOGICAL PRESSURE: Managing 344x positions requires extreme
-   emotional control - most traders cannot handle this stress
+6. RISK LEVEL: High but manageable with proper risk management
+   and stop losses
 
-📌 RECOMMENDED MAXIMUM LEVERAGE: 10-20x for experienced traders
-📌 SAFE LEVERAGE FOR BEGINNERS: 2-5x
+📌 34x is aggressive but workable for experienced traders
+📌 Ensure tight stop losses (max 1-2% move)
+📌 Monitor positions actively
 
-The simulation assumes perfect execution, no slippage, and no funding.
-Real-world results will likely be significantly worse.
+The simulation assumes perfect execution, no slippage, and minimal funding.
+Real-world results may vary based on market conditions.
 """)
     
     print(f"{'='*60}")
