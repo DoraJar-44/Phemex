@@ -1,0 +1,183 @@
+{
+  "simulation_parameters": {
+    "initial_balance": 10000,
+    "leverage": 344,
+    "position_size_pct": 3.0,
+    "max_positions": 10
+  },
+  "results": {
+    "final_balance": 45419.65,
+    "total_pnl_usd": 35419.65,
+    "total_return_pct": 354.2,
+    "total_fees_usd": 4795.26
+  },
+  "trade_statistics": {
+    "total_trades": 36,
+    "winning_trades": 28,
+    "losing_trades": 7,
+    "win_rate_pct": 77.78,
+    "avg_winner_usd": 2162.34,
+    "avg_loser_usd": 4228.43,
+    "profit_factor": 1.79
+  },
+  "risk_metrics": {
+    "max_drawdown_pct": 37.69,
+    "peak_balance": 45419.65
+  },
+  "best_trade": {
+    "symbol": "ETHUSDT",
+    "pnl_usd": 4605.46,
+    "pnl_pct": 663.92
+  },
+  "worst_trade": {
+    "symbol": "VETUSDT",
+    "pnl_usd": -8701.51,
+    "pnl_pct": -729.28
+  },
+  "hourly_progression": [
+    {
+      "hour": "2025-08-15 22:00",
+      "balance": 10000,
+      "open_positions": 2,
+      "total_trades": 2
+    },
+    {
+      "hour": "2025-08-15 23:00",
+      "balance": 10000,
+      "open_positions": 3,
+      "total_trades": 3
+    },
+    {
+      "hour": "2025-08-16 00:00",
+      "balance": 11991.76,
+      "open_positions": 2,
+      "total_trades": 3
+    },
+    {
+      "hour": "2025-08-16 01:00",
+      "balance": 10768.84,
+      "open_positions": 1,
+      "total_trades": 4
+    },
+    {
+      "hour": "2025-08-16 02:00",
+      "balance": 10768.84,
+      "open_positions": 3,
+      "total_trades": 6
+    },
+    {
+      "hour": "2025-08-16 03:00",
+      "balance": 12847.053818560002,
+      "open_positions": 2,
+      "total_trades": 7
+    },
+    {
+      "hour": "2025-08-16 04:00",
+      "balance": 12847.053818560002,
+      "open_positions": 2,
+      "total_trades": 7
+    },
+    {
+      "hour": "2025-08-16 05:00",
+      "balance": 11075.43090520017,
+      "open_positions": 2,
+      "total_trades": 9
+    },
+    {
+      "hour": "2025-08-16 06:00",
+      "balance": 11075.43090520017,
+      "open_positions": 2,
+      "total_trades": 9
+    },
+    {
+      "hour": "2025-08-16 07:00",
+      "balance": 9720.994308941432,
+      "open_positions": 1,
+      "total_trades": 10
+    },
+    {
+      "hour": "2025-08-16 08:00",
+      "balance": 10658.992491799809,
+      "open_positions": 3,
+      "total_trades": 13
+    },
+    {
+      "hour": "2025-08-16 09:00",
+      "balance": 11687.499995318556,
+      "open_positions": 2,
+      "total_trades": 13
+    },
+    {
+      "hour": "2025-08-16 10:00",
+      "balance": 12716.007498837304,
+      "open_positions": 1,
+      "total_trades": 13
+    },
+    {
+      "hour": "2025-08-16 11:00",
+      "balance": 12716.007498837304,
+      "open_positions": 5,
+      "total_trades": 17
+    },
+    {
+      "hour": "2025-08-16 12:00",
+      "balance": 16277.23851194447,
+      "open_positions": 7,
+      "total_trades": 21
+    },
+    {
+      "hour": "2025-08-16 13:00",
+      "balance": 18560.62654649569,
+      "open_positions": 7,
+      "total_trades": 24
+    },
+    {
+      "hour": "2025-08-16 14:00",
+      "balance": 20131.249844990234,
+      "open_positions": 9,
+      "total_trades": 27
+    },
+    {
+      "hour": "2025-08-16 15:00",
+      "balance": 22370.664290243214,
+      "open_positions": 6,
+      "total_trades": 27
+    },
+    {
+      "hour": "2025-08-16 16:00",
+      "balance": 23122.5547282443,
+      "open_positions": 7,
+      "total_trades": 31
+    },
+    {
+      "hour": "2025-08-16 17:00",
+      "balance": 33367.34860186471,
+      "open_positions": 6,
+      "total_trades": 33
+    },
+    {
+      "hour": "2025-08-16 18:00",
+      "balance": 39772.136263583,
+      "open_positions": 5,
+      "total_trades": 35
+    },
+    {
+      "hour": "2025-08-16 19:00",
+      "balance": 37922.71801920151,
+      "open_positions": 3,
+      "total_trades": 36
+    },
+    {
+      "hour": "2025-08-16 20:00",
+      "balance": 41760.410991547156,
+      "open_positions": 2,
+      "total_trades": 36
+    },
+    {
+      "hour": "2025-08-16 21:00",
+      "balance": 45419.649898655945,
+      "open_positions": 1,
+      "total_trades": 36
+    }
+  ]
+}
