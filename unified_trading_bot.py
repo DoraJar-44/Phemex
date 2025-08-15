@@ -425,17 +425,104 @@ class TradingTUI:
         }
 
     def get_score_color(self, score: int) -> int:
-        if score >= 90:
-            return curses.color_pair(1) | curses.A_BOLD  # Mint green
+        """Get color based on score value with gradient"""
+        if score >= 95:
+            return self.color_pairs['profit'] | curses.A_BOLD
+        elif score >= 90:
+            return self.color_pairs['success'] | curses.A_BOLD
+        elif score >= 85:
+            return self.color_pairs['success']
+        elif score >= 80:
+            return curses.color_pair(8)
         elif score >= 75:
-            return curses.color_pair(2)  # Orange
+            return self.color_pairs['warning']
+        elif score >= 70:
+            return curses.color_pair(9)
         else:
-            return curses.color_pair(3)  # Red
+            return self.color_pairs['danger']
 
-    def draw_border(self, win, title: str, color: int = 4):
+    def draw_border(self, win, title: str, color=None, style="double"):
+        """Draw enhanced border with title"""
+        if color is None:
+            color = self.color_pairs.get('header', curses.color_pair(4))
+            
         h, w = win.getmaxyx()
-        win.box()
-        win.addstr(0, 2, f" {title} ", curses.color_pair(color) | curses.A_BOLD)
+        
+        # Use Unicode borders if supported
+        if style == "double" and self.unicode_support:
+            chars = {'tl': '╔', 'tr': '╗', 'bl': '╚', 'br': '╝', 'h': '═', 'v': '║'}
+        elif style == "rounded" and self.unicode_support:
+            chars = {'tl': '╭', 'tr': '╮', 'bl': '╰', 'br': '╯', 'h': '─', 'v': '│'}
+        else:
+            win.box()
+            win.addstr(0, 2, f" {title} ", color | curses.A_BOLD)
+            return
+            
+        try:
+            # Draw corners
+            win.addstr(0, 0, chars['tl'], color)
+            win.addstr(0, w-1, chars['tr'], color)
+            win.addstr(h-1, 0, chars['bl'], color)
+            win.addstr(h-1, w-1, chars['br'], color)
+            
+            # Draw lines
+            for x in range(1, w-1):
+                win.addstr(0, x, chars['h'], color)
+                win.addstr(h-1, x, chars['h'], color)
+            for y in range(1, h-1):
+                win.addstr(y, 0, chars['v'], color)
+                win.addstr(y, w-1, chars['v'], color)
+                
+            # Add centered title
+            title_with_padding = f" {title} "
+            title_start = (w - len(title_with_padding)) // 2
+            win.addstr(0, title_start, title_with_padding, color | curses.A_BOLD)
+        except curses.error:
+            pass
+
+    def draw_progress_bar(self, win, y: int, x: int, width: int, value: float, max_value: float, 
+                         label: str = "", color=None):
+        """Draw a progress bar with percentage"""
+        if color is None:
+            color = self.color_pairs.get('success', curses.color_pair(1))
+            
+        if max_value <= 0:
+            percentage = 0
+        else:
+            percentage = min(100, max(0, (value / max_value) * 100))
+            
+        filled = int((width - 2) * percentage / 100)
+        
+        try:
+            win.addstr(y, x, "[", self.color_pairs.get('muted', curses.color_pair(7)))
+            win.addstr(y, x + width - 1, "]", self.color_pairs.get('muted', curses.color_pair(7)))
+            
+            # Draw filled portion
+            if self.unicode_support:
+                for i in range(filled):
+                    win.addstr(y, x + 1 + i, "█", color)
+                for i in range(filled, width - 2):
+                    win.addstr(y, x + 1 + i, "░", self.color_pairs.get('muted', curses.color_pair(7)))
+            else:
+                for i in range(filled):
+                    win.addstr(y, x + 1 + i, "=", color)
+                for i in range(filled, width - 2):
+                    win.addstr(y, x + 1 + i, "-", self.color_pairs.get('muted', curses.color_pair(7)))
+                    
+            if label:
+                label_text = f" {label}: {percentage:.1f}%"
+                win.addstr(y, x + width + 1, label_text, self.color_pairs.get('normal', curses.color_pair(6)))
+        except curses.error:
+            pass
+
+    def format_number(self, value: float, prefix: str = "", suffix: str = "", decimals: int = 2) -> str:
+        """Format number with proper spacing and symbols"""
+        if abs(value) >= 1_000_000:
+            return f"{prefix}{value/1_000_000:.{decimals}f}M{suffix}"
+        elif abs(value) >= 1_000:
+            return f"{prefix}{value/1_000:.{decimals}f}K{suffix}"
+        else:
+            return f"{prefix}{value:.{decimals}f}{suffix}"
 
     def draw_scores_pane(self, win):
         win.clear()
@@ -542,104 +629,150 @@ class TradingTUI:
 
     def draw_account_info(self, win):
         win.clear()
-        self.draw_border(win, "💰 ACCOUNT INFO")
+        self.draw_border(win, "💰 ACCOUNT OVERVIEW")
         
         h, w = win.getmaxyx()
-        y = 1
+        y = 2
         
-        account_lines = [
-            f"Balance: ${self.stats['account_balance']:.2f}",
-            f"Equity: ${self.stats['equity']:.2f}",
-            f"Margin Used: ${self.stats['margin_used']:.2f}",
-            f"Free Margin: ${self.stats['equity'] - self.stats['margin_used']:.2f}",
-            f"Daily PnL: ${self.stats['daily_pnl']:.2f}",
-            f"Total Volume: ${self.stats['total_volume']:.0f}",
-            f"Open Positions: {self.stats['open_positions']}",
+        # Calculate metrics
+        balance = self.stats['account_balance']
+        equity = self.stats['equity']
+        margin = self.stats['margin_used']
+        free_margin = equity - margin
+        margin_level = (equity / margin * 100) if margin > 0 else 999
+        
+        # Display with enhanced formatting
+        metrics = [
+            ("Balance", self.format_number(balance, "$"), self.color_pairs.get('normal', curses.color_pair(6))),
+            ("Equity", self.format_number(equity, "$"), 
+             self.color_pairs.get('profit', curses.color_pair(1)) if equity > balance else self.color_pairs.get('loss', curses.color_pair(3))),
+            ("Margin Used", self.format_number(margin, "$"), self.color_pairs.get('warning', curses.color_pair(2))),
+            ("Free Margin", self.format_number(free_margin, "$"), 
+             self.color_pairs.get('success', curses.color_pair(1)) if free_margin > margin else self.color_pairs.get('warning', curses.color_pair(2))),
+            ("Margin Level", f"{margin_level:.1f}%", 
+             self.color_pairs.get('success', curses.color_pair(1)) if margin_level > 200 else self.color_pairs.get('danger', curses.color_pair(3))),
         ]
         
-        for line in account_lines:
-            if y >= h - 1:
+        for label, value, color in metrics:
+            if y >= h - 2:
                 break
             try:
-                color = curses.color_pair(1) if self.stats['daily_pnl'] > 0 else curses.color_pair(3) if self.stats['daily_pnl'] < 0 else curses.color_pair(6)
-                win.addstr(y, 1, line[:w-2], color)
+                win.addstr(y, 2, f"{label}:", self.color_pairs.get('muted', curses.color_pair(7)))
+                win.addstr(y, 15, value, color | curses.A_BOLD)
             except curses.error:
                 pass
             y += 1
+        
+        # Add margin level progress bar
+        if y + 1 < h - 1 and w > 20:
+            self.draw_progress_bar(win, y + 1, 2, min(20, w - 4), 
+                                 min(margin_level, 500), 500, "Margin", 
+                                 self.color_pairs.get('success', curses.color_pair(1)) if margin_level > 200 else self.color_pairs.get('danger', curses.color_pair(3)))
 
     def draw_performance_metrics(self, win):
         win.clear()
-        self.draw_border(win, "📈 PERFORMANCE")
+        self.draw_border(win, "📊 PERFORMANCE")
         
         h, w = win.getmaxyx()
-        y = 1
+        y = 2
         
-        perf_lines = [
-            f"Total Trades: {self.stats['trades']}",
-            f"Win Rate: {self.stats['win_rate']:.1f}%",
-            f"Avg Profit: ${self.stats['avg_profit']:.2f}",
-            f"Max Drawdown: {self.stats['max_drawdown']:.1f}%",
-            f"Total PnL: ${self.stats['pnl']:.2f}",
-            "",
-            f"Mode: {'🔴 LIVE' if settings.live_trade else '🟡 PAPER'}",
-            f"Risk: {settings.risk_per_trade_pct}%",
-            f"Leverage: {settings.leverage_max}x",
-        ]
+        # Calculate win rate
+        total_trades = self.stats.get('total_trades', 0) or self.stats.get('trades', 0)
+        winning_trades = self.stats.get('winning_trades', 0)
+        win_rate = (winning_trades / total_trades * 100) if total_trades > 0 else 0
         
-        for line in perf_lines:
-            if y >= h - 1:
-                break
-            try:
-                if "LIVE" in line:
-                    color = curses.color_pair(3) | curses.A_BOLD
-                elif "PAPER" in line:
-                    color = curses.color_pair(2) | curses.A_BOLD
-                elif self.stats['pnl'] > 0 and "PnL" in line:
-                    color = curses.color_pair(1)
-                elif self.stats['pnl'] < 0 and "PnL" in line:
-                    color = curses.color_pair(3)
-                else:
-                    color = curses.color_pair(6)
-                win.addstr(y, 1, line[:w-2], color)
-            except curses.error:
-                pass
+        try:
+            # Daily PnL with color
+            daily_pnl = self.stats['daily_pnl']
+            daily_pnl_pct = (daily_pnl / self.stats['account_balance'] * 100) if self.stats['account_balance'] > 0 else 0
+            pnl_color = self.color_pairs.get('profit', curses.color_pair(1)) if daily_pnl > 0 else self.color_pairs.get('loss', curses.color_pair(3)) if daily_pnl < 0 else self.color_pairs.get('normal', curses.color_pair(6))
+            
+            win.addstr(y, 2, "Daily P&L:", self.color_pairs.get('muted', curses.color_pair(7)))
+            win.addstr(y, 13, f"{self.format_number(daily_pnl, '$')} ({daily_pnl_pct:+.2f}%)", pnl_color | curses.A_BOLD)
             y += 1
+            
+            # Total PnL
+            total_pnl = self.stats['pnl']
+            total_pnl_pct = (total_pnl / self.stats['account_balance'] * 100) if self.stats['account_balance'] > 0 else 0
+            pnl_color = self.color_pairs.get('profit', curses.color_pair(1)) if total_pnl > 0 else self.color_pairs.get('loss', curses.color_pair(3)) if total_pnl < 0 else self.color_pairs.get('normal', curses.color_pair(6))
+            
+            win.addstr(y, 2, "Total P&L:", self.color_pairs.get('muted', curses.color_pair(7)))
+            win.addstr(y, 13, f"{self.format_number(total_pnl, '$')} ({total_pnl_pct:+.2f}%)", pnl_color | curses.A_BOLD)
+            y += 2
+            
+            # Win rate with progress bar
+            if y < h - 1:
+                win.addstr(y, 2, f"Win Rate: {win_rate:.1f}%", self.color_pairs.get('normal', curses.color_pair(6)))
+                y += 1
+            if y < h - 1 and w > 20:
+                self.draw_progress_bar(win, y, 2, min(20, w - 4), win_rate, 100, "", 
+                                     self.color_pairs.get('success', curses.color_pair(1)) if win_rate > 50 else self.color_pairs.get('warning', curses.color_pair(2)))
+                y += 2
+            
+            # Trade stats
+            if y < h - 1:
+                win.addstr(y, 2, f"Trades: {total_trades}", self.color_pairs.get('info', curses.color_pair(4)))
+                y += 1
+                
+            # Trading mode
+            if y < h - 1:
+                mode = "🔴 LIVE" if settings.live_trade else "🟡 PAPER"
+                mode_color = self.color_pairs.get('danger', curses.color_pair(3)) if settings.live_trade else self.color_pairs.get('warning', curses.color_pair(2))
+                win.addstr(y, 2, f"Mode: {mode}", mode_color | curses.A_BOLD)
+                
+        except curses.error:
+            pass
 
     def draw_risk_monitor(self, win):
         win.clear()
         self.draw_border(win, "⚠️ RISK MONITOR")
         
         h, w = win.getmaxyx()
-        y = 1
+        y = 2
         
-        # Calculate risk metrics
-        margin_ratio = (self.stats['margin_used'] / self.stats['equity'] * 100) if self.stats['equity'] > 0 else 0
-        daily_loss_pct = (self.stats['daily_pnl'] / self.stats['account_balance'] * 100) if self.stats['account_balance'] > 0 else 0
-        
-        risk_lines = [
-            f"Margin Ratio: {margin_ratio:.1f}%",
-            f"Daily Loss: {daily_loss_pct:.1f}%",
-            f"Max Allowed: {settings.max_daily_loss_pct}%",
-            f"Positions: {self.stats['open_positions']}/{settings.max_positions}",
-            "",
-            "Status:",
-            "✅ Normal" if margin_ratio < 80 and abs(daily_loss_pct) < settings.max_daily_loss_pct else "⚠️ Warning",
-        ]
-        
-        for line in risk_lines:
-            if y >= h - 1:
-                break
-            try:
-                if "⚠️" in line:
-                    color = curses.color_pair(3) | curses.A_BOLD
-                elif "✅" in line:
-                    color = curses.color_pair(1) | curses.A_BOLD
-                else:
-                    color = curses.color_pair(6)
-                win.addstr(y, 1, line[:w-2], color)
-            except curses.error:
-                pass
-            y += 1
+        try:
+            # Calculate risk metrics
+            margin_ratio = (self.stats['margin_used'] / self.stats['equity'] * 100) if self.stats['equity'] > 0 else 0
+            daily_loss_pct = abs(self.stats['daily_pnl'] / self.stats['account_balance'] * 100) if self.stats['account_balance'] > 0 and self.stats['daily_pnl'] < 0 else 0
+            position_usage = (self.stats['open_positions'] / settings.max_positions * 100) if settings.max_positions > 0 else 0
+            
+            # Risk status
+            risk_level = "LOW"
+            risk_color = self.color_pairs.get('success', curses.color_pair(1))
+            if margin_ratio > 80 or daily_loss_pct > 2:
+                risk_level = "HIGH"
+                risk_color = self.color_pairs.get('danger', curses.color_pair(3))
+            elif margin_ratio > 50 or daily_loss_pct > 1:
+                risk_level = "MEDIUM"
+                risk_color = self.color_pairs.get('warning', curses.color_pair(2))
+                
+            win.addstr(y, 2, f"Risk Level: {risk_level}", risk_color | curses.A_BOLD)
+            y += 2
+            
+            # Margin usage with progress bar
+            if y < h - 1:
+                win.addstr(y, 2, "Margin Usage:", self.color_pairs.get('normal', curses.color_pair(6)))
+                y += 1
+            if y < h - 1 and w > 20:
+                bar_color = self.color_pairs.get('danger', curses.color_pair(3)) if margin_ratio > 80 else self.color_pairs.get('warning', curses.color_pair(2)) if margin_ratio > 50 else self.color_pairs.get('success', curses.color_pair(1))
+                self.draw_progress_bar(win, y, 2, min(20, w - 15), margin_ratio, 100, f"{margin_ratio:.1f}%", bar_color)
+                y += 2
+            
+            # Daily loss with progress bar
+            if y < h - 1:
+                win.addstr(y, 2, "Daily Loss:", self.color_pairs.get('normal', curses.color_pair(6)))
+                y += 1
+            if y < h - 1 and w > 20:
+                bar_color = self.color_pairs.get('danger', curses.color_pair(3)) if daily_loss_pct > 2 else self.color_pairs.get('warning', curses.color_pair(2)) if daily_loss_pct > 1 else self.color_pairs.get('success', curses.color_pair(1))
+                self.draw_progress_bar(win, y, 2, min(20, w - 15), daily_loss_pct, settings.max_daily_loss_pct, f"{daily_loss_pct:.1f}%", bar_color)
+                y += 2
+            
+            # Position usage
+            if y < h - 1:
+                win.addstr(y, 2, f"Positions: {self.stats['open_positions']}/{settings.max_positions}", self.color_pairs.get('normal', curses.color_pair(6)))
+                
+        except curses.error:
+            pass
 
     def draw_active_positions(self, win):
         win.clear()
@@ -762,6 +895,15 @@ class TradingTUI:
             curses.cbreak()
             self.stdscr.keypad(True)
             self.stdscr.nodelay(True)
+            curses.curs_set(0)  # Hide cursor
+            
+            # Check for Unicode support
+            try:
+                self.stdscr.addstr(0, 0, "█")
+                self.unicode_support = True
+            except:
+                self.unicode_support = False
+            self.stdscr.clear()
             
             self.init_colors()
             self.running = True
