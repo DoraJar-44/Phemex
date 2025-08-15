@@ -121,6 +121,21 @@ class ConnectionPoolManager:
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         if self.client:
             await self.client.aclose()
+    
+    async def get_client(self) -> httpx.AsyncClient:
+        """Get or create HTTP client with connection pooling"""
+        if not self.client:
+            self.client = httpx.AsyncClient(
+                transport=self.transport,
+                timeout=httpx.Timeout(30.0)
+            )
+        return self.client
+    
+    async def close(self):
+        """Close the HTTP client"""
+        if self.client:
+            await self.client.aclose()
+            self.client = None
 
 # ============================================================================
 # FIX 4: Resource Cleanup Manager
@@ -238,6 +253,32 @@ class CircuitBreaker:
             
             if self.failure_count >= self.failure_threshold:
                 self.state = "open"
+    
+    async def call_with_breaker(self, func, *args, **kwargs):
+        """Execute function with circuit breaker protection"""
+        with self._lock:
+            if self.state == "open":
+                if self.last_failure_time and \
+                   (time.time() - self.last_failure_time) > self.recovery_timeout:
+                    self.state = "half-open"
+                else:
+                    raise Exception("Circuit breaker is open - API calls blocked")
+        
+        try:
+            result = await func(*args, **kwargs)
+            with self._lock:
+                self.failure_count = 0
+                if self.state == "half-open":
+                    self.state = "closed"
+            return result
+        except Exception as e:
+            with self._lock:
+                self.failure_count += 1
+                self.last_failure_time = time.time()
+                if self.failure_count >= self.failure_threshold:
+                    self.state = "open"
+                    logging.error(f"Circuit breaker opened after {self.failure_count} failures")
+            raise e
 
 # ============================================================================
 # FIX 7: Memory-Efficient Checkpoint Manager
