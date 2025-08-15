@@ -439,7 +439,7 @@ class TradingTUI:
                 except curses.error:
                     pass
                     
-                time.sleep(0.1)  # 10 FPS
+                time.sleep(1.0)  # 1 FPS to reduce spam
                 
         except KeyboardInterrupt:
             self.running = False

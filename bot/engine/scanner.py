@@ -199,8 +199,8 @@ async def run_scanner():
 						if use_tui:
 							add_validation_error_to_tui(f"{sym} Validation: {str(e)}")
 					
-					# Send to TUI if enabled
-					if use_tui:
+					# Send to TUI only for high scores or signals to reduce spam
+					if use_tui and (res['scores']['long'] >= 75 or res['scores']['short'] >= 75 or res['signals']['long'] or res['signals']['short']):
 						add_score_to_tui(
 							symbol=sym,
 							price=res["price"],
