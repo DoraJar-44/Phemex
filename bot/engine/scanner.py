@@ -263,8 +263,13 @@ async def run_scanner():
 								allowed_notional = min(allowed_notional, float(settings.trade_notional))
 							qty, notional = cap_quantity_by_notional(qty, res["price"], meta["contractValuePerPrice"], allowed_notional, meta["lotSize"], meta["minQty"])
 						intents = build_bracket_orders(payload, qty)
-						placed = await place_bracket(sym, intents)
-						print({"placed": placed})
+						if settings.live_trade:
+							print(f"🚀 LIVE TRADE: Executing {payload.action} {sym} qty={qty}")
+							placed = await place_bracket(sym, intents)
+							print({"placed": placed})
+						else:
+							print(f"📝 DRY RUN: Would execute {payload.action} {sym} qty={qty}")
+							print({"dryRun": True, "intents": intents})
 				except Exception as e:
 					msg = str(e)
 					# Skip noisy prints for shallow history symbols

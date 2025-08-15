@@ -3,6 +3,7 @@ from typing import Dict, Any
 from bot.config import settings
 from bot.exchange.phemex_client import get_client
 from bot.exchange.ccxt_client import get_ccxt_client
+from bot.utils.symbol_conversion import ccxt_to_phemex_symbol
 
 
 def _key(prefix: str) -> str:
@@ -19,7 +20,7 @@ async def place_bracket(symbol: str, intents: Dict[str, Any]) -> Dict[str, Any]:
 
 	def _normalize_symbol(sym: str) -> str:
 		# Convert unified or TradingView formats to Phemex compact, e.g. BTC/USDT:USDT -> BTCUSDT
-		return sym.replace("/USDT:USDT", "USDT").replace("/USDT", "USDT").replace(":USDT", "USDT")
+		return ccxt_to_phemex_symbol(sym)
 
 	p_symbol = _normalize_symbol(symbol)
 
@@ -95,7 +96,7 @@ async def place_bracket(symbol: str, intents: Dict[str, Any]) -> Dict[str, Any]:
 		placed_sl = await client.place_order(
 			symbol=p_symbol,
 			side=sl["side"],
-			ord_type="stop",
+			ord_type="Stop",  # Changed from "stop" to match Phemex API
 			qty=sl["quantity"],
 			stop_px=sl["stopPrice"],
 			reduce_only=True,

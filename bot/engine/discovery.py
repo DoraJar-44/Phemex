@@ -26,6 +26,20 @@ async def discover_symbols(exchange, min_leverage: float = 34.0, exclude_bases: 
 		limits = m.get("limits") or {}
 		lev = limits.get("leverage") or {}
 		max_lev = lev.get("max")
+		
+		# Add fallback to info object for Phemex-specific fields
+		if max_lev is None:
+			info = m.get("info") or {}
+			# Phemex uses these fields in contract info
+			max_lev = (
+				info.get("maxLeverageEr")  # Phemex scaled leverage
+				or info.get("maxLeverage") 
+				or info.get("leverageUpper")
+			)
+		
+		# Handle Phemex scaled integers (Er suffix means scaled by 10000)
+		if isinstance(max_lev, str) and str(max_lev).endswith("Er"):
+			max_lev = float(str(max_lev)[:-2]) / 10000
 		if max_lev is None:
 			info = m.get("info") or {}
 			# Try common fields
