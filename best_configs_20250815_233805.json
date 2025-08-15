@@ -1,0 +1,422 @@
+[
+  {
+    "symbol": "SKL/USDT:USDT",
+    "timeframe": "3m",
+    "mtf": [
+      "15m",
+      "30m",
+      "1h"
+    ],
+    "atr_period": 50,
+    "atr_mult": 0.5,
+    "price": 0.03759,
+    "atr": 0.00022100000000000036,
+    "volatility": 0.5879223197658962,
+    "momentum": 1.952807160292917,
+    "score": 86.16544378114169,
+    "position_size": 4276.269785154654,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:37:38.984885"
+  },
+  {
+    "symbol": "CTSI/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "3m",
+      "15m",
+      "30m"
+    ],
+    "atr_period": 2,
+    "atr_mult": 2.0,
+    "price": 0.0665,
+    "atr": 0.00019999999999999185,
+    "volatility": 0.3007518796992359,
+    "momentum": 0.7575757575757582,
+    "score": 85.23410799726594,
+    "position_size": 1181.319528149023,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.4725278112595899,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:36:49.227475"
+  },
+  {
+    "symbol": "ALCH/USDT:USDT",
+    "timeframe": "3m",
+    "mtf": [
+      "15m",
+      "30m",
+      "1h"
+    ],
+    "atr_period": 10,
+    "atr_mult": 2.0,
+    "price": 0.14091,
+    "atr": 0.00020799999999999985,
+    "volatility": 0.1476119508906393,
+    "momentum": 0.2775405636208379,
+    "score": 84.97347499275934,
+    "position_size": 1135.8841616817074,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.4725278112595899,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:35:51.839373"
+  },
+  {
+    "symbol": "ALCH/USDT:USDT",
+    "timeframe": "15m",
+    "mtf": [
+      "1m",
+      "5m",
+      "15m"
+    ],
+    "atr_period": 10,
+    "atr_mult": 0.5,
+    "price": 0.1409,
+    "atr": 0.0003409999999999996,
+    "volatility": 0.2420156139105746,
+    "momentum": 0.35612535612535645,
+    "score": 84.8081411924563,
+    "position_size": 2771.424112959475,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 2.9999999999999996,
+    "timestamp": "2025-08-15T23:35:51.221449"
+  },
+  {
+    "symbol": "ALCH/USDT:USDT",
+    "timeframe": "15m",
+    "mtf": [
+      "15m",
+      "30m",
+      "1h"
+    ],
+    "atr_period": 10,
+    "atr_mult": 2.0,
+    "price": 0.1409,
+    "atr": 0.0003409999999999996,
+    "volatility": 0.2420156139105746,
+    "momentum": 0.35612535612535645,
+    "score": 84.8081411924563,
+    "position_size": 692.8560282398688,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 2.9999999999999996,
+    "timestamp": "2025-08-15T23:35:56.155002"
+  },
+  {
+    "symbol": "ALCH/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "atr_period": 20,
+    "atr_mult": 5.0,
+    "price": 0.14083,
+    "atr": 0.0002004999999999993,
+    "volatility": 0.1423702336149963,
+    "momentum": 0.0,
+    "score": 84.57288929915501,
+    "position_size": 471.34943766542807,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:35:53.744100"
+  },
+  {
+    "symbol": "ALCH/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "3m",
+      "15m",
+      "30m"
+    ],
+    "atr_period": 50,
+    "atr_mult": 5.0,
+    "price": 0.14083,
+    "atr": 0.00020300000000000095,
+    "volatility": 0.14414542356032162,
+    "momentum": 0.0,
+    "score": 84.56756372931903,
+    "position_size": 465.5446416350618,
+    "potential_profit": 1.41758343377877,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:35:50.619387"
+  },
+  {
+    "symbol": "ALICE/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "15m",
+      "30m",
+      "1h"
+    ],
+    "atr_period": 20,
+    "atr_mult": 5.0,
+    "price": 0.379,
+    "atr": 0.0006000000000000005,
+    "volatility": 0.15831134564643812,
+    "momentum": 0.0,
+    "score": 84.52506596306068,
+    "position_size": 157.50927041986318,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:34:14.602231"
+  },
+  {
+    "symbol": "YFI/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "1m",
+      "5m",
+      "15m"
+    ],
+    "atr_period": 2,
+    "atr_mult": 0.5,
+    "price": 5581.0,
+    "atr": 9.5,
+    "volatility": 0.1702203906110016,
+    "momentum": -0.08950948800572861,
+    "score": 84.3550745961584,
+    "position_size": 0.09947953921254526,
+    "potential_profit": 1.41758343377877,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:37:50.477574"
+  },
+  {
+    "symbol": "CTSI/USDT:USDT",
+    "timeframe": "3m",
+    "mtf": [
+      "3m",
+      "15m",
+      "30m"
+    ],
+    "atr_period": 2,
+    "atr_mult": 0.5,
+    "price": 0.0665,
+    "atr": 9.999999999999593e-05,
+    "volatility": 0.15037593984961795,
+    "momentum": -0.15015015015015445,
+    "score": 84.32364695522591,
+    "position_size": 9450.556225192184,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.4725278112595899,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:36:51.051351"
+  },
+  {
+    "symbol": "CTSI/USDT:USDT",
+    "timeframe": "3m",
+    "mtf": [
+      "1m",
+      "5m",
+      "15m"
+    ],
+    "atr_period": 50,
+    "atr_mult": 5.0,
+    "price": 0.0665,
+    "atr": 0.00011199999999999821,
+    "volatility": 0.16842105263157625,
+    "momentum": -0.15015015015015445,
+    "score": 84.26951161688004,
+    "position_size": 843.799662963567,
+    "potential_profit": 1.41758343377877,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:36:54.294502"
+  },
+  {
+    "symbol": "YFI/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "15m",
+      "30m",
+      "1h"
+    ],
+    "atr_period": 50,
+    "atr_mult": 5.0,
+    "price": 5581.0,
+    "atr": 11.74,
+    "volatility": 0.2103565669234904,
+    "momentum": -0.08950948800572861,
+    "score": 84.23466606722093,
+    "position_size": 0.008049877534234922,
+    "potential_profit": 1.41758343377877,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0000000000000004,
+    "timestamp": "2025-08-15T23:37:49.167070"
+  },
+  {
+    "symbol": "YFI/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "1m",
+      "5m",
+      "15m"
+    ],
+    "atr_period": 50,
+    "atr_mult": 0.5,
+    "price": 5581.0,
+    "atr": 11.74,
+    "volatility": 0.2103565669234904,
+    "momentum": -0.08950948800572861,
+    "score": 84.23466606722093,
+    "position_size": 0.08049877534234923,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:37:49.878982"
+  },
+  {
+    "symbol": "NXPC/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "atr_period": 50,
+    "atr_mult": 0.5,
+    "price": 0.8632,
+    "atr": 0.0018660000000000055,
+    "volatility": 0.21617238183503307,
+    "momentum": -0.1272706236260546,
+    "score": 84.16057691905581,
+    "position_size": 506.46067659119893,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:37:26.036122"
+  },
+  {
+    "symbol": "YFI/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "1m",
+      "5m",
+      "15m"
+    ],
+    "atr_period": 10,
+    "atr_mult": 2.0,
+    "price": 5581.0,
+    "atr": 13.3,
+    "volatility": 0.2383085468554023,
+    "momentum": -0.08950948800572861,
+    "score": 84.1508101274252,
+    "position_size": 0.017764203430811653,
+    "potential_profit": 1.41758343377877,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0000000000000004,
+    "timestamp": "2025-08-15T23:37:52.290157"
+  },
+  {
+    "symbol": "KSM/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "atr_period": 50,
+    "atr_mult": 5.0,
+    "price": 14.795,
+    "atr": 0.04211999999999982,
+    "volatility": 0.2846907739101035,
+    "momentum": -0.07429420505200077,
+    "score": 84.03448637069168,
+    "position_size": 2.2437218008527635,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:34:52.380406"
+  },
+  {
+    "symbol": "COS/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "3m",
+      "15m",
+      "30m"
+    ],
+    "atr_period": 10,
+    "atr_mult": 0.5,
+    "price": 0.003286,
+    "atr": 8.90000000000001e-06,
+    "volatility": 0.27084601339014025,
+    "momentum": -0.12158054711246497,
+    "score": 84.00509113916088,
+    "position_size": 106186.02500215494,
+    "potential_profit": 1.41758343377877,
+    "potential_loss": 0.47252781125959004,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:38:02.585537"
+  },
+  {
+    "symbol": "COS/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "3m",
+      "15m",
+      "30m"
+    ],
+    "atr_period": 50,
+    "atr_mult": 2.0,
+    "price": 0.003286,
+    "atr": 9.079999999999991e-06,
+    "volatility": 0.27632379793061446,
+    "momentum": -0.12158054711246497,
+    "score": 83.98865778553946,
+    "position_size": 26020.25392398626,
+    "potential_profit": 1.41758343377877,
+    "potential_loss": 0.47252781125959004,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:38:00.082938"
+  },
+  {
+    "symbol": "HIPPO/USDT:USDT",
+    "timeframe": "3m",
+    "mtf": [
+      "1m",
+      "5m",
+      "15m"
+    ],
+    "atr_period": 10,
+    "atr_mult": 5.0,
+    "price": 0.00187,
+    "atr": 2.0000000000000054e-06,
+    "volatility": 0.1069518716577543,
+    "momentum": -0.5319148936170226,
+    "score": 83.8812720446012,
+    "position_size": 47252.78112595887,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.4725278112595899,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:34:41.279649"
+  },
+  {
+    "symbol": "LDO/USDT:USDT",
+    "timeframe": "5m",
+    "mtf": [
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "atr_period": 10,
+    "atr_mult": 2.0,
+    "price": 1.3831,
+    "atr": 0.007240000000000024,
+    "volatility": 0.523461788735451,
+    "momentum": 0.29004423174534144,
+    "score": 83.86468098141165,
+    "position_size": 32.633136136711904,
+    "potential_profit": 1.4175834337787698,
+    "potential_loss": 0.47252781125959,
+    "risk_reward": 3.0,
+    "timestamp": "2025-08-15T23:33:39.760387"
+  }
+]
