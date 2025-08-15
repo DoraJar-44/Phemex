@@ -1,0 +1,289 @@
+{
+  "leverage": 34,
+  "position_size_pct": 3.0,
+  "initial_balance": 10000,
+  "final_balance": 10134.62,
+  "total_pnl": 134.62,
+  "total_return_pct": 1.35,
+  "total_trades": 54,
+  "winning_trades": 27,
+  "losing_trades": 27,
+  "win_rate": 50.0,
+  "avg_win": 78.77,
+  "avg_loss": 73.78,
+  "profit_factor": 1.07,
+  "max_drawdown": 2.94,
+  "peak_balance": 10373.5,
+  "total_fees": 530.69,
+  "symbols_traded": 40,
+  "top_performers": [
+    {
+      "symbol": "FTMUSDT",
+      "trades": 2,
+      "pnl": 133.05,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "ZKSUSDT",
+      "trades": 2,
+      "pnl": 129.84,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "ARBUSDT",
+      "trades": 1,
+      "pnl": 119.44,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "APTUSDT",
+      "trades": 1,
+      "pnl": 68.64,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "BLZUSDT",
+      "trades": 1,
+      "pnl": 68.46,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "IOUSDT",
+      "trades": 1,
+      "pnl": 67.12,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "FETUSDT",
+      "trades": 1,
+      "pnl": 66.96,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "DENTUSDT",
+      "trades": 1,
+      "pnl": 66.42,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "DYMUSDT",
+      "trades": 1,
+      "pnl": 66.42,
+      "win_rate": 100.0
+    },
+    {
+      "symbol": "PENDLEUSDT",
+      "trades": 1,
+      "pnl": 65.6,
+      "win_rate": 100.0
+    }
+  ],
+  "worst_performers": [
+    {
+      "symbol": "LISTAUSDT",
+      "trades": 1,
+      "pnl": -73.85,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "SEIUSDT",
+      "trades": 1,
+      "pnl": -75.04,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "ORDIUSDT",
+      "trades": 1,
+      "pnl": -75.28,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "CELRUSDT",
+      "trades": 1,
+      "pnl": -76.24,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "AUDIOUSDT",
+      "trades": 1,
+      "pnl": -76.51,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "FLOKIUSDT",
+      "trades": 1,
+      "pnl": -76.51,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "HOOKUSDT",
+      "trades": 1,
+      "pnl": -77.03,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "WAVESUSDT",
+      "trades": 1,
+      "pnl": -77.11,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "LTCUSDT",
+      "trades": 1,
+      "pnl": -77.17,
+      "win_rate": 0.0
+    },
+    {
+      "symbol": "ATOMUSDT",
+      "trades": 1,
+      "pnl": -77.54,
+      "win_rate": 0.0
+    }
+  ],
+  "hourly_progression": [
+    {
+      "hour": 0,
+      "balance": 10000,
+      "open_positions": 0,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 1,
+      "balance": 10000,
+      "open_positions": 3,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 2,
+      "balance": 10046.942670448921,
+      "open_positions": 1,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 3,
+      "balance": 10046.942670448921,
+      "open_positions": 4,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 4,
+      "balance": 10172.802844875167,
+      "open_positions": 1,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 5,
+      "balance": 10097.985256450984,
+      "open_positions": 0,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 6,
+      "balance": 10097.985256450984,
+      "open_positions": 1,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 7,
+      "balance": 10024.33659827601,
+      "open_positions": 1,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 8,
+      "balance": 9949.055607307873,
+      "open_positions": 4,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 9,
+      "balance": 9979.955113125985,
+      "open_positions": 2,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 10,
+      "balance": 9979.615367027087,
+      "open_positions": 1,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 11,
+      "balance": 9908.627301064625,
+      "open_positions": 1,
+      "market_condition": "bear"
+    },
+    {
+      "hour": 12,
+      "balance": 10022.52507518224,
+      "open_positions": 2,
+      "market_condition": "sideways"
+    },
+    {
+      "hour": 13,
+      "balance": 9873.335403613262,
+      "open_positions": 3,
+      "market_condition": "sideways"
+    },
+    {
+      "hour": 14,
+      "balance": 10066.216889123598,
+      "open_positions": 1,
+      "market_condition": "sideways"
+    },
+    {
+      "hour": 15,
+      "balance": 10131.141448550572,
+      "open_positions": 4,
+      "market_condition": "sideways"
+    },
+    {
+      "hour": 16,
+      "balance": 9979.683971845952,
+      "open_positions": 6,
+      "market_condition": "volatile"
+    },
+    {
+      "hour": 17,
+      "balance": 10336.920639102666,
+      "open_positions": 0,
+      "market_condition": "volatile"
+    },
+    {
+      "hour": 18,
+      "balance": 10336.920639102666,
+      "open_positions": 4,
+      "market_condition": "volatile"
+    },
+    {
+      "hour": 19,
+      "balance": 10373.49539920048,
+      "open_positions": 4,
+      "market_condition": "volatile"
+    },
+    {
+      "hour": 20,
+      "balance": 10353.026139636671,
+      "open_positions": 2,
+      "market_condition": "volatile"
+    },
+    {
+      "hour": 21,
+      "balance": 10344.461341747043,
+      "open_positions": 8,
+      "market_condition": "volatile"
+    },
+    {
+      "hour": 22,
+      "balance": 10220.779975522595,
+      "open_positions": 0,
+      "market_condition": "volatile"
+    },
+    {
+      "hour": 23,
+      "balance": 10220.779975522595,
+      "open_positions": 3,
+      "market_condition": "volatile"
+    }
+  ]
+}
