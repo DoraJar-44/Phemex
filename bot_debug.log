@@ -1116,3 +1116,5 @@ RuntimeError: asyncio.run() cannot be called from a running event loop
 2025-08-16 05:35:36,597 - __main__ - INFO - Scan cycle 917 completed, waiting for next cycle
 2025-08-16 05:35:39,514 - __main__ - INFO - Scan cycle 51 completed, waiting for next cycle
 2025-08-16 05:35:59,436 - __main__ - INFO - Scan cycle 65 completed, waiting for next cycle
+2025-08-15 22:21:16,293 - unified_trading_bot - INFO - Loaded 7 checkpoints
+2025-08-15 22:21:16,295 - unified_trading_bot - ERROR - Invalid price for scoring: 0

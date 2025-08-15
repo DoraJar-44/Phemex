@@ -846,16 +846,10 @@ def compute_total_score(inputs: ScoreInputs, direction: str, min_score: int = 85
         
         price = inputs.close
         
-        # Add price validation to prevent division by zero
-        if price <= 0:
-            logger.error(f"Invalid price for scoring: {price}")
-            return 0
-        
         if direction == "long":
             # Long scoring logic
-            # Fixed: Return 0 distance if levels are invalid instead of 1
-            support_distance = abs(price - inputs.s1) / price if inputs.s1 > 0 and price > 0 else 0
-            resistance_distance = abs(inputs.r1 - price) / price if inputs.r1 > 0 and price > 0 else 0
+            support_distance = abs(price - inputs.s1) / price if inputs.s1 > 0 else 1
+            resistance_distance = abs(inputs.r1 - price) / price if inputs.r1 > 0 else 1
             
             # Base score from price position
             if price <= inputs.s1:
@@ -875,9 +869,8 @@ def compute_total_score(inputs: ScoreInputs, direction: str, min_score: int = 85
             
         else:  # short
             # Short scoring logic
-            # Fixed: Return 0 distance if levels are invalid instead of 1
-            resistance_distance = abs(price - inputs.r1) / price if inputs.r1 > 0 and price > 0 else 0
-            support_distance = abs(inputs.s1 - price) / price if inputs.s1 > 0 and price > 0 else 0
+            resistance_distance = abs(price - inputs.r1) / price if inputs.r1 > 0 else 1
+            support_distance = abs(inputs.s1 - price) / price if inputs.s1 > 0 else 1
             
             # Base score from price position
             if price >= inputs.r1:
@@ -1013,37 +1006,21 @@ async def place_bracket_trade(client, symbol: str, intents: Dict[str, Any]) -> D
             tp1 = intents["tp1"]
             logger.debug(f"Placing TP1 order for {symbol}: {tp1}")
             
-            try:
-                tp1_order = await client.create_order(
-                    symbol=symbol,
-                    type="limit",  # As per memory: limit orders for TP
-                    side=tp1["side"],
-                    amount=tp1["quantity"],
-                    price=tp1["price"],
-                    params={
-                        "clientOrderId": _key("tp1"),
-                        "posSide": "Merged",
-                        "reduceOnly": True,  # Reduce-only as per rules
-                        "postOnly": True  # As per memory: post-only
-                    }
-                )
-                results["placed"].append({"tp1": tp1_order})
-                logger.info(f"TP1 order placed for {symbol}: {tp1_order.get('id', 'unknown')}")
-            except Exception as e:
-                # Rollback: Close position if TP placement fails
-                logger.error(f"Failed to place TP1 order, attempting to close position: {e}")
-                try:
-                    # Place market order to close position
-                    close_order = await client.create_order(
-                        symbol=symbol,
-                        type="market",
-                        side="sell" if entry["side"] == "buy" else "buy",
-                        amount=entry["quantity"],
-                        params={"reduceOnly": True}
-                    )
-                    return {"error": f"Failed to place TP1, position closed: {e}", "closed": close_order}
-                except Exception as close_error:
-                    return {"error": f"Failed to place TP1 and failed to close position: {e}, {close_error}"}
+            tp1_order = await client.create_order(
+                symbol=symbol,
+                type="limit",  # As per memory: limit orders for TP
+                side=tp1["side"],
+                amount=tp1["quantity"],
+                price=tp1["price"],
+                params={
+                    "clientOrderId": _key("tp1"),
+                    "posSide": "Merged",
+                    "reduceOnly": True,  # Reduce-only as per rules
+                    "postOnly": True  # As per memory: post-only
+                }
+            )
+            results["placed"].append({"tp1": tp1_order})
+            logger.info(f"TP1 order placed for {symbol}: {tp1_order.get('id', 'unknown')}")
             
             # Place TP2 order (as per memory: limit orders, reduce-only)
             tp2 = intents["tp2"]
@@ -1065,21 +1042,21 @@ async def place_bracket_trade(client, symbol: str, intents: Dict[str, Any]) -> D
             results["placed"].append({"tp2": tp2_order})
             logger.info(f"TP2 order placed for {symbol}: {tp2_order.get('id', 'unknown')}")
             
-            # Place SL order (FIXED: Use stop_market for proper stop loss execution)
+            # Place SL order (as per memory: limit orders, reduce-only)
             sl = intents["sl"]
             logger.debug(f"Placing SL order for {symbol}: {sl}")
             
             sl_order = await client.create_order(
                 symbol=symbol,
-                type="stop_market",  # FIXED: Changed from limit to stop_market for proper SL execution
+                type="limit",  # As per memory: limit orders for SL
                 side=sl["side"],
                 amount=sl["quantity"],
-                stopPrice=sl.get("stopPrice"),  # Use stopPrice for stop orders
+                price=sl.get("price", sl.get("stopPrice")),  # Use price for limit order
                 params={
                     "clientOrderId": _key("sl"),
                     "posSide": "Merged",
                     "reduceOnly": True,  # Reduce-only as per rules
-                    # Removed postOnly as it's not compatible with stop orders
+                    "postOnly": True  # As per memory: post-only
                 }
             )
             results["placed"].append({"sl": sl_order})
@@ -1370,17 +1347,15 @@ async def execute_trade(client, scan_result: Dict[str, Any]):
             if signals["long"]:
                 side = "buy"
                 entry_price = price
-                # Fixed: Ensure TP is always above entry for longs
-                tp1_price = max(levels["avg"], price * 1.01) if levels["avg"] > price else price * 1.01
-                tp2_price = max(levels["r1"], price * 1.02) if levels["r1"] > price else price * 1.02
+                tp1_price = levels["avg"] if levels["avg"] > price else price * 1.01
+                tp2_price = levels["r1"] if levels["r1"] > price else price * 1.02
                 sl_price = levels["s2"] if levels["s2"] > 0 and levels["s2"] < price else price * 0.98
                 
             else:  # short signal
                 side = "sell"
                 entry_price = price
-                # Fixed: Ensure TP is always below entry for shorts
-                tp1_price = min(levels["avg"], price * 0.99) if levels["avg"] < price else price * 0.99
-                tp2_price = min(levels["s1"], price * 0.98) if levels["s1"] > 0 and levels["s1"] < price else price * 0.98
+                tp1_price = levels["avg"] if levels["avg"] < price else price * 0.99
+                tp2_price = levels["s1"] if levels["s1"] > 0 and levels["s1"] < price else price * 0.98
                 sl_price = levels["r2"] if levels["r2"] > 0 and levels["r2"] > price else price * 1.02
             
             logger.debug(f"Trade levels for {symbol}: entry={entry_price}, tp1={tp1_price}, tp2={tp2_price}, sl={sl_price}")
@@ -1392,17 +1367,6 @@ async def execute_trade(client, scan_result: Dict[str, Any]):
                 logger.error(msg)
                 tui.add_error(msg)
                 return
-            
-            # Validate stop distance isn't too large (max 5%)
-            max_stop_distance = entry_price * 0.05
-            if stop_distance > max_stop_distance:
-                logger.warning(f"Stop distance too large for {symbol}: {stop_distance/entry_price*100:.2f}%, capping at 5%")
-                stop_distance = max_stop_distance
-                # Recalculate stop price based on capped distance
-                if signals["long"]:
-                    sl_price = entry_price - stop_distance
-                else:
-                    sl_price = entry_price + stop_distance
                 
             # Use live equity if available, otherwise fallback to configured account balance
             effective_equity = tui.stats.get("equity") or tui.stats.get("account_balance") or settings.account_balance_usdt
@@ -1418,11 +1382,6 @@ async def execute_trade(client, scan_result: Dict[str, Any]):
                 lot_size = settings.symbol_overrides[symbol].get("lotSize", 0.001)
             
             quantity = max(min_qty, round(quantity / lot_size) * lot_size)
-            
-            # Add maximum position size check
-            max_position_value = effective_equity * settings.max_capital_fraction
-            max_quantity = max_position_value / entry_price
-            quantity = min(quantity, max_quantity)
             
             logger.debug(f"Position sizing for {symbol}: risk_amount={risk_amount}, quantity={quantity}")
             
