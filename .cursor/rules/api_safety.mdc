@@ -1,0 +1,73 @@
+# 🚨 API SAFETY RULES - STRICT ENFORCEMENT
+
+## 🔐 API KEY PROTECTION (NEVER VIOLATE)
+- **NEVER** log API keys to console, files, or logs
+- **NEVER** display API keys in error messages
+- **NEVER** commit API keys to version control
+- **NEVER** hardcode API keys in source code
+- **ALWAYS** load API keys from environment variables only
+
+## 🛡️ ENVIRONMENT VARIABLE RULES
+```python
+# CORRECT - Load from environment
+api_key = os.getenv("PHEMEX_API_KEY")
+api_secret = os.getenv("PHEMEX_API_SECRET")
+
+# WRONG - Never hardcode
+api_key = "8d65ae81-ddd4-44f7-84bb-5b01608251de"  # ❌ FORBIDDEN
+```
+
+## 🔒 AUTHENTICATION ENFORCEMENT
+- **Signature**: Always use HMAC-SHA256 with proper expiry
+- **Headers**: Include all required Phemex authentication headers
+- **Expiry**: Set request expiry to 60 seconds from current time
+- **Rate Limiting**: Minimum 100ms between API requests
+
+## 🚫 FORBIDDEN API PRACTICES
+- Logging raw API responses containing sensitive data
+- Storing API credentials in plain text files
+- Sharing API keys in error reports or debugging
+- Using API keys without proper permission validation
+- Making API calls without proper error handling
+
+## ✅ REQUIRED API SAFETY PATTERNS
+```python
+# Always implement this pattern
+try:
+    response = await client.make_api_call()
+    # Process response
+except Exception as e:
+    # Log error without exposing sensitive data
+    logger.error(f"API call failed: {type(e).__name__}")
+    # Never log: logger.error(f"API call failed: {e}")  # ❌ FORBIDDEN
+```
+
+## 🔍 API PERMISSION VALIDATION
+- Validate API key permissions on startup
+- Test futures trading access before live trading
+- Verify account balance access
+- Check position and order management permissions
+
+## 📝 SAFE LOGGING PATTERNS
+```python
+# SAFE - Generic error information
+logger.error("API authentication failed")
+logger.error("Rate limit exceeded")
+logger.error("Insufficient permissions")
+
+# UNSAFE - Never log these
+logger.error(f"API key {api_key} failed")  # ❌ FORBIDDEN
+logger.error(f"Secret {api_secret} invalid")  # ❌ FORBIDDEN
+```
+
+## 🚨 CRITICAL SAFETY CHECKS
+- [ ] API keys loaded from environment only
+- [ ] No hardcoded credentials in source
+- [ ] Proper error handling without data exposure
+- [ ] Rate limiting implemented
+- [ ] Client cleanup on shutdown
+- [ ] Permission validation on startup
+description:
+globs:
+alwaysApply: true
+---

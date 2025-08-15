@@ -1,0 +1,61 @@
+{
+  "main_started": {
+    "timestamp": 1755284611.4498532,
+    "data": {
+      "timestamp": 1755284611.4498513,
+      "live_trade": false,
+      "quick_run": false
+    }
+  },
+  "bot_startup": {
+    "timestamp": 1755284611.4527862,
+    "data": {
+      "timestamp": 1755284611.452783,
+      "mode": "paper",
+      "quick_run": false
+    }
+  },
+  "client_status": {
+    "timestamp": 1755284611.4683259,
+    "data": {
+      "status": "paper",
+      "mode": "paper"
+    }
+  },
+  "client_ready": {
+    "timestamp": 1755284611.4701061,
+    "data": {
+      "client_status": "paper",
+      "timestamp": 1755284611.4701037
+    }
+  },
+  "symbols_loaded": {
+    "timestamp": 1755284611.4735801,
+    "data": {
+      "count": 5,
+      "symbols": [
+        "BTC/USDT:USDT",
+        "ETH/USDT:USDT",
+        "SOL/USDT:USDT",
+        "AVAX/USDT:USDT",
+        "ADA/USDT:USDT"
+      ]
+    }
+  },
+  "scan_cycle": {
+    "timestamp": 1755286559.1346912,
+    "data": {
+      "cycle": 65,
+      "timestamp": 1755286559.134689,
+      "symbols_count": 5
+    }
+  },
+  "scan_completed": {
+    "timestamp": 1755286559.435403,
+    "data": {
+      "cycle": 65,
+      "timestamp": 1755286559.4354014,
+      "status": "success"
+    }
+  }
+}

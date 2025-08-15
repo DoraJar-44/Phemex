@@ -20,7 +20,7 @@ class BotReloadHandler(FileSystemEventHandler):
         self.process = None
         self.restart_needed = False
         self.last_restart = 0
-        self.restart_delay = 2  # seconds
+        self.restart_delay = 0.5  # seconds - faster restart
         
         # Start the bot initially
         self.start_bot()
@@ -40,7 +40,27 @@ class BotReloadHandler(FileSystemEventHandler):
             if self.mode == "api":
                 # Use uvicorn for API mode
                 self.process = subprocess.Popen(
-                    [sys.executable, "-m", "uvicorn", "bot.api.server:app", "--host", "0.0.0.0", "--port", "8000"],
+                    [sys.executable, "-m", "uvicorn", "bot.api.server:app", "--host", "0.0.0.0", "--port", "8000", "--reload"],
+                    env=env,
+                    cwd=Path(__file__).parent,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                )
+            elif self.mode == "scanner":
+                # Use scanner module directly
+                self.process = subprocess.Popen(
+                    [sys.executable, "-m", "bot.engine.scanner"],
+                    env=env,
+                    cwd=Path(__file__).parent,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                )
+            elif self.mode == "unified":
+                # Use unified bot
+                self.process = subprocess.Popen(
+                    [sys.executable, "unified_trading_bot.py"],
                     env=env,
                     cwd=Path(__file__).parent,
                     stdout=subprocess.PIPE,
@@ -48,7 +68,7 @@ class BotReloadHandler(FileSystemEventHandler):
                     text=True
                 )
             else:
-                # Use main.py for scanner mode
+                # Use custom script
                 self.process = subprocess.Popen(
                     [sys.executable, self.script_path],
                     env=env,
@@ -83,8 +103,8 @@ class BotReloadHandler(FileSystemEventHandler):
         """Check if we should restart for this file change."""
         path = Path(event_path)
         
-        # Only restart for Python files
-        if path.suffix != '.py':
+        # Restart for Python files AND important config files
+        if path.suffix not in ['.py', '.env', '.mdc', '.txt', '.json']:
             return False
         
         # Ignore __pycache__ and other temp files
@@ -95,23 +115,41 @@ class BotReloadHandler(FileSystemEventHandler):
         if path.name == 'auto_reload.py':
             return False
         
+        # Ignore logs and cache files
+        if path.suffix in ['.log', '.pyc', '.pyo']:
+            return False
+            
         return True
     
     def on_modified(self, event):
         """Handle file modification events."""
         if not event.is_directory and self.should_restart(event.src_path):
-            current_time = time.time()
-            
-            # Debounce rapid file changes
-            if current_time - self.last_restart < self.restart_delay:
-                return
-            
-            self.last_restart = current_time
-            file_name = Path(event.src_path).name
-            print(f"📝 File changed: {file_name}")
-            print("🔄 Restarting bot with latest code...")
-            
-            self.start_bot()
+            self._restart_bot(event.src_path, "modified")
+    
+    def on_created(self, event):
+        """Handle file creation events."""
+        if not event.is_directory and self.should_restart(event.src_path):
+            self._restart_bot(event.src_path, "created")
+    
+    def on_moved(self, event):
+        """Handle file move/rename events."""
+        if not event.is_directory and self.should_restart(event.dest_path):
+            self._restart_bot(event.dest_path, "moved")
+    
+    def _restart_bot(self, file_path: str, action: str):
+        """Restart the bot after a file change."""
+        current_time = time.time()
+        
+        # Debounce rapid file changes
+        if current_time - self.last_restart < self.restart_delay:
+            return
+        
+        self.last_restart = current_time
+        file_name = Path(file_path).name
+        print(f"📝 File {action}: {file_name}")
+        print("🔄 Restarting bot with latest code...")
+        
+        self.start_bot()
 
 
 def main():
@@ -119,7 +157,7 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description="Auto-reload Phemex trading bot")
-    parser.add_argument("--mode", choices=["scanner", "api"], default="scanner",
+    parser.add_argument("--mode", choices=["scanner", "api", "unified"], default="scanner",
                        help="Bot mode to run (default: scanner)")
     parser.add_argument("--script", default="main.py",
                        help="Script to run (default: main.py)")

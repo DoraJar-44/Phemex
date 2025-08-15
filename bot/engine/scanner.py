@@ -111,10 +111,46 @@ async def scan_once(exchange: ccxt.Exchange, symbol: str, timeframe: str) -> Dic
 	base_long = price > avg and price < r1 and c["close"][-2] <= avg
 	base_short = price < avg and price > s1 and c["close"][-2] >= avg
 
-	# Score
-	si = ScoreInputs(avg=avg, r1=r1, r2=r2, s1=s1, s2=s2, close=price, open=c["open"][-1])
-	long_score = compute_total_score(si, "long", settings.score_min)
-	short_score = compute_total_score(si, "short", settings.score_min)
+	# Enhanced Score calculation with proper inputs
+	# Calculate bounce probability based on price position
+	range_size = abs(r1 - s1)
+	if range_size > 0:
+		# For longs, closer to support = higher bounce prob
+		long_bounce_prob = max(0, 0.9 - (abs(price - s1) / range_size))
+		# For shorts, closer to resistance = higher bounce prob  
+		short_bounce_prob = max(0, 0.9 - (abs(price - r1) / range_size))
+	else:
+		long_bounce_prob = 0.5
+		short_bounce_prob = 0.5
+	
+	# Basic trend confidence based on SMA position
+	trend_strength = abs(price - sma) / sma if sma > 0 else 0
+	trend_conf = min(0.8, trend_strength * 10)  # Scale to 0-0.8 range
+	
+	# Create score inputs for long
+	si_long = ScoreInputs(
+		avg=avg, r1=r1, r2=r2, s1=s1, s2=s2, 
+		close=price, open=c["open"][-1],
+		bounce_prob=long_bounce_prob,
+		bias_up_conf=trend_conf if trend_ok_long else 0.2,
+		bias_dn_conf=0.0,
+		bull_div=False,  # Could add divergence detection
+		bear_div=False
+	)
+	
+	# Create score inputs for short
+	si_short = ScoreInputs(
+		avg=avg, r1=r1, r2=r2, s1=s1, s2=s2,
+		close=price, open=c["open"][-1],
+		bounce_prob=short_bounce_prob,
+		bias_up_conf=0.0,
+		bias_dn_conf=trend_conf if trend_ok_short else 0.2,
+		bull_div=False,
+		bear_div=False
+	)
+	
+	long_score = compute_total_score(si_long, "long", settings.score_min)
+	short_score = compute_total_score(si_short, "short", settings.score_min)
 	allow_long = (not settings.score_filter) or (long_score >= settings.score_min)
 	allow_short = (not settings.score_filter) or (short_score >= settings.score_min)
 
@@ -290,3 +326,6 @@ async def run_scanner():
 			pass
 
 
+if __name__ == "__main__":
+	# Auto-reload test - this change should trigger restart
+	asyncio.run(run_scanner())

@@ -1,0 +1,48 @@
+# === MDC Configuration File ===
+# Purpose: Centralized config and command reference for automated trading tasks
+# Platform: Phemex Futures (Swaps)
+# User: Accessibility-first automation (visual impairment support)
+
+# === Directory Setup ===
+WORKING_DIRECTORY=/mdc
+LOG_DIRECTORY=/mdc/logs
+DAILY_SUMMARY_LOG=${LOG_DIRECTORY}/daily_summary_$(date +%Y%m%d).txt
+
+# === Trading Parameters ===
+EXCHANGE=PHEMEX
+MARKET_TYPE=FUTURES
+TRADE_MODE=SWAP
+DEFAULT_SYMBOL=BTCUSDT
+DEFAULT_LEVERAGE=25
+ORDER_TYPE=MARKET
+POSITION_SIDE=LONG
+
+# === Safety Flags ===
+ALLOW_AUTO_RETRY=false
+ALLOW_INDICATORS=false
+ALLOW_SETTING_CHANGES=false
+REQUIRE_CONFIRMATION=true
+
+# === Logging Settings ===
+LOG_FORMAT=human_readable
+LOG_TIMESTAMP=UTC
+LOG_LEVEL=INFO
+LOG_FILE=${LOG_DIRECTORY}/execution_log.txt
+
+# === Execution Command Template ===
+EXECUTE_TRADE_COMMAND="cd ${WORKING_DIRECTORY} && python trade_executor.py \
+--symbol ${DEFAULT_SYMBOL} \
+--leverage ${DEFAULT_LEVERAGE} \
+--order_type ${ORDER_TYPE} \
+--position ${POSITION_SIDE}"
+
+# === Example Log Entry ===
+# [2025-08-16 06:30 UTC] Executed: cd /mdc && python trade_executor.py --symbol BTCUSDT --leverage 25
+# Result: Trade executed successfully. Order ID: 123456789
+
+# === Notes ===
+# - Do not modify leverage, symbol, or order type unless explicitly approved.
+# - All commands must be prefixed with 'cd ${WORKING_DIRECTORY} &&'
+# - Logs must be saved in ${LOG_DIRECTORY} and summarized daily.
+
+# === End of MDC File ===

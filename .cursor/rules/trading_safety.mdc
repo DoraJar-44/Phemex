@@ -1,0 +1,171 @@
+# 🚨 TRADING SAFETY RULES - STRICT ENFORCEMENT
+
+## 🔴 CRITICAL SAFETY RULES (NEVER VIOLATE)
+- **LIVE_TRADE**: NEVER set to "true" without explicit user permission
+- **Risk Limits**: NEVER exceed MAX_DAILY_LOSS_PCT or MAX_CAPITAL_FRACTION
+- **Position Limits**: NEVER exceed MAX_POSITIONS limit
+- **Leverage**: NEVER change user-specified leverage automatically
+- **Order Types**: NEVER place orders without proper risk validation
+
+## 💰 RISK MANAGEMENT ENFORCEMENT
+
+### Position Sizing (ALWAYS ENFORCE)
+```python
+# REQUIRED - Use risk.sizing.compute_quantity()
+from bot.risk.sizing import compute_quantity
+
+# Calculate position size based on risk parameters
+qty = compute_quantity(
+    account_balance=settings.account_balance_usdt,
+    risk_pct=settings.risk_per_trade_pct,
+    entry_price=entry_price,
+    stop_price=stop_price
+)
+```
+
+### Daily Loss Protection (ALWAYS ENFORCE)
+```python
+# REQUIRED - Check daily loss limit
+if daily_loss_pct >= settings.max_daily_loss_pct:
+    logger.warning(f"Daily loss limit reached: {daily_loss_pct}%")
+    # STOP TRADING - Do not place new orders
+    return {"error": "Daily loss limit exceeded"}
+```
+
+### Capital Fraction Protection (ALWAYS ENFORCE)
+```python
+# REQUIRED - Check capital usage
+if total_position_value >= (settings.account_balance_usdt * settings.max_capital_fraction):
+    logger.warning("Maximum capital fraction reached")
+    # STOP TRADING - Do not place new orders
+    return {"error": "Maximum capital fraction exceeded"}
+```
+
+## 🎯 ORDER MANAGEMENT RULES
+
+### Entry Orders (ALWAYS VALIDATE)
+- **Symbol**: Must be valid USDT-margined swap
+- **Quantity**: Must be within exchange limits
+- **Price**: Must be within reasonable range
+- **Risk**: Must pass all risk checks
+
+### Take Profit Orders (ALWAYS REDUCE-ONLY)
+```python
+# REQUIRED - Take profit must be reduce-only
+tp_order = {
+    "symbol": symbol,
+    "side": "Sell" if side == "Buy" else "Buy",
+    "ordType": "Limit",
+    "orderQtyRq": qty,
+    "priceRp": tp_price,
+    "reduceOnly": True,  # ALWAYS TRUE
+    "posSide": "Merged"  # ALWAYS MERGED
+}
+```
+
+### Stop Loss Orders (ALWAYS REDUCE-ONLY)
+```python
+# REQUIRED - Stop loss must be reduce-only
+sl_order = {
+    "symbol": symbol,
+    "side": "Sell" if side == "Buy" else "Buy",
+    "ordType": "Stop",
+    "orderQtyRq": qty,
+    "stopPxRp": sl_price,
+    "reduceOnly": True,  # ALWAYS TRUE
+    "posSide": "Merged"  # ALWAYS MERGED
+}
+```
+
+## 🛡️ PRE-TRADE VALIDATION
+
+### Required Checks (ALWAYS PERFORM)
+1. **API Connection**: Verify Phemex API is accessible
+2. **Account Balance**: Check sufficient USDT balance
+3. **Risk Limits**: Verify within daily loss and capital limits
+4. **Position Count**: Check MAX_POSITIONS not exceeded
+5. **Symbol Validation**: Verify symbol is valid USDT swap
+6. **Leverage Check**: Confirm leverage is within limits
+7. **Cooldown**: Respect ENTRY_COOLDOWN_S between trades
+
+### Validation Code Pattern (ALWAYS USE)
+```python
+# REQUIRED - Pre-trade validation
+def validate_trade_parameters(symbol, side, qty, price):
+    # Check all required validations
+    if not validate_api_connection():
+        return {"error": "API connection failed"}
+    
+    if not validate_risk_limits():
+        return {"error": "Risk limits exceeded"}
+    
+    if not validate_symbol(symbol):
+        return {"error": "Invalid symbol"}
+    
+    if not validate_position_limits():
+        return {"error": "Position limit exceeded"}
+    
+    return {"valid": True}
+```
+
+## 🚫 FORBIDDEN TRADING ACTIONS
+
+### Never Allow These Actions
+- Placing orders without risk validation
+- Exceeding user-specified leverage
+- Ignoring daily loss limits
+- Placing non-reduce-only orders
+- Trading outside USDT-margined swaps
+- Bypassing position count limits
+- Ignoring cooldown periods
+
+### Never Modify These Settings
+- User-specified leverage values
+- Risk percentage parameters
+- Daily loss limits
+- Capital fraction limits
+- Position count limits
+
+## ✅ SAFETY CHECKLIST (ALWAYS VERIFY)
+
+### Before Every Trade
+- [ ] LIVE_TRADE environment variable is correct
+- [ ] API credentials are valid and loaded
+- [ ] Risk limits are within acceptable ranges
+- [ ] Position limits are not exceeded
+- [ ] Symbol is valid USDT swap
+- [ ] Leverage is within user specifications
+- [ ] Cooldown period has elapsed
+- [ ] All orders have reduce-only flags
+- [ ] Position side is set to "Merged"
+
+### After Every Trade
+- [ ] Orders were placed successfully
+- [ ] Position tracking is updated
+- [ ] Risk calculations are current
+- [ ] Daily loss is within limits
+- [ ] Capital usage is within limits
+- [ ] Client connections are maintained
+- [ ] Error handling is working
+
+## 🚨 EMERGENCY STOP PROCEDURES
+
+### If Safety Rules Are Violated
+1. **IMMEDIATELY STOP** all trading operations
+2. **LOG** the violation with full details
+3. **NOTIFY** user of the safety breach
+4. **DISABLE** live trading mode
+5. **REVIEW** all recent trades for compliance
+6. **REQUEST** user permission to resume
+
+### Emergency Stop Triggers
+- Daily loss limit exceeded
+- Capital fraction limit exceeded
+- Position count limit exceeded
+- API authentication failure
+- Risk calculation errors
+- Order placement failures
+description:
+globs:
+alwaysApply: true
+---

@@ -1,99 +1,156 @@
+# Cursor Rules: Phemex Trading Bot - STRICT ENFORCEMENT
+
+This MDC applies globally to this workspace and STRICTLY ENFORCES Phemex API usage, file structure, and trading safety.
+
+## 🚨 CRITICAL SAFETY RULES (NEVER VIOLATE)
+- **LIVE_TRADE**: NEVER set to "true" without explicit user permission
+- **API Keys**: NEVER log, display, or commit API keys to version control
+- **Risk Limits**: NEVER exceed MAX_DAILY_LOSS_PCT or MAX_CAPITAL_FRACTION
+- **Leverage**: NEVER change user-specified leverage automatically
+- **Position Limits**: NEVER exceed MAX_POSITIONS limit
+
+## 🔐 API USAGE ENFORCEMENT
+- **Exchange**: Phemex USDT-margined swaps ONLY (no spot, no coin-margined)
+- **Authentication**: Always use proper HMAC-SHA256 signature with expiry
+- **Rate Limiting**: Respect Phemex rate limits (100ms between requests minimum)
+- **Error Handling**: Implement proper retry logic for transient errors
+- **Client Cleanup**: Always close HTTP/WebSocket clients on shutdown
+
+## 📁 STRICT FILE STRUCTURE ENFORCEMENT
+
+### Core Bot Structure (NEVER MODIFY WITHOUT PERMISSION)
+```
+bot/
+├── __init__.py                 # Bot package initialization
+├── config.py                   # Settings and environment loading
+├── api/
+│   ├── __init__.py
+│   └── server.py              # FastAPI webhook server
+├── engine/
+│   ├── __init__.py
+│   ├── scanner.py             # Market scanner engine
+│   ├── discovery.py           # Symbol discovery
+│   └── symbols.py             # Symbol management
+├── exchange/
+│   ├── __init__.py
+│   ├── phemex_client.py       # Phemex API client (PRIMARY)
+│   └── ccxt_client.py         # CCXT fallback client
+├── execution/
+│   ├── __init__.py
+│   ├── brackets.py            # Bracket order management
+│   └── execute.py             # Order execution
+├── risk/
+│   ├── __init__.py
+│   ├── guards.py              # Risk management guards
+│   └── sizing.py              # Position sizing calculations
+├── signals/
+│   ├── __init__.py
+│   └── webhook_models.py      # TradingView webhook models
+├── strategy/
+│   ├── __init__.py
+│   ├── pr.py                  # Predictive ranges
+│   └── score.py               # Signal scoring
+├── ui/
+│   ├── __init__.py
+│   ├── tui_display.py         # Terminal UI
+│   └── static/                # Web UI assets
+├── utils/
+│   ├── __init__.py
+│   └── symbol_conversion.py   # Symbol format conversion
+└── validation/
+    ├── __init__.py
+    └── math_validator.py      # Mathematical validation
+```
+
+### Root Files (NEVER DELETE OR MODIFY WITHOUT PERMISSION)
+- `main.py`                    # Main entry point
+- `unified_trading_bot.py`     # Unified bot implementation
+- `setup_live_trading.py`      # Live trading setup
+- `env.template`               # Environment template
+- `requirements.txt`            # Python dependencies
+- `README.md`                  # Project documentation
+
+## 🎯 TRADING EXECUTION RULES
+
+### Order Management
+- **Entry Orders**: Market orders for immediate execution
+- **Take Profit**: Limit orders with `reduceOnly: true`
+- **Stop Loss**: Stop-Market orders with `reduceOnly: true`
+- **Position Side**: Always `posSide: Merged` (one-way mode)
+
+### Risk Management
+- **Position Sizing**: Use `risk.sizing.compute_quantity()`
+- **Daily Loss Limit**: Enforce `MAX_DAILY_LOSS_PCT`
+- **Capital Fraction**: Never exceed `MAX_CAPITAL_FRACTION`
+- **Cooldown**: Respect `ENTRY_COOLDOWN_S` between trades
+
+### Signal Processing
+- **Webhook Validation**: Verify `WEBHOOK_TOKEN` before processing
+- **Signal Scoring**: Use `strategy.score.compute_total_score()`
+- **Score Filter**: Only trade signals ≥ `SCORE_MIN`
+- **Validation**: Run mathematical validation before execution
+
+## 🔧 DEVELOPMENT RULES
+
+### Code Quality
+- **Type Hints**: Use proper type annotations
+- **Error Handling**: Comprehensive exception handling
+- **Logging**: Structured logging with appropriate levels
+- **Documentation**: Inline docstrings for all functions
+
+### Testing
+- **Dry Run**: Always test with `LIVE_TRADE=false` first
+- **API Testing**: Test API connections before live trading
+- **Validation**: Test all risk calculations and limits
+
+### Environment Management
+- **API Keys**: Load from environment variables only
+- **Configuration**: Use `bot.config.settings` for all config
+- **Secrets**: Never hardcode secrets in source code
+
+## 🚫 FORBIDDEN ACTIONS
+- Creating new files outside the defined structure
+- Modifying core bot files without explicit permission
+- Adding new indicators or calculation logic
+- Changing user-specified leverage or risk parameters
+- Setting LIVE_TRADE=true without user approval
+- Logging or displaying API keys
+- Exceeding risk limits or position caps
+
+## 📋 REQUIRED IMPORTS AND DEPENDENCIES
+```python
+# Always required for bot operations
+from bot.config import settings
+from bot.exchange.phemex_client import get_client
+from bot.risk.sizing import compute_quantity
+from bot.execution.brackets import build_bracket_orders
+from bot.strategy.score import compute_total_score
+```
+
+## 🔄 EXECUTION FLOW (NEVER MODIFY)
+1. **Startup**: Load environment variables and validate API credentials
+2. **Initialization**: Initialize Phemex client and validate permissions
+3. **Mode Selection**: Scanner mode or Webhook mode
+4. **Signal Processing**: Validate, score, and size signals
+5. **Risk Check**: Verify all risk parameters and limits
+6. **Execution**: Place orders with proper risk management
+7. **Monitoring**: Track positions and enforce limits
+8. **Cleanup**: Close connections and log results
+
+## ⚠️ SAFETY CHECKLIST (ALWAYS VERIFY)
+- [ ] LIVE_TRADE environment variable is set correctly
+- [ ] API credentials are loaded from environment
+- [ ] Risk limits are within acceptable ranges
+- [ ] Position limits are not exceeded
+- [ ] All orders have proper reduce-only flags
+- [ ] Client connections are properly closed
+- [ ] Error handling covers all failure scenarios
+
 ---
+description: Strict enforcement rules for Phemex trading bot API usage and file structure
+globs: ["**/*.py", "**/*.md", "**/*.json", "**/*.env*"]
 alwaysApply: true
 ---
 
-Cursor Always-Applies Rules for Trading AI 
-
-- Do not create new files unless absolutely necessary. Prefer modifying existing files when possible.
-
-This MDC applies globally to this workspace. It governs how the AI and automation should act by default across all tasks and scripts.
-
-## Global Operating Rules
-- Exchange: Use Bitget Futures (Swaps) only. Do not place spot or options orders.
-- Stops and one-way mode: All stop orders must be reduce-only and positions must be managed in one-way mode (`posSide: Merged`).
-- Leverage: Never change leverage automatically. If leverage is specified by the user, keep it exactly as given.
-- Indicators/logic: Do not add indicators or new calculation logic without explicit user permission.
-- Environment: All bot scripts must load required environment variables at startup (API keys, secrets, base URLs, tokens).
-- Commands: When providing shell commands, always include a preceding `cd` into the project directory.
-- Reliability: Use idempotent client order IDs (`clOrdID`) and safe retries for transient network errors; avoid duplicates.
-- Safety: Respect exchange tick/lot constraints and convert price/qty into exchange raw units where required.
-- Client cleanup: Ensure any HTTP/WebSocket clients are closed on shutdown.
-
-## Mermaid Flow (AI Execution Path)
-```mermaid
-flowchart TD
-  A["Startup"] --> B["Load environment variables (.env/system):<br/>API keys, secrets, tokens"]
-  B --> C{"MODE?"}
-  C -->|api| D["FastAPI webhook /webhook/tradingview"]
-  C -->|scanner| S["Engine scanner loop"]
-
-  %% Webhook path
-  D --> E["Validate token -> parse WebhookPayload"]
-  E --> F["Compute quantity<br/>risk.sizing.compute_quantity"]
-  F --> G["Build bracket intents<br/>execution.brackets.build_bracket_orders"]
-  G --> H["Score signal<br/>strategy.score.compute_total_score"]
-  H --> I{"settings.live_trade?"}
-  I -->|No| DRY["Return dryRun + intents"]
-  I -->|Yes| J["Normalize symbol to unified"]
-  J --> K["Place entry Market"]
-  K --> L["Place TP1/TP2 Limit<br/>reduceOnly: true"]
-  L --> M["Place Stop Loss Stop-Market<br/>reduceOnly: true"]
-  M --> N["Ensure one-way mode<br/>posSide: Merged"]
-  N --> O["Return placements"]
-
-  %% Scanner path joins at bracket stage
-  S --> F
-
-  %% Global rules (applies to all steps)
-  A -. reference .-> R["Global Rules:<br/>- Exchange: Bitget Futures (Swaps) only<br/>- Stops are reduce-only; one-way mode (posSide: Merged)<br/>- Do not auto-change leverage<br/>- No new indicators without explicit permission<br/>- Always include 'cd' with shell commands<br/>- Load env vars on startup<br/>- Close HTTP/WS clients on shutdown"]
-```
-
-Cursor Always-Applies Rules for Trading AI
-
-This MDC applies globally to this workspace. It governs how the AI and automation should act by default across all tasks and scripts.
-
-## Global Operating Rules
-- Exchange: Use Bitget Futures (Swaps) only. Do not place spot or options orders.
-- Stops and one-way mode: All stop orders must be reduce-only and positions must be managed in one-way mode (`posSide: Merged`).
-- Leverage: Never change leverage automatically. If leverage is specified by the user, keep it exactly as given.
-- Indicators/logic: Do not add indicators or new calculation logic without explicit user permission.
-- Environment: All bot scripts must load required environment variables at startup (API keys, secrets, base URLs, tokens).
-- Commands: When providing shell commands, always include a preceding `cd` into the project directory.
-- Reliability: Use idempotent client order IDs (`clOrdID`) and safe retries for transient network errors; avoid duplicates.
-- Safety: Respect exchange tick/lot constraints and convert price/qty into exchange raw units where required.
-- Client cleanup: Ensure any HTTP/WebSocket clients are closed on shutdown.
-
-## Mermaid Flow (AI Execution Path)
-```mermaid
-flowchart TD
-  A["Startup"] --> B["Load environment variables (.env/system):<br/>API keys, secrets, tokens"]
-  B --> C{"MODE?"}
-  C -->|api| D["FastAPI webhook /webhook/tradingview"]
-  C -->|scanner| S["Engine scanner loop"]
-
-  %% Webhook path
-  D --> E["Validate token -> parse WebhookPayload"]
-  E --> F["Compute quantity<br/>risk.sizing.compute_quantity"]
-  F --> G["Build bracket intents<br/>execution.brackets.build_bracket_orders"]
-  G --> H["Score signal<br/>strategy.score.compute_total_score"]
-  H --> I{"settings.live_trade?"}
-  I -->|No| DRY["Return dryRun + intents"]
-  I -->|Yes| J["Normalize symbol to unified"]
-  J --> K["Place entry Market"]
-  K --> L["Place TP1/TP2 Limit<br/>reduceOnly: true"]
-  L --> M["Place Stop Loss Stop-Market<br/>reduceOnly: true"]
-  M --> N["Ensure one-way mode<br/>posSide: Merged"]
-  N --> O["Return placements"]
-
-  %% Scanner path joins at bracket stage
-  S --> F
-
-  %% Global rules (applies to all steps)
-  A -. reference .-> R["Global Rules:<br/>- Exchange: Bitget Futures (Swaps) only<br/>- Stops are reduce-only; one-way mode (posSide: Merged)<br/>- Do not auto-change leverage<br/>- No new indicators without explicit permission<br/>- Always include 'cd' with shell commands<br/>- Load env vars on startup<br/>- Close HTTP/WS clients on shutdown"]
-```
-
----
-description:
-globs:
 alwaysApply: true
 ---

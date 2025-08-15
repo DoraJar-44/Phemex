@@ -113,7 +113,24 @@ async def webhook_tv(request: Request):
 		meta["contractValuePerPrice"],
 	)
 	intents = build_bracket_orders(payload, qty)
-	# Compute score (basic version; extend with HTF/confidence later)
+	# Compute score with enhanced inputs
+	side = "long" if payload.action == "BUY" else "short"
+	
+	# Calculate bounce probability based on price proximity to support/resistance
+	if side == "long":
+		# For longs, check proximity to support
+		dist_to_s1 = abs(payload.price - payload.levels.s1)
+		range_size = abs(payload.levels.r1 - payload.levels.s1)
+		bounce_prob = max(0, 0.9 - (dist_to_s1 / range_size)) if range_size > 0 else 0.5
+	else:
+		# For shorts, check proximity to resistance
+		dist_to_r1 = abs(payload.price - payload.levels.r1)
+		range_size = abs(payload.levels.r1 - payload.levels.s1)
+		bounce_prob = max(0, 0.9 - (dist_to_r1 / range_size)) if range_size > 0 else 0.5
+	
+	# Set a default bias confidence based on signal strength
+	bias_conf = 0.7 if payload.is_strong else 0.4
+	
 	si = ScoreInputs(
 		avg=payload.levels.avg,
 		r1=payload.levels.r1,
@@ -123,11 +140,27 @@ async def webhook_tv(request: Request):
 		close=payload.price,
 		open=payload.price,
 		rsi=(payload.stats.rsi if payload.stats else None),
+		bounce_prob=bounce_prob,
+		bias_up_conf=bias_conf if side == "long" else 0.0,
+		bias_dn_conf=bias_conf if side == "short" else 0.0,
+		# Could add divergence detection here if we had OHLC history
+		bull_div=False,
+		bear_div=False,
 	)
-	score = compute_total_score(si, "long" if payload.action == "BUY" else "short")
+	score = compute_total_score(si, side)
 	logger.info("signal_received", symbol=payload.symbol, side=payload.action, score=score, intents=intents)
-	placed = await place_bracket(payload.symbol, intents)
-	return {"ok": True, "score": score, "intents": intents, "placed": placed}
+	
+	# Check if score meets minimum requirement
+	if settings.score_filter and score < settings.score_min:
+		logger.warning("signal_rejected", symbol=payload.symbol, side=payload.action, score=score, min_required=settings.score_min)
+		return {"ok": False, "score": score, "reason": f"Score {score} below minimum {settings.score_min}", "intents": intents}
+	
+	# Only place trades if live trading is enabled
+	if settings.live_trade:
+		placed = await place_bracket(payload.symbol, intents)
+		return {"ok": True, "score": score, "intents": intents, "placed": placed}
+	else:
+		return {"ok": True, "score": score, "intents": intents, "dryRun": True}
 
 
 @app.on_event("shutdown")

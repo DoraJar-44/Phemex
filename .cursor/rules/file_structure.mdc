@@ -1,0 +1,135 @@
+# 📁 FILE STRUCTURE ENFORCEMENT - STRICT RULES
+
+## 🚫 FORBIDDEN ACTIONS (NEVER ALLOW)
+- Creating files outside the defined structure
+- Moving core bot files to different locations
+- Deleting essential bot files without permission
+- Creating duplicate or conflicting files
+- Modifying file structure without explicit approval
+
+## 🏗️ MANDATORY DIRECTORY STRUCTURE
+
+### Root Level (NEVER MODIFY)
+```
+NEW-PHEMEX-main/
+├── .cursor/                    # Cursor rules (NEVER DELETE)
+├── bot/                       # Core bot package (NEVER DELETE)
+├── notebooks/                 # Jupyter notebooks (optional)
+├── postman/                   # API testing collections
+├── scripts/                   # Utility scripts
+├── main.py                    # Main entry point (NEVER DELETE)
+├── unified_trading_bot.py     # Unified bot (NEVER DELETE)
+├── setup_live_trading.py      # Setup script (NEVER DELETE)
+├── env.template               # Environment template (NEVER DELETE)
+├── requirements.txt            # Dependencies (NEVER DELETE)
+└── README.md                  # Documentation (NEVER DELETE)
+```
+
+### Bot Package Structure (NEVER MODIFY)
+```
+bot/
+├── __init__.py                # Package initialization (NEVER DELETE)
+├── config.py                  # Configuration (NEVER DELETE)
+├── api/                       # API server (NEVER DELETE)
+│   ├── __init__.py
+│   └── server.py
+├── engine/                    # Trading engine (NEVER DELETE)
+│   ├── __init__.py
+│   ├── scanner.py
+│   ├── discovery.py
+│   └── symbols.py
+├── exchange/                  # Exchange clients (NEVER DELETE)
+│   ├── __init__.py
+│   ├── phemex_client.py       # PRIMARY CLIENT
+│   └── ccxt_client.py
+├── execution/                 # Order execution (NEVER DELETE)
+│   ├── __init__.py
+│   ├── brackets.py
+│   └── execute.py
+├── risk/                      # Risk management (NEVER DELETE)
+│   ├── __init__.py
+│   ├── guards.py
+│   └── sizing.py
+├── signals/                   # Signal processing (NEVER DELETE)
+│   ├── __init__.py
+│   └── webhook_models.py
+├── strategy/                  # Trading strategy (NEVER DELETE)
+│   ├── __init__.py
+│   ├── pr.py
+│   └── score.py
+├── ui/                        # User interface (NEVER DELETE)
+│   ├── __init__.py
+│   ├── tui_display.py
+│   └── static/
+├── utils/                     # Utilities (NEVER DELETE)
+│   ├── __init__.py
+│   └── symbol_conversion.py
+└── validation/                # Validation logic (NEVER DELETE)
+    ├── __init__.py
+    └── math_validator.py
+```
+
+## 📋 FILE CREATION RULES
+
+### Allowed New Files (WITH PERMISSION ONLY)
+- Configuration files (`.env`, `.config`)
+- Log files (`.log`, `.txt`)
+- Data files (`.json`, `.csv`)
+- Documentation updates
+- Test files in appropriate directories
+
+### Forbidden New Files (NEVER CREATE)
+- Duplicate core bot files
+- Files outside the defined structure
+- Conflicting or redundant files
+- Files that break the package structure
+
+## 🔒 FILE PROTECTION RULES
+
+### Critical Files (NEVER MODIFY WITHOUT PERMISSION)
+- `bot/__init__.py` - Package initialization
+- `bot/config.py` - Configuration management
+- `bot/exchange/phemex_client.py` - Primary API client
+- `main.py` - Main entry point
+- `unified_trading_bot.py` - Core bot logic
+
+### Protected Directories (NEVER RESTRUCTURE)
+- `bot/` - Core bot package
+- `.cursor/` - Cursor rules
+- Root level structure
+
+## 📝 FILE NAMING CONVENTIONS
+
+### Required Patterns
+- Python files: `snake_case.py`
+- Configuration files: `UPPER_CASE`
+- Package directories: `lowercase`
+- Test files: `test_*.py`
+
+### Forbidden Patterns
+- Spaces in filenames
+- Special characters (except `_` and `-`)
+- Uppercase package names
+- Non-descriptive names
+
+## 🚨 STRUCTURE VIOLATION RESPONSE
+If file structure rules are violated:
+1. **IMMEDIATELY STOP** any file operations
+2. **REPORT** the violation to the user
+3. **REQUEST** explicit permission for changes
+4. **VERIFY** the intended structure
+5. **CORRECT** any unauthorized changes
+
+## ✅ STRUCTURE VALIDATION CHECKLIST
+- [ ] All required directories exist
+- [ ] All required files are present
+- [ ] No unauthorized files created
+- [ ] File locations match structure
+- [ ] Package hierarchy maintained
+- [ ] Import paths remain valid
+- [ ] No circular dependencies
+- [ ] Structure follows Python conventions
+description:
+globs:
+alwaysApply: true
+---

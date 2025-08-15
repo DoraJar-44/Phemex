@@ -1,0 +1,81 @@
+﻿{
+    "CPU":  {
+                "Name":  "Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz",
+                "Manufacturer":  "GenuineIntel",
+                "NumberOfCores":  4,
+                "NumberOfLogicalProcessors":  8,
+                "MaxClockSpeed":  3600
+            },
+    "GPU":  {
+                "Name":  "NVIDIA GeForce GTX 1080",
+                "DriverVersion":  "32.0.15.6094",
+                "AdapterRAM":  4293918720
+            },
+    "Motherboard":  {
+                        "Manufacturer":  "MSI",
+                        "Product":  "B250M BAZOOKA (MS-7A70)",
+                        "SerialNumber":  "H917061644"
+                    },
+    "Memory":  [
+                   {
+                       "Manufacturer":  "04EF",
+                       "PartNumber":  "TEAMGROUP-UD4-3000  ",
+                       "Capacity":  8589934592,
+                       "Speed":  2133,
+                       "ConfiguredClockSpeed":  2133,
+                       "SerialNumber":  "010431FA"
+                   },
+                   {
+                       "Manufacturer":  "04EF",
+                       "PartNumber":  "TEAMGROUP-UD4-3000  ",
+                       "Capacity":  8589934592,
+                       "Speed":  2133,
+                       "ConfiguredClockSpeed":  2133,
+                       "SerialNumber":  "01043222"
+                   }
+               ],
+    "Storage":  [
+                    {
+                        "Model":  "Samsung SSD 860 EVO 250GB",
+                        "Manufacturer":  "(Standard disk drives)",
+                        "Size":  250056737280,
+                        "InterfaceType":  "IDE",
+                        "SerialNumber":  "S3Y9NF0JC49411Y",
+                        "MediaType":  "Fixed hard disk media"
+                    },
+                    {
+                        "Model":  "Kingston XS1000 SCSI Disk Device",
+                        "Manufacturer":  "(Standard disk drives)",
+                        "Size":  1000202273280,
+                        "InterfaceType":  "SCSI",
+                        "SerialNumber":  "50026B7283876AF5",
+                        "MediaType":  "External hard disk media"
+                    },
+                    {
+                        "Model":  "ST2000DM006-2DM164",
+                        "Manufacturer":  "(Standard disk drives)",
+                        "Size":  2000396321280,
+                        "InterfaceType":  "IDE",
+                        "SerialNumber":  "            Z4ZAVCHN",
+                        "MediaType":  "Fixed hard disk media"
+                    }
+                ],
+    "OS":  {
+               "Caption":  "Microsoft Windows 10 Home",
+               "Version":  "10.0.19045",
+               "OSArchitecture":  "64-bit",
+               "BuildNumber":  "19045"
+           },
+    "System":  {
+                   "Manufacturer":  "MSI",
+                   "Model":  "MS-7A70",
+                   "TotalPhysicalMemory":  17146372096,
+                   "SystemType":  "x64-based PC"
+               },
+    "BIOS":  {
+                 "Manufacturer":  "American Megatrends Inc.",
+                 "SMBIOSBIOSVersion":  "1.40",
+                 "SerialNumber":  "Default string",
+                 "ReleaseDate":  "\/Date(1498608000000)\/"
+             }
+}
