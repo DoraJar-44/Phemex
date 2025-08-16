@@ -1,0 +1,89 @@
+2025-08-16 23:29:10,876 - INFO - ============================================================
+2025-08-16 23:29:10,877 - INFO - 🚀 PINE SCRIPT LIVE TRADER STARTED
+2025-08-16 23:29:10,877 - INFO - Leverage: 34x
+2025-08-16 23:29:10,877 - INFO - Risk per trade: $1.0
+2025-08-16 23:29:10,877 - INFO - Symbols: BTC/USDT:USDT, ETH/USDT:USDT, SOL/USDT:USDT
+2025-08-16 23:29:10,877 - INFO - ============================================================
+2025-08-16 23:29:12,911 - ERROR - Failed to set leverage for BTC/USDT:USDT: phemex {"code":20004,"msg":"TE_ERR_INCONSISTENT_POS_MODE","data":null}
+2025-08-16 23:29:13,510 - INFO - Set leverage to 34x for ETH/USDT:USDT
+2025-08-16 23:29:14,116 - ERROR - Failed to set leverage for SOL/USDT:USDT: phemex {"code":20004,"msg":"TE_ERR_INCONSISTENT_POS_MODE","data":null}
+2025-08-16 23:29:16,768 - INFO - Account balance: $15.76
+2025-08-16 23:29:17,001 - ERROR - Error scanning BTC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:29:17,601 - ERROR - Error scanning ETH/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:29:18,404 - ERROR - Error scanning SOL/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:29:18,404 - INFO - ============================================================
+2025-08-16 23:29:18,404 - INFO - PINE SCRIPT TRADER - LIVE STATISTICS
+2025-08-16 23:29:18,404 - INFO - ============================================================
+2025-08-16 23:29:18,404 - INFO - Total Trades: 0
+2025-08-16 23:29:18,404 - INFO - Wins: 0 | Losses: 0
+2025-08-16 23:29:18,404 - INFO - Win Rate: 0.0%
+2025-08-16 23:29:18,404 - INFO - Total P&L: $0.00
+2025-08-16 23:29:18,404 - INFO - Active Positions: 0
+2025-08-16 23:29:18,404 - INFO - ============================================================
+2025-08-16 23:29:18,404 - INFO - Next scan in 60 seconds...
+2025-08-16 23:29:40,659 - INFO - ============================================================
+2025-08-16 23:29:40,660 - INFO - 🚀 PINE SCRIPT LIVE TRADER STARTED
+2025-08-16 23:29:40,660 - INFO - Leverage: 34x
+2025-08-16 23:29:40,660 - INFO - Risk per trade: $1.0
+2025-08-16 23:29:40,660 - INFO - Symbols: BTC/USDT:USDT, ETH/USDT:USDT, SOL/USDT:USDT
+2025-08-16 23:29:40,660 - INFO - ============================================================
+2025-08-16 23:29:42,910 - ERROR - Failed to set leverage for BTC/USDT:USDT: phemex {"code":20004,"msg":"TE_ERR_INCONSISTENT_POS_MODE","data":null}
+2025-08-16 23:29:43,500 - INFO - Set leverage to 34x for ETH/USDT:USDT
+2025-08-16 23:29:43,897 - ERROR - Failed to set leverage for SOL/USDT:USDT: phemex {"code":20004,"msg":"TE_ERR_INCONSISTENT_POS_MODE","data":null}
+2025-08-16 23:29:45,667 - INFO - Account balance: $15.76
+2025-08-16 23:29:45,893 - ERROR - Error scanning BTC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:29:46,507 - ERROR - Error scanning ETH/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:29:47,105 - ERROR - Error scanning SOL/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:29:47,105 - INFO - ============================================================
+2025-08-16 23:29:47,105 - INFO - PINE SCRIPT TRADER - LIVE STATISTICS
+2025-08-16 23:29:47,105 - INFO - ============================================================
+2025-08-16 23:29:47,105 - INFO - Total Trades: 0
+2025-08-16 23:29:47,105 - INFO - Wins: 0 | Losses: 0
+2025-08-16 23:29:47,105 - INFO - Win Rate: 0.0%
+2025-08-16 23:29:47,105 - INFO - Total P&L: $0.00
+2025-08-16 23:29:47,105 - INFO - Active Positions: 0
+2025-08-16 23:29:47,105 - INFO - ============================================================
+2025-08-16 23:29:47,105 - INFO - Next scan in 60 seconds...
+2025-08-16 23:30:18,217 - INFO - ============================================================
+2025-08-16 23:30:18,217 - INFO - 🚀 PINE SCRIPT LIVE TRADER STARTED
+2025-08-16 23:30:18,217 - INFO - Leverage: 34x
+2025-08-16 23:30:18,217 - INFO - Risk per trade: $1.0
+2025-08-16 23:30:18,217 - INFO - Symbols: BTC/USDT:USDT, ETH/USDT:USDT, SOL/USDT:USDT
+2025-08-16 23:30:18,217 - INFO - ============================================================
+2025-08-16 23:30:20,249 - ERROR - Failed to set leverage for BTC/USDT:USDT: phemex {"code":20004,"msg":"TE_ERR_INCONSISTENT_POS_MODE","data":null}
+2025-08-16 23:30:20,855 - INFO - Set leverage to 34x for ETH/USDT:USDT
+2025-08-16 23:30:21,458 - ERROR - Failed to set leverage for SOL/USDT:USDT: phemex {"code":20004,"msg":"TE_ERR_INCONSISTENT_POS_MODE","data":null}
+2025-08-16 23:30:23,358 - INFO - Account balance: $15.76
+2025-08-16 23:30:23,586 - ERROR - Error scanning BTC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:30:24,188 - ERROR - Error scanning ETH/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:30:24,799 - ERROR - Error scanning SOL/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-16 23:30:24,799 - INFO - ============================================================
+2025-08-16 23:30:24,799 - INFO - PINE SCRIPT TRADER - LIVE STATISTICS
+2025-08-16 23:30:24,799 - INFO - ============================================================
+2025-08-16 23:30:24,799 - INFO - Total Trades: 0
+2025-08-16 23:30:24,799 - INFO - Wins: 0 | Losses: 0
+2025-08-16 23:30:24,799 - INFO - Win Rate: 0.0%
+2025-08-16 23:30:24,799 - INFO - Total P&L: $0.00
+2025-08-16 23:30:24,799 - INFO - Active Positions: 0
+2025-08-16 23:30:24,799 - INFO - ============================================================
+2025-08-16 23:30:24,799 - INFO - Next scan in 60 seconds...
+2025-08-16 23:31:18,943 - INFO - ============================================================
+2025-08-16 23:31:18,943 - INFO - 🚀 PINE SCRIPT LIVE TRADER STARTED
+2025-08-16 23:31:18,944 - INFO - Leverage: 34x
+2025-08-16 23:31:18,944 - INFO - Risk per trade: $1.0
+2025-08-16 23:31:18,944 - INFO - Symbols: BTC/USDT:USDT, ETH/USDT:USDT, SOL/USDT:USDT
+2025-08-16 23:31:18,944 - INFO - ============================================================
+2025-08-16 23:31:20,971 - ERROR - Failed to set leverage for BTC/USDT:USDT: phemex {"code":20004,"msg":"TE_ERR_INCONSISTENT_POS_MODE","data":null}
+2025-08-16 23:31:21,576 - INFO - Set leverage to 34x for ETH/USDT:USDT
+2025-08-16 23:31:22,177 - ERROR - Failed to set leverage for SOL/USDT:USDT: phemex {"code":20004,"msg":"TE_ERR_INCONSISTENT_POS_MODE","data":null}
+2025-08-16 23:31:23,530 - INFO - Account balance: $15.76
+2025-08-16 23:31:25,766 - INFO - ============================================================
+2025-08-16 23:31:25,766 - INFO - PINE SCRIPT TRADER - LIVE STATISTICS
+2025-08-16 23:31:25,766 - INFO - ============================================================
+2025-08-16 23:31:25,766 - INFO - Total Trades: 0
+2025-08-16 23:31:25,766 - INFO - Wins: 0 | Losses: 0
+2025-08-16 23:31:25,766 - INFO - Win Rate: 0.0%
+2025-08-16 23:31:25,766 - INFO - Total P&L: $0.00
+2025-08-16 23:31:25,766 - INFO - Active Positions: 0
+2025-08-16 23:31:25,766 - INFO - ============================================================
+2025-08-16 23:31:25,766 - INFO - Next scan in 60 seconds...
