@@ -1,0 +1,5 @@
+2025-08-16 10:36:59,593 - __main__ - INFO - 🚀 Initializing Optimized Trading System...
+2025-08-16 10:37:01,067 - ccxt.base.exchange - WARNING - phemex requires to release all resources with an explicit call to the .close() coroutine. If you are using the exchange instance with async coroutines, add `await exchange.close()` to your code into a place when you're done with the exchange and don't need the exchange instance anymore (at the end of your async coroutine).
+2025-08-16 10:37:01,067 - asyncio - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7fad11055370>, 34274.108656227)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7fad110517f0>
