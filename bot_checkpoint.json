@@ -1,61 +1,73 @@
 {
   "main_started": {
-    "timestamp": 1755284611.4498532,
+    "timestamp": 1755339583.5644438,
     "data": {
-      "timestamp": 1755284611.4498513,
-      "live_trade": false,
+      "timestamp": 1755339583.564442,
+      "live_trade": true,
       "quick_run": false
     }
   },
   "bot_startup": {
-    "timestamp": 1755284611.4527862,
+    "timestamp": 1755339583.5656536,
     "data": {
-      "timestamp": 1755284611.452783,
-      "mode": "paper",
+      "timestamp": 1755339583.5656521,
+      "mode": "live",
       "quick_run": false
     }
   },
   "client_status": {
-    "timestamp": 1755284611.4683259,
+    "timestamp": 1755339583.5704758,
     "data": {
-      "status": "paper",
-      "mode": "paper"
+      "status": "connected",
+      "mode": "live"
     }
   },
   "client_ready": {
-    "timestamp": 1755284611.4701061,
+    "timestamp": 1755339583.5707536,
     "data": {
-      "client_status": "paper",
-      "timestamp": 1755284611.4701037
+      "client_status": "ready",
+      "timestamp": 1755339583.570753
     }
   },
   "symbols_loaded": {
-    "timestamp": 1755284611.4735801,
+    "timestamp": 1755339584.2196658,
     "data": {
-      "count": 5,
+      "count": 292,
       "symbols": [
         "BTC/USDT:USDT",
         "ETH/USDT:USDT",
+        "XRP/USDT:USDT",
+        "ADA/USDT:USDT",
         "SOL/USDT:USDT",
-        "AVAX/USDT:USDT",
-        "ADA/USDT:USDT"
+        "UNI/USDT:USDT",
+        "DOT/USDT:USDT",
+        "LINK/USDT:USDT",
+        "ATOM/USDT:USDT",
+        "LTC/USDT:USDT"
       ]
     }
   },
   "scan_cycle": {
-    "timestamp": 1755286559.1346912,
+    "timestamp": 1755339584.2200053,
     "data": {
-      "cycle": 65,
-      "timestamp": 1755286559.134689,
-      "symbols_count": 5
+      "cycle": 1,
+      "timestamp": 1755339584.220004,
+      "symbols_count": 292
     }
   },
   "scan_completed": {
-    "timestamp": 1755286559.435403,
+    "timestamp": 1755339613.4827392,
     "data": {
-      "cycle": 65,
-      "timestamp": 1755286559.4354014,
+      "cycle": 1,
+      "timestamp": 1755339613.4827282,
       "status": "success"
+    }
+  },
+  "cleanup_completed": {
+    "timestamp": 1755339613.7351816,
+    "data": {
+      "timestamp": 1755339613.735178,
+      "scan_count": 1
     }
   }
 }

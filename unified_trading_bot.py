@@ -1114,8 +1114,9 @@ async def get_phemex_client():
         raise
 
 def compute_quantity(price: float, stop_distance: float, account_balance: float, risk_pct: float) -> float:
-    """Compute position size based on risk percentage"""
-    risk_amount = account_balance * (risk_pct / 100)
+    """Compute position size based on fixed $1 risk per trade"""
+    # Use fixed $1 per trade regardless of account balance
+    risk_amount = 1.0  # Fixed $1 risk per trade
     quantity = risk_amount / stop_distance
     return round(quantity, 6)
 
@@ -1698,17 +1699,15 @@ async def get_trading_symbols(client) -> List[str]:
                         leverage_info = market.get('limits', {}).get('leverage', {})
                         max_leverage = leverage_info.get('max', 1)
                         
-                        if max_leverage >= settings.min_leverage:
-                            # Check if base currency should be excluded
-                            base = market['base']
-                            if base not in settings.exclude_bases:
-                                symbols.append(market['symbol'])
+                        if max_leverage >= 34:  # Use 34x minimum leverage
+                            # Include ALL pairs - no exclusions for maximum coverage
+                            symbols.append(market['symbol'])
                                 
                 except Exception as e:
                     log_exception(f"filter_market_{market.get('symbol', 'unknown')}", e)
                     continue
             
-            filtered_symbols = symbols[:50]  # Limit to first 50 symbols
+            filtered_symbols = symbols  # Use ALL symbols that meet 34x leverage requirement
             logger.info(f"Filtered {len(filtered_symbols)} trading symbols from {len(markets)} markets")
             return filtered_symbols
             
