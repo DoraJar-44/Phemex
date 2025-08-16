@@ -86,8 +86,16 @@ class FastPineStrategy:
 async def test_configuration(exchange, symbol: str, timeframe: str, config: Dict) -> Dict:
     """Test a single configuration"""
     try:
-        # Fetch minimal data for speed
-        ohlcv = await exchange.fetch_ohlcv(symbol, timeframe, limit=200)
+        # Fetch minimal data for speed (using sync within async)
+        import ccxt
+        sync_exchange = ccxt.phemex({
+            'apiKey': API_KEY,
+            'secret': API_SECRET,
+            'enableRateLimit': False,
+            'options': {'defaultType': 'swap'}
+        })
+        sync_exchange.load_markets()
+        ohlcv = sync_exchange.fetch_ohlcv(symbol, timeframe, limit=200)
         if not ohlcv or len(ohlcv) < 100:
             return {'score': -1}
         
@@ -152,8 +160,8 @@ async def optimize_fast():
     
     await exchange.load_markets()
     
-    # Best symbols from previous tests (using Phemex format)
-    symbols = ['sBTCUSDT', 'sETHUSDT', 'sSOLUSDT']
+    # Best perpetual swap symbols
+    symbols = ['BTC/USDT:USDT', 'ETH/USDT:USDT', 'SOL/USDT:USDT']
     timeframes = ['1m', '5m', '15m']
     
     # Essential configurations only
