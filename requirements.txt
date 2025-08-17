@@ -11,7 +11,7 @@ structlog==24.1.0
 tenacity==8.3.0
 sqlalchemy==2.0.31
 ccxt==4.5.0
-protobuf==6.32.0
+protobuf>=3.19,<5.0
 numpy==1.26.4
 watchdog==6.0.0
 windows-curses==2.4.1; sys_platform == "win32"

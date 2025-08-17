@@ -1,53 +1,58 @@
 {
   "main_started": {
-    "timestamp": 1755284611.4498532,
+    "timestamp": 1755473227.0323257,
     "data": {
-      "timestamp": 1755284611.4498513,
-      "live_trade": false,
+      "timestamp": 1755473227.0323248,
+      "live_trade": true,
       "quick_run": false
     }
   },
   "bot_startup": {
-    "timestamp": 1755284611.4527862,
+    "timestamp": 1755473227.0328147,
     "data": {
-      "timestamp": 1755284611.452783,
-      "mode": "paper",
+      "timestamp": 1755473227.032814,
+      "mode": "live",
       "quick_run": false
     }
   },
   "client_status": {
-    "timestamp": 1755284611.4683259,
+    "timestamp": 1755473227.0384214,
     "data": {
-      "status": "paper",
-      "mode": "paper"
+      "status": "connected",
+      "mode": "live"
     }
   },
   "client_ready": {
-    "timestamp": 1755284611.4701061,
+    "timestamp": 1755473227.0386074,
     "data": {
-      "client_status": "paper",
-      "timestamp": 1755284611.4701037
+      "client_status": "ready",
+      "timestamp": 1755473227.038607
     }
   },
   "symbols_loaded": {
-    "timestamp": 1755284611.4735801,
+    "timestamp": 1755473227.6883764,
     "data": {
-      "count": 5,
+      "count": 50,
       "symbols": [
-        "BTC/USDT:USDT",
-        "ETH/USDT:USDT",
-        "SOL/USDT:USDT",
-        "AVAX/USDT:USDT",
-        "ADA/USDT:USDT"
+        "ADA/USDT:USDT",
+        "UNI/USDT:USDT",
+        "DOT/USDT:USDT",
+        "LINK/USDT:USDT",
+        "ATOM/USDT:USDT",
+        "LTC/USDT:USDT",
+        "HOOK/USDT:USDT",
+        "TWT/USDT:USDT",
+        "MANA/USDT:USDT",
+        "APE/USDT:USDT"
       ]
     }
   },
   "scan_cycle": {
-    "timestamp": 1755286559.1346912,
+    "timestamp": 1755473227.6886237,
     "data": {
-      "cycle": 65,
-      "timestamp": 1755286559.134689,
-      "symbols_count": 5
+      "cycle": 1,
+      "timestamp": 1755473227.6886222,
+      "symbols_count": 50
     }
   },
   "scan_completed": {
