@@ -4078,3 +4078,1358 @@ ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check inp
 
 2025-08-17 23:30:24,374 - __main__ - WARNING - Insufficient candle data for MKR/USDT:USDT: 0 candles
 2025-08-17 23:30:24,425 - __main__ - INFO - Scan cycle 3 completed, waiting for next cycle
+2025-08-17 23:30:55,335 - __main__ - ERROR - Exception in fetch_candles_live_ADA/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:30:55,336 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:30:55,336 - __main__ - WARNING - Insufficient candle data for ADA/USDT:USDT: 0 candles
+2025-08-17 23:30:56,210 - __main__ - ERROR - Exception in fetch_candles_live_UNI/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:30:56,211 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:30:56,211 - __main__ - WARNING - Insufficient candle data for UNI/USDT:USDT: 0 candles
+2025-08-17 23:30:57,091 - __main__ - ERROR - Exception in fetch_candles_live_DOT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:30:57,091 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:30:57,092 - __main__ - WARNING - Insufficient candle data for DOT/USDT:USDT: 0 candles
+2025-08-17 23:30:57,969 - __main__ - ERROR - Exception in fetch_candles_live_LINK/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:30:57,970 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:30:57,970 - __main__ - WARNING - Insufficient candle data for LINK/USDT:USDT: 0 candles
+2025-08-17 23:30:58,844 - __main__ - ERROR - Exception in fetch_candles_live_ATOM/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:30:58,845 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:30:58,845 - __main__ - WARNING - Insufficient candle data for ATOM/USDT:USDT: 0 candles
+2025-08-17 23:30:59,731 - __main__ - ERROR - Exception in fetch_candles_live_LTC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:30:59,733 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:30:59,733 - __main__ - WARNING - Insufficient candle data for LTC/USDT:USDT: 0 candles
+2025-08-17 23:31:00,605 - __main__ - ERROR - Exception in fetch_candles_live_HOOK/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:31:00,606 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:31:00,606 - __main__ - WARNING - Insufficient candle data for HOOK/USDT:USDT: 0 candles
+2025-08-17 23:31:00,927 - __main__ - INFO - Received signal 15, initiating graceful shutdown
+2025-08-17 23:31:01,482 - __main__ - ERROR - Exception in fetch_candles_live_TWT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:31:01,484 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:31:01,484 - __main__ - WARNING - Insufficient candle data for TWT/USDT:USDT: 0 candles
+2025-08-17 23:31:01,534 - __main__ - INFO - Scan cycle 4 completed, waiting for next cycle
+2025-08-17 23:31:01,534 - __main__ - INFO - Shutdown requested, stopping scan loop
+2025-08-17 23:31:01,534 - __main__ - INFO - Starting cleanup
+2025-08-17 23:31:01,786 - __main__ - INFO - Bot stopped successfully
+2025-08-17 23:32:08,225 - __main__ - INFO - Loaded 8 checkpoints
+2025-08-17 23:32:08,229 - __main__ - INFO - Starting main function
+2025-08-17 23:32:08,229 - __main__ - INFO - Safety validation passed
+2025-08-17 23:32:08,229 - __main__ - INFO - Starting asyncio event loop
+2025-08-17 23:32:08,229 - __main__ - INFO - Starting Unified Phemex Trading Bot
+2025-08-17 23:32:08,230 - __main__ - INFO - Attempting to start TUI...
+2025-08-17 23:32:08,232 - __main__ - ERROR - Exception in safe_start_tui: asyncio.run() cannot be called from a running event loop
+2025-08-17 23:32:08,232 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 270, in safe_start_tui
+    tui_result = asyncio.run(timeout_manager.with_timeout(
+        start_tui(), "tui_startup", None
+    ))
+  File "/usr/lib/python3.13/asyncio/runners.py", line 191, in run
+    raise RuntimeError(
+        "asyncio.run() cannot be called from a running event loop")
+RuntimeError: asyncio.run() cannot be called from a running event loop
+
+2025-08-17 23:32:08,232 - __main__ - WARNING - TUI startup failed: asyncio.run() cannot be called from a running event loop
+2025-08-17 23:32:08,233 - __main__ - INFO - Initializing exchange client...
+2025-08-17 23:32:08,233 - __main__ - INFO - Initializing Phemex client...
+2025-08-17 23:32:08,236 - __main__ - INFO - Phemex client initialized successfully
+2025-08-17 23:32:08,236 - __main__ - INFO - Live trading client initialized successfully
+2025-08-17 23:32:08,237 - __main__ - INFO - Loading trading symbols...
+2025-08-17 23:32:08,237 - __main__ - INFO - Getting trading symbols
+2025-08-17 23:32:08,886 - __main__ - INFO - Filtered 50 trading symbols from 1588 markets
+2025-08-17 23:32:08,887 - __main__ - INFO - Loaded 50 symbols for trading
+2025-08-17 23:32:08,887 - __main__ - INFO - Starting scan loop: max_scans=999999
+2025-08-17 23:32:18,344 - __main__ - ERROR - Exception in fetch_candles_live_ADA/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:18,347 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:18,347 - __main__ - WARNING - Insufficient candle data for ADA/USDT:USDT: 0 candles
+2025-08-17 23:32:19,227 - __main__ - ERROR - Exception in fetch_candles_live_UNI/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:19,228 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:19,228 - __main__ - WARNING - Insufficient candle data for UNI/USDT:USDT: 0 candles
+2025-08-17 23:32:20,106 - __main__ - ERROR - Exception in fetch_candles_live_DOT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:20,107 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:20,107 - __main__ - WARNING - Insufficient candle data for DOT/USDT:USDT: 0 candles
+2025-08-17 23:32:20,988 - __main__ - ERROR - Exception in fetch_candles_live_LINK/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:20,989 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:20,989 - __main__ - WARNING - Insufficient candle data for LINK/USDT:USDT: 0 candles
+2025-08-17 23:32:21,863 - __main__ - ERROR - Exception in fetch_candles_live_ATOM/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:21,864 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:21,864 - __main__ - WARNING - Insufficient candle data for ATOM/USDT:USDT: 0 candles
+2025-08-17 23:32:22,739 - __main__ - ERROR - Exception in fetch_candles_live_LTC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:22,740 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:22,740 - __main__ - WARNING - Insufficient candle data for LTC/USDT:USDT: 0 candles
+2025-08-17 23:32:23,615 - __main__ - ERROR - Exception in fetch_candles_live_HOOK/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:23,618 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:23,619 - __main__ - WARNING - Insufficient candle data for HOOK/USDT:USDT: 0 candles
+2025-08-17 23:32:24,502 - __main__ - ERROR - Exception in fetch_candles_live_TWT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:24,503 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:24,503 - __main__ - WARNING - Insufficient candle data for TWT/USDT:USDT: 0 candles
+2025-08-17 23:32:25,383 - __main__ - ERROR - Exception in fetch_candles_live_MANA/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:25,384 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:25,384 - __main__ - WARNING - Insufficient candle data for MANA/USDT:USDT: 0 candles
+2025-08-17 23:32:26,265 - __main__ - ERROR - Exception in fetch_candles_live_APE/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:26,266 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:26,266 - __main__ - WARNING - Insufficient candle data for APE/USDT:USDT: 0 candles
+2025-08-17 23:32:27,142 - __main__ - ERROR - Exception in fetch_candles_live_LUNC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:27,143 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:27,143 - __main__ - WARNING - Insufficient candle data for LUNC/USDT:USDT: 0 candles
+2025-08-17 23:32:28,030 - __main__ - ERROR - Exception in fetch_candles_live_FLOW/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:28,031 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:28,031 - __main__ - WARNING - Insufficient candle data for FLOW/USDT:USDT: 0 candles
+2025-08-17 23:32:28,919 - __main__ - ERROR - Exception in fetch_candles_live_NEO/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:28,920 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:28,920 - __main__ - WARNING - Insufficient candle data for NEO/USDT:USDT: 0 candles
+2025-08-17 23:32:29,797 - __main__ - ERROR - Exception in fetch_candles_live_ACH/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:29,798 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:29,798 - __main__ - WARNING - Insufficient candle data for ACH/USDT:USDT: 0 candles
+2025-08-17 23:32:30,673 - __main__ - ERROR - Exception in fetch_candles_live_BAND/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:30,674 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:30,674 - __main__ - WARNING - Insufficient candle data for BAND/USDT:USDT: 0 candles
+2025-08-17 23:32:31,556 - __main__ - ERROR - Exception in fetch_candles_live_VET/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:31,557 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:31,557 - __main__ - WARNING - Insufficient candle data for VET/USDT:USDT: 0 candles
+2025-08-17 23:32:32,060 - __main__ - INFO - Loaded 8 checkpoints
+2025-08-17 23:32:32,063 - __main__ - INFO - Starting main function
+2025-08-17 23:32:32,063 - __main__ - INFO - Safety validation passed
+2025-08-17 23:32:32,064 - __main__ - INFO - Starting asyncio event loop
+2025-08-17 23:32:32,064 - __main__ - INFO - Starting Unified Phemex Trading Bot
+2025-08-17 23:32:32,064 - __main__ - INFO - Attempting to start TUI...
+2025-08-17 23:32:32,065 - __main__ - ERROR - Exception in safe_start_tui: asyncio.run() cannot be called from a running event loop
+2025-08-17 23:32:32,066 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 270, in safe_start_tui
+    tui_result = asyncio.run(timeout_manager.with_timeout(
+        start_tui(), "tui_startup", None
+    ))
+  File "/usr/lib/python3.13/asyncio/runners.py", line 191, in run
+    raise RuntimeError(
+        "asyncio.run() cannot be called from a running event loop")
+RuntimeError: asyncio.run() cannot be called from a running event loop
+
+2025-08-17 23:32:32,066 - __main__ - WARNING - TUI startup failed: asyncio.run() cannot be called from a running event loop
+2025-08-17 23:32:32,067 - __main__ - INFO - Initializing exchange client...
+2025-08-17 23:32:32,067 - __main__ - INFO - Initializing Phemex client...
+2025-08-17 23:32:32,069 - __main__ - INFO - Phemex client initialized successfully
+2025-08-17 23:32:32,069 - __main__ - INFO - Live trading client initialized successfully
+2025-08-17 23:32:32,070 - __main__ - INFO - Loading trading symbols...
+2025-08-17 23:32:32,070 - __main__ - INFO - Getting trading symbols
+2025-08-17 23:32:32,432 - __main__ - ERROR - Exception in fetch_candles_live_SUSHI/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:32,433 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:32,433 - __main__ - WARNING - Insufficient candle data for SUSHI/USDT:USDT: 0 candles
+2025-08-17 23:32:32,719 - __main__ - INFO - Filtered 50 trading symbols from 1588 markets
+2025-08-17 23:32:32,721 - __main__ - INFO - Loaded 50 symbols for trading
+2025-08-17 23:32:32,721 - __main__ - INFO - Starting scan loop: max_scans=999999
+2025-08-17 23:32:33,310 - __main__ - ERROR - Exception in fetch_candles_live_ENJ/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:33,311 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:33,311 - __main__ - WARNING - Insufficient candle data for ENJ/USDT:USDT: 0 candles
+2025-08-17 23:32:34,190 - __main__ - ERROR - Exception in fetch_candles_live_XTZ/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:34,191 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:34,191 - __main__ - WARNING - Insufficient candle data for XTZ/USDT:USDT: 0 candles
+2025-08-17 23:32:35,067 - __main__ - ERROR - Exception in fetch_candles_live_JASMY/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:35,068 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:35,068 - __main__ - WARNING - Insufficient candle data for JASMY/USDT:USDT: 0 candles
+2025-08-17 23:32:35,716 - __main__ - ERROR - Exception in fetch_candles_live_ADA/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:35,719 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:35,719 - __main__ - WARNING - Insufficient candle data for ADA/USDT:USDT: 0 candles
+2025-08-17 23:32:35,952 - __main__ - ERROR - Exception in fetch_candles_live_THETA/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:35,952 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:35,953 - __main__ - WARNING - Insufficient candle data for THETA/USDT:USDT: 0 candles
+2025-08-17 23:32:36,595 - __main__ - ERROR - Exception in fetch_candles_live_UNI/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:36,596 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:36,596 - __main__ - WARNING - Insufficient candle data for UNI/USDT:USDT: 0 candles
+2025-08-17 23:32:36,831 - __main__ - ERROR - Exception in fetch_candles_live_TRX/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:36,832 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:36,832 - __main__ - WARNING - Insufficient candle data for TRX/USDT:USDT: 0 candles
+2025-08-17 23:32:37,484 - __main__ - ERROR - Exception in fetch_candles_live_DOT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:37,485 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:37,485 - __main__ - WARNING - Insufficient candle data for DOT/USDT:USDT: 0 candles
+2025-08-17 23:32:37,718 - __main__ - ERROR - Exception in fetch_candles_live_ONE/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:37,719 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:37,719 - __main__ - WARNING - Insufficient candle data for ONE/USDT:USDT: 0 candles
+2025-08-17 23:32:38,362 - __main__ - ERROR - Exception in fetch_candles_live_LINK/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:38,363 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:38,363 - __main__ - WARNING - Insufficient candle data for LINK/USDT:USDT: 0 candles
+2025-08-17 23:32:38,597 - __main__ - ERROR - Exception in fetch_candles_live_RUNE/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:38,598 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:38,598 - __main__ - WARNING - Insufficient candle data for RUNE/USDT:USDT: 0 candles
+2025-08-17 23:32:39,251 - __main__ - ERROR - Exception in fetch_candles_live_ATOM/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:39,252 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:39,252 - __main__ - WARNING - Insufficient candle data for ATOM/USDT:USDT: 0 candles
+2025-08-17 23:32:39,475 - __main__ - ERROR - Exception in fetch_candles_live_AXS/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:39,476 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:39,477 - __main__ - WARNING - Insufficient candle data for AXS/USDT:USDT: 0 candles
+2025-08-17 23:32:40,151 - __main__ - ERROR - Exception in fetch_candles_live_LTC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:40,152 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:40,152 - __main__ - WARNING - Insufficient candle data for LTC/USDT:USDT: 0 candles
+2025-08-17 23:32:40,349 - __main__ - ERROR - Exception in fetch_candles_live_ETC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:40,350 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:40,350 - __main__ - WARNING - Insufficient candle data for ETC/USDT:USDT: 0 candles
+2025-08-17 23:32:41,041 - __main__ - ERROR - Exception in fetch_candles_live_HOOK/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:41,042 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:41,042 - __main__ - WARNING - Insufficient candle data for HOOK/USDT:USDT: 0 candles
+2025-08-17 23:32:41,245 - __main__ - ERROR - Exception in fetch_candles_live_RSR/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:41,246 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:41,246 - __main__ - WARNING - Insufficient candle data for RSR/USDT:USDT: 0 candles
+2025-08-17 23:32:41,939 - __main__ - ERROR - Exception in fetch_candles_live_TWT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:41,940 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:41,940 - __main__ - WARNING - Insufficient candle data for TWT/USDT:USDT: 0 candles
+2025-08-17 23:32:42,122 - __main__ - ERROR - Exception in fetch_candles_live_FIL/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:42,123 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:42,123 - __main__ - WARNING - Insufficient candle data for FIL/USDT:USDT: 0 candles
+2025-08-17 23:32:42,818 - __main__ - ERROR - Exception in fetch_candles_live_MANA/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:42,819 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:42,819 - __main__ - WARNING - Insufficient candle data for MANA/USDT:USDT: 0 candles
+2025-08-17 23:32:43,012 - __main__ - ERROR - Exception in fetch_candles_live_AVAX/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:43,014 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:43,014 - __main__ - WARNING - Insufficient candle data for AVAX/USDT:USDT: 0 candles
+2025-08-17 23:32:43,695 - __main__ - ERROR - Exception in fetch_candles_live_APE/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:43,696 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:43,696 - __main__ - WARNING - Insufficient candle data for APE/USDT:USDT: 0 candles
+2025-08-17 23:32:43,889 - __main__ - ERROR - Exception in fetch_candles_live_GMT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-17 23:32:43,890 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "/workspace/unified_trading_bot.py", line 1168, in fetch_candles
+    ohlcv = await client.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 1385, in fetch_ohlcv
+    response = await self.publicGetMdV2KlineLast(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 978, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 974, in fetch2
+    raise e
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 963, in fetch2
+    return await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/base/exchange.py", line 263, in fetch
+    self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/async_support/phemex.py", line 5011, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], errorCode, feedback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/ccxt/base/exchange.py", line 4957, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.BadRequest: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+
+2025-08-17 23:32:43,890 - __main__ - WARNING - Insufficient candle data for GMT/USDT:USDT: 0 candles
