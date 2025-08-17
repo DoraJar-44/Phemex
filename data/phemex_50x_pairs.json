@@ -1,0 +1,4174 @@
+{
+  "pairs_50x": [
+    "1000000BABYDOGE/USDT:USDT",
+    "1000000MOG/USDT:USDT",
+    "1000BONK/USDT:USDT",
+    "1000CAT/USDT:USDT",
+    "1000CHEEMS/USDT:USDT",
+    "1000FLOKI/USDT:USDT",
+    "1000PEPE/USDT:USDT",
+    "1000SATS/USDT:USDT",
+    "1000SHIB/USDT:USDT",
+    "1000WHY/USDT:USDT",
+    "1000X/USDT:USDT",
+    "A/USDT:USDT",
+    "AAVE/USDT:USDT",
+    "ACH/USDT:USDT",
+    "ACT/USDT:USDT",
+    "ACX/USDT:USDT",
+    "ADA/USDT:USDT",
+    "AERO/USDT:USDT",
+    "AEVO/USDT:USDT",
+    "AGLD/USDT:USDT",
+    "AI/USDT:USDT",
+    "AIXBT/USDT:USDT",
+    "AKT/USDT:USDT",
+    "ALCH/USDT:USDT",
+    "ALGO/USDT:USDT",
+    "ALPHA/USDT:USDT",
+    "ALT/USDT:USDT",
+    "ANIME/USDT:USDT",
+    "ANKR/USDT:USDT",
+    "APE/USDT:USDT",
+    "APT/USDT:USDT",
+    "AR/USDT:USDT",
+    "ARB/USDT:USDT",
+    "ARC/USDT:USDT",
+    "ARKM/USDT:USDT",
+    "ATA/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "AUCTION/USDT:USDT",
+    "AVA/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "AXS/USDT:USDT",
+    "B3/USDT:USDT",
+    "BAKE/USDT:USDT",
+    "BAN/USDT:USDT",
+    "BANANA/USDT:USDT",
+    "BAND/USDT:USDT",
+    "BB/USDT:USDT",
+    "BCH/USDT:USDT",
+    "BEAM/USDT:USDT",
+    "BEL/USDT:USDT",
+    "BERA/USDT:USDT",
+    "BIGTIME/USDT:USDT",
+    "BIO/USDT:USDT",
+    "BLUR/USDT:USDT",
+    "BMT/USDT:USDT",
+    "BNB/USDT:USDT",
+    "BOME/USDT:USDT",
+    "BRETT/USDT:USDT",
+    "BSW/USDT:USDT",
+    "CAKE/USDT:USDT",
+    "CATI/USDT:USDT",
+    "CELO/USDT:USDT",
+    "CETUS/USDT:USDT",
+    "CGPT/USDT:USDT",
+    "CHESS/USDT:USDT",
+    "CHILLGUY/USDT:USDT",
+    "COMP/USDT:USDT",
+    "COOKIE/USDT:USDT",
+    "COS/USDT:USDT",
+    "COTI/USDT:USDT",
+    "COW/USDT:USDT",
+    "CRV/USDT:USDT",
+    "CYBER/USDT:USDT",
+    "D/USDT:USDT",
+    "DASH/USDT:USDT",
+    "DEEP/USDT:USDT",
+    "DEGO/USDT:USDT",
+    "DEXE/USDT:USDT",
+    "DF/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "DOGS/USDT:USDT",
+    "DOT/USDT:USDT",
+    "DRIFT/USDT:USDT",
+    "DYDX/USDT:USDT",
+    "DYM/USDT:USDT",
+    "EDU/USDT:USDT",
+    "EGLD/USDT:USDT",
+    "EIGEN/USDT:USDT",
+    "ENA/USDT:USDT",
+    "ENJ/USDT:USDT",
+    "EPIC/USDT:USDT",
+    "ETC/USDT:USDT",
+    "ETHFI/USDT:USDT",
+    "ETHW/USDT:USDT",
+    "FARTCOIN/USDT:USDT",
+    "FET/USDT:USDT",
+    "FIDA/USDT:USDT",
+    "FIL/USDT:USDT",
+    "FIO/USDT:USDT",
+    "FLM/USDT:USDT",
+    "FLOW/USDT:USDT",
+    "FLUX/USDT:USDT",
+    "FORM/USDT:USDT",
+    "FXS/USDT:USDT",
+    "G/USDT:USDT",
+    "GALA/USDT:USDT",
+    "GAS/USDT:USDT",
+    "GHST/USDT:USDT",
+    "GLM/USDT:USDT",
+    "GMT/USDT:USDT",
+    "GMX/USDT:USDT",
+    "GOAT/USDT:USDT",
+    "GPS/USDT:USDT",
+    "GRASS/USDT:USDT",
+    "GRIFFAIN/USDT:USDT",
+    "GRT/USDT:USDT",
+    "GUN/USDT:USDT",
+    "HBAR/USDT:USDT",
+    "HEI/USDT:USDT",
+    "HFT/USDT:USDT",
+    "HIGH/USDT:USDT",
+    "HMSTR/USDT:USDT",
+    "HOOK/USDT:USDT",
+    "HOT/USDT:USDT",
+    "HYPE/USDT:USDT",
+    "ICP/USDT:USDT",
+    "ID/USDT:USDT",
+    "ILV/USDT:USDT",
+    "INJ/USDT:USDT",
+    "IO/USDT:USDT",
+    "IOTX/USDT:USDT",
+    "IP/USDT:USDT",
+    "JASMY/USDT:USDT",
+    "JOE/USDT:USDT",
+    "JTO/USDT:USDT",
+    "JUP/USDT:USDT",
+    "KAIA/USDT:USDT",
+    "KAITO/USDT:USDT",
+    "KAS/USDT:USDT",
+    "KAVA/USDT:USDT",
+    "KDA/USDT:USDT",
+    "KMNO/USDT:USDT",
+    "KNC/USDT:USDT",
+    "LAYER/USDT:USDT",
+    "LDO/USDT:USDT",
+    "LINK/USDT:USDT",
+    "LISTA/USDT:USDT",
+    "LQTY/USDT:USDT",
+    "LRC/USDT:USDT",
+    "LSK/USDT:USDT",
+    "LTC/USDT:USDT",
+    "LUNA2/USDT:USDT",
+    "LUNC/USDT:USDT",
+    "MAGIC/USDT:USDT",
+    "MANA/USDT:USDT",
+    "MASK/USDT:USDT",
+    "MAV/USDT:USDT",
+    "MAVIA/USDT:USDT",
+    "MBOX/USDT:USDT",
+    "ME/USDT:USDT",
+    "MEME/USDT:USDT",
+    "MEW/USDT:USDT",
+    "MINA/USDT:USDT",
+    "MKR/USDT:USDT",
+    "MLN/USDT:USDT",
+    "MOCA/USDT:USDT",
+    "MOODENG/USDT:USDT",
+    "MORPHO/USDT:USDT",
+    "MOVE/USDT:USDT",
+    "MTL/USDT:USDT",
+    "MUBARAK/USDT:USDT",
+    "MYRO/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "NEIRO/USDT:USDT",
+    "NEIROETH/USDT:USDT",
+    "NEO/USDT:USDT",
+    "NIL/USDT:USDT",
+    "NKN/USDT:USDT",
+    "NTRN/USDT:USDT",
+    "OM/USDT:USDT",
+    "OMNI/USDT:USDT",
+    "ONDO/USDT:USDT",
+    "ONE/USDT:USDT",
+    "ONG/USDT:USDT",
+    "ONT/USDT:USDT",
+    "OP/USDT:USDT",
+    "ORCA/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "PARTI/USDT:USDT",
+    "PAXG/USDT:USDT",
+    "PENGU/USDT:USDT",
+    "PEOPLE/USDT:USDT",
+    "PHA/USDT:USDT",
+    "PHB/USDT:USDT",
+    "PIPPIN/USDT:USDT",
+    "PIXEL/USDT:USDT",
+    "PLUME/USDT:USDT",
+    "PNUT/USDT:USDT",
+    "POL/USDT:USDT",
+    "PONKE/USDT:USDT",
+    "POPCAT/USDT:USDT",
+    "PORTAL/USDT:USDT",
+    "POWR/USDT:USDT",
+    "PT/USDT:USDT",
+    "PYTH/USDT:USDT",
+    "QNT/USDT:USDT",
+    "QTUM/USDT:USDT",
+    "RARE/USDT:USDT",
+    "RED/USDT:USDT",
+    "REI/USDT:USDT",
+    "RENDER/USDT:USDT",
+    "REZ/USDT:USDT",
+    "RON/USDT:USDT",
+    "RSR/USDT:USDT",
+    "RUNE/USDT:USDT",
+    "RVN/USDT:USDT",
+    "S/USDT:USDT",
+    "SAFE/USDT:USDT",
+    "SAGA/USDT:USDT",
+    "SAND/USDT:USDT",
+    "SANTOS/USDT:USDT",
+    "SCR/USDT:USDT",
+    "SCRT/USDT:USDT",
+    "SEI/USDT:USDT",
+    "SHELL/USDT:USDT",
+    "SIREN/USDT:USDT",
+    "SKL/USDT:USDT",
+    "SOL/USDT:USDT",
+    "SOLV/USDT:USDT",
+    "SONIC/USDT:USDT",
+    "SPELL/USDT:USDT",
+    "SPX/USDT:USDT",
+    "SSV/USDT:USDT",
+    "STEEM/USDT:USDT",
+    "STG/USDT:USDT",
+    "STO/USDT:USDT",
+    "STRK/USDT:USDT",
+    "STX/USDT:USDT",
+    "SUI/USDT:USDT",
+    "SUN/USDT:USDT",
+    "SUPER/USDT:USDT",
+    "SUSHI/USDT:USDT",
+    "SWARMS/USDT:USDT",
+    "SWELL/USDT:USDT",
+    "SXP/USDT:USDT",
+    "SYN/USDT:USDT",
+    "SYS/USDT:USDT",
+    "TAO/USDT:USDT",
+    "THE/USDT:USDT",
+    "THETA/USDT:USDT",
+    "TIA/USDT:USDT",
+    "TNSR/USDT:USDT",
+    "TON/USDT:USDT",
+    "TRB/USDT:USDT",
+    "TRU/USDT:USDT",
+    "TRUMP/USDT:USDT",
+    "TRX/USDT:USDT",
+    "TST/USDT:USDT",
+    "TURBO/USDT:USDT",
+    "TUT/USDT:USDT",
+    "TWT/USDT:USDT",
+    "UMA/USDT:USDT",
+    "UNI/USDT:USDT",
+    "USTC/USDT:USDT",
+    "USUAL/USDT:USDT",
+    "UXLINK/USDT:USDT",
+    "VANA/USDT:USDT",
+    "VANRY/USDT:USDT",
+    "VELODROME/USDT:USDT",
+    "VET/USDT:USDT",
+    "VIC/USDT:USDT",
+    "VIRTUAL/USDT:USDT",
+    "VOXEL/USDT:USDT",
+    "VTHO/USDT:USDT",
+    "VVV/USDT:USDT",
+    "W/USDT:USDT",
+    "WIF/USDT:USDT",
+    "WLD/USDT:USDT",
+    "XAI/USDT:USDT",
+    "XDC/USDT:USDT",
+    "XLM/USDT:USDT",
+    "XRP/USDT:USDT",
+    "XTZ/USDT:USDT",
+    "YFI/USDT:USDT",
+    "ZEN/USDT:USDT",
+    "ZEREBRO/USDT:USDT",
+    "ZETA/USDT:USDT",
+    "ZIL/USDT:USDT",
+    "ZK/USDT:USDT",
+    "ZRO/USDT:USDT"
+  ],
+  "pairs_100x": [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT"
+  ],
+  "all_leverage_info": {
+    "BTC/USDT:USDT": {
+      "max_leverage": 100.0,
+      "min_leverage": 1.0,
+      "base": "BTC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ETH/USDT:USDT": {
+      "max_leverage": 100.0,
+      "min_leverage": 1.0,
+      "base": "ETH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XRP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "XRP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ADA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ADA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SOL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SOL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "UNI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "UNI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DOT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DOT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LINK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LINK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ATOM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ATOM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LTC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LTC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DOGE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DOGE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HOOK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "HOOK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TWT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TWT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BNB/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BNB",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MANA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MANA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "APE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "APE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LUNC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LUNC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FLOW/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FLOW",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NEO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "NEO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ACH/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ACH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BAND/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BAND",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VET/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VET",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "API3/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "API3",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SUSHI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SUSHI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ENJ/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ENJ",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XTZ/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "XTZ",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CHZ/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CHZ",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "JASMY/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "JASMY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "THETA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "THETA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TRX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TRX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ONE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ONE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RUNE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "RUNE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AXS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AXS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ETC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ETC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RSR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "RSR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FIL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FIL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AVAX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AVAX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GMT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GMT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZRX/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ZRX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MTL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MTL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LUNA2/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LUNA2",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HOT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "HOT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CRV/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CRV",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "APT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "APT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MASK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MASK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CELO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CELO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZEC/USDT:USDT": {
+      "max_leverage": 10.0,
+      "min_leverage": 1.0,
+      "base": "ZEC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "EGLD/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "EGLD",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MAGIC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MAGIC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GALA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GALA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ALICE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ALICE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LRC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LRC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000SHIB/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000SHIB",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "STORJ/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "STORJ",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DENT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "DENT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GRT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GRT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CVX/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CVX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "IMX/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "IMX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "QTUM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "QTUM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CELR/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CELR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BAKE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BAKE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "OGN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "OGN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ALPHA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ALPHA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "QNT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "QNT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RVN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "RVN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MKR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MKR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LDO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LDO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZIL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ZIL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ALGO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ALGO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GMX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GMX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "C98/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "C98",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CHR/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CHR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BCH/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BCH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KAVA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "KAVA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FLUX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FLUX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SNX/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "SNX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BAT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BAT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NEAR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "NEAR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "YFI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "YFI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ROSE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ROSE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ENS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ENS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SPELL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SPELL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SAND/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SAND",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PAXG/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PAXG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GTC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "GTC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XLM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "XLM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SKL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SKL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DYDX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DYDX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "INJ/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "INJ",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ARPA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ARPA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AAVE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AAVE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AGLD/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AGLD",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DASH/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DASH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ONT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ONT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SFP/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SFP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FLM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FLM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "OP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "OP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1INCH/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "1INCH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "STG/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "STG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ICP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ICP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "COTI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "COTI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LPT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "LPT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KNC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "KNC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HFT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "HFT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KSM/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "KSM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "IOTX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "IOTX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "COMP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "COMP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MINA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MINA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ANKR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ANKR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZEN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ZEN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SXP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SXP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "WOO/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "WOO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "YGG/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "YGG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PEOPLE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PEOPLE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "IOST/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "IOST",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "T/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "T",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FXS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FXS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FET/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FET",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HIGH/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "HIGH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BLUR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BLUR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ASTR/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ASTR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PHB/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PHB",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CFX/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "CFX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "STX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "STX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SSV/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SSV",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HBAR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "HBAR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CKB/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CKB",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RLC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "RLC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TRU/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TRU",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PERP/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PERP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LQTY/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LQTY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ARB/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ARB",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ID/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ID",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TLM/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TLM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ICX/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ICX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NKN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "NKN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BEL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BEL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "JOE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "JOE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CTSI/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CTSI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RPL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "RPL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SUI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SUI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RDNT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "RDNT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000PEPE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000PEPE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "EDU/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "EDU",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000FLOKI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000FLOKI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "10000LADYS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "10000LADYS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ORDI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ORDI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000XEC/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "1000XEC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MAV/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MAV",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XVG/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "XVG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "WLD/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "WLD",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PENDLE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PENDLE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AUCTION/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AUCTION",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FORTH/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "FORTH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ARKM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ARKM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SEI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SEI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CYBER/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CYBER",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TRB/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TRB",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XVS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "XVS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DUSK/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "DUSK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HIFI/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "HIFI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NMR/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "NMR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ARK/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ARK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BIGTIME/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BIGTIME",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BNT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BNT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ORBS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ORBS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "WAXP/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "WAXP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "POLYX/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "POLYX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GAS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GAS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TIA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TIA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MEME/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MEME",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CAKE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CAKE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TOKEN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TOKEN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "STEEM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "STEEM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NTRN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "NTRN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ILV/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ILV",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KAS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "KAS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BEAM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BEAM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000BONK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000BONK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PYTH/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PYTH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SUPER/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SUPER",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "USTC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "USTC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ETHW/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ETHW",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ONG/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ONG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "JTO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "JTO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000SATS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000SATS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000RATS/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "1000RATS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ACE/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "ACE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MOVR/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "MOVR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NFP/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "NFP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "POWR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "POWR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XAI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "XAI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "WIF/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "WIF",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MANTA/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "MANTA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ONDO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ONDO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "UMA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "UMA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LSK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LSK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ALT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ALT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "JUP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "JUP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZETA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ZETA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RON/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "RON",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DYM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DYM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "OM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "OM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MAVIA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MAVIA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PROM/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PROM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PIXEL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PIXEL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "STRK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "STRK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GLM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GLM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PORTAL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PORTAL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TON/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TON",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AXL/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "AXL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MYRO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MYRO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "METIS/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "METIS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AEVO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AEVO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VANRY/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VANRY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BOME/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BOME",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ETHFI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ETHFI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SLERF/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SLERF",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "POPCAT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "POPCAT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "W/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "W",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ENA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ENA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DEGEN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "DEGEN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CORE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CORE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TNSR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TNSR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SAGA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SAGA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TAO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TAO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZEUS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ZEUS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "OMNI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "OMNI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MERL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "MERL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MEW/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MEW",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZBCN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ZBCN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ATA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ATA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "REZ/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "REZ",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BRETT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BRETT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BB/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BB",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NOT/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "NOT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TURBO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TURBO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "IO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "IO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ZK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LISTA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LISTA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZRO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ZRO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BANANA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BANANA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RENDER/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "RENDER",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "L3/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "L3",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RARE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "RARE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "G/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "G",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SYN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SYN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SYS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SYS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VOXEL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VOXEL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SUN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SUN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DOGS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DOGS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MBOX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MBOX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BSW/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BSW",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CHESS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CHESS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NEIROETH/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "NEIROETH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000000BABYDOGE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000000BABYDOGE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NEIRO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "NEIRO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "UXLINK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "UXLINK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "POL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "POL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FIDA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FIDA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KDA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "KDA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CATI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CATI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FIO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FIO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GHST/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GHST",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SUNDOG/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SUNDOG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HMSTR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "HMSTR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DIA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "DIA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "EIGEN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "EIGEN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "COS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "COS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "REI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "REI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000CAT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000CAT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PUFFER/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PUFFER",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DEEP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DEEP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SCR/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SCR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MOODENG/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MOODENG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GOAT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GOAT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SANTOS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SANTOS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SAFE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SAFE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GRASS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GRASS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PONKE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PONKE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CETUS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CETUS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "COW/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "COW",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000000MOG/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000000MOG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SWELL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SWELL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DRIFT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DRIFT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PNUT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PNUT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ACT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ACT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000X/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000X",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HIPPO/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "HIPPO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AKT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AKT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BAN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BAN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SCRT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SCRT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000CHEEMS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000CHEEMS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "1000WHY/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "1000WHY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CHILLGUY/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CHILLGUY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MORPHO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MORPHO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "THE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "THE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AERO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AERO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KAIA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "KAIA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MOVE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MOVE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ORCA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ORCA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ACX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ACX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SPX/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SPX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VIRTUAL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VIRTUAL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RAY/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "RAY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ME/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ME",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VELODROME/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VELODROME",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DEGO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DEGO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AVA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AVA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MOCA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MOCA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VANA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VANA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PENGU/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PENGU",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HYPE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "HYPE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "USUAL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "USUAL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CGPT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "CGPT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KMNO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "KMNO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FARTCOIN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FARTCOIN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AIXBT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "AIXBT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DEXE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DEXE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DF/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "DF",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PHA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PHA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AI16Z/USDT:USDT": {
+      "max_leverage": 23.0,
+      "min_leverage": 1.0,
+      "base": "AI16Z",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZEREBRO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ZEREBRO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GRIFFAIN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GRIFFAIN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BIO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BIO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SWARMS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SWARMS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ALCH/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ALCH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "COOKIE/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "COOKIE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "D/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "D",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "REX/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "REX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FUEL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "FUEL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SONIC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SONIC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AVAAI/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "AVAAI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "S/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "S",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TRUMP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TRUMP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MELANIA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "MELANIA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ARC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ARC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SOLV/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SOLV",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VTHO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VTHO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VINE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "VINE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ANIME/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "ANIME",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VVV/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VVV",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PIPPIN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PIPPIN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BERA/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BERA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TST/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TST",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LAYER/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "LAYER",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "IP/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "IP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BROCCOLI/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BROCCOLI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "B3/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "B3",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HEI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "HEI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SHELL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SHELL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GPS/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GPS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KAITO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "KAITO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RED/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "RED",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XDC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "XDC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ROAM/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ROAM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AVL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "AVL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BMT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "BMT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MUBARAK/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MUBARAK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TUT/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "TUT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RSS3/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "RSS3",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FORM/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "FORM",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SIREN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "SIREN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XTER/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "XTER",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ELX/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ELX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VIC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "VIC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "EPIC/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "EPIC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PARTI/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PARTI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NIL/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "NIL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PLUME/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "PLUME",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "JELLYJELLY/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "JELLYJELLY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "WAL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "WAL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MLN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "MLN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GUN/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "GUN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "STO/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "STO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ATH/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ATH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RFC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "RFC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BABY/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BABY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FHE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "FHE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PROMPT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PROMPT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CLANKER/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "CLANKER",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "WCT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "WCT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "KERNEL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "KERNEL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XCN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "XCN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TITCOIN/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "TITCOIN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BUTTCOIN/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "BUTTCOIN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "EPT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "EPT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BANK/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BANK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LUMO/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "LUMO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AERGO/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "AERGO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HYPER/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "HYPER",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZORA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ZORA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TROLL/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "TROLL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "INIT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "INIT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FIS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "FIS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SIGN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SIGN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HOUSE/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "HOUSE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "JST/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "JST",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CTK/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CTK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HAEDAL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "HAEDAL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PUNDIX/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PUNDIX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "OBOL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "OBOL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SYRUP/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SYRUP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MILK/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "MILK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "B2/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "B2",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ALPINE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ALPINE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ASR/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ASR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SXT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SXT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DOOD/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "DOOD",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NXPC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "NXPC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SKYAI/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SKYAI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BANANAS31/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BANANAS31",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LAUNCHCOIN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "LAUNCHCOIN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CVC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CVC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AGT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "AGT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SAROS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SAROS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AWE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "AWE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SOON/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SOON",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "B/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "B",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BROCCOLIF3B/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BROCCOLIF3B",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HUMA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "HUMA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TAI/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TAI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SOPH/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SOPH",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "A/USDT:USDT": {
+      "max_leverage": 50.0,
+      "min_leverage": 1.0,
+      "base": "A",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BDXN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BDXN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "GIGA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "GIGA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PORT3/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PORT3",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FLOCK/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "FLOCK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "LA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "LA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SKATE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SKATE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PUMPBTC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PUMPBTC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "OL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "OL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "HOME/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "HOME",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RESOLV/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "RESOLV",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ZRC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ZRC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SQD/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SQD",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TAIKO/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TAIKO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SPK/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SPK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "F/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "F",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DBR/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "DBR",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DMC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "DMC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NEWT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "NEWT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "H/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "H",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AURA/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "AURA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VELO/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "VELO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SAHARA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "SAHARA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CARV/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CARV",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "SOLAMI/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "SOLAMI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VIBE/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "VIBE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ICNT/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ICNT",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PRCL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PRCL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TANSSI/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TANSSI",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "POOP/USDT:USDT": {
+      "max_leverage": 3.0,
+      "min_leverage": 1.0,
+      "base": "POOP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AIN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "AIN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "CROSS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "CROSS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PUMP/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PUMP",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TAC/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TAC",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "USELESS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "USELESS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ES/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ES",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "C/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "C",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "VELVET/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "VELVET",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ERA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ERA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "FRAG/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "FRAG",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PEAQ/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PEAQ",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "BICO/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "BICO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TREE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TREE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "ESPORTS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "ESPORTS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "A2Z/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "A2Z",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "NAORIS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "NAORIS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "MYX/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "MYX",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "DUCK/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "DUCK",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "TOWNS/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "TOWNS",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "PROVE/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "PROVE",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "IDOL/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "IDOL",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "RHEA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "RHEA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "IN/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "IN",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "K/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "K",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "YALA/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "YALA",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "XNY/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "XNY",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    },
+    "AIO/USDT:USDT": {
+      "max_leverage": 20.0,
+      "min_leverage": 1.0,
+      "base": "AIO",
+      "quote": "USDT",
+      "type": "swap",
+      "active": true
+    }
+  },
+  "total_50x": 290,
+  "total_100x": 2
+}

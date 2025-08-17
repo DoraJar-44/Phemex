@@ -1,0 +1,61 @@
+{
+  "overall_status": "READY",
+  "total_issues": 2,
+  "critical_gaps": [],
+  "recommendations": [
+    "\u2705 Test API connection with small test order",
+    "\u2705 Implement position monitoring dashboard",
+    "\u2705 Add emergency stop functionality",
+    "\u2705 Implement profit/loss tracking",
+    "\u2705 Add trade logging and analytics",
+    "\u2705 Test bracket order execution",
+    "\u2705 Validate risk management limits",
+    "\u2705 Test symbol discovery for 50x pairs"
+  ],
+  "detailed_results": {
+    "api_credentials": {
+      "status": "PASS",
+      "issues": [],
+      "testnet": false
+    },
+    "environment_config": {
+      "status": "PASS",
+      "issues": [],
+      "config": {
+        "LIVE_TRADE": "true",
+        "LEVERAGE_MAX": "50",
+        "RISK_PER_TRADE_PCT": "0.5",
+        "MAX_POSITIONS": "5",
+        "SCORE_MIN": "85",
+        "TIMEFRAME": "5m"
+      }
+    },
+    "system_components": {
+      "status": "PASS",
+      "issues": [],
+      "missing_files": []
+    },
+    "risk_management": {
+      "status": "PASS",
+      "issues": []
+    },
+    "execution_system": {
+      "status": "FAIL",
+      "issues": [
+        "\u2705 Bracket orders system available"
+      ]
+    },
+    "strategy_system": {
+      "status": "PASS",
+      "issues": []
+    },
+    "dependencies": {
+      "status": "FAIL",
+      "issues": [
+        "\u274c Missing package: python-dotenv"
+      ]
+    }
+  },
+  "50x_pairs_available": 290,
+  "100x_pairs_available": 2
+}
