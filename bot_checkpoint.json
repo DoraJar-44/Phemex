@@ -1,36 +1,36 @@
 {
   "main_started": {
-    "timestamp": 1755473552.06388,
+    "timestamp": 1755473528.2295756,
     "data": {
-      "timestamp": 1755473552.0638793,
+      "timestamp": 1755473528.229575,
       "live_trade": true,
       "quick_run": false
     }
   },
   "bot_startup": {
-    "timestamp": 1755473552.0643537,
+    "timestamp": 1755473528.230058,
     "data": {
-      "timestamp": 1755473552.064353,
+      "timestamp": 1755473528.2300572,
       "mode": "live",
       "quick_run": false
     }
   },
   "client_status": {
-    "timestamp": 1755473552.0700111,
+    "timestamp": 1755473528.23645,
     "data": {
       "status": "connected",
       "mode": "live"
     }
   },
   "client_ready": {
-    "timestamp": 1755473552.070192,
+    "timestamp": 1755473528.236639,
     "data": {
       "client_status": "ready",
-      "timestamp": 1755473552.0701916
+      "timestamp": 1755473528.2366385
     }
   },
   "symbols_loaded": {
-    "timestamp": 1755473552.7216115,
+    "timestamp": 1755473528.887539,
     "data": {
       "count": 50,
       "symbols": [
@@ -48,18 +48,18 @@
     }
   },
   "scan_cycle": {
-    "timestamp": 1755473552.7218723,
+    "timestamp": 1755474212.7358582,
     "data": {
-      "cycle": 1,
-      "timestamp": 1755473552.7218711,
+      "cycle": 10,
+      "timestamp": 1755474212.7358553,
       "symbols_count": 50
     }
   },
   "scan_completed": {
-    "timestamp": 1755473461.5344512,
+    "timestamp": 1755474182.7023652,
     "data": {
-      "cycle": 4,
-      "timestamp": 1755473461.5344496,
+      "cycle": 9,
+      "timestamp": 1755474182.7023625,
       "status": "success"
     }
   },
