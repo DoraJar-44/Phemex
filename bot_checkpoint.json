@@ -48,18 +48,18 @@
     }
   },
   "scan_cycle": {
-    "timestamp": 1755473227.6886237,
+    "timestamp": 1755473379.420214,
     "data": {
-      "cycle": 1,
-      "timestamp": 1755473227.6886222,
+      "cycle": 3,
+      "timestamp": 1755473379.4202082,
       "symbols_count": 50
     }
   },
   "scan_completed": {
-    "timestamp": 1755286559.435403,
+    "timestamp": 1755473424.4250426,
     "data": {
-      "cycle": 65,
-      "timestamp": 1755286559.4354014,
+      "cycle": 3,
+      "timestamp": 1755473424.425041,
       "status": "success"
     }
   }
