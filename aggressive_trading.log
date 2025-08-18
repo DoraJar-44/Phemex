@@ -1,0 +1,41 @@
+2025-08-18 03:13:36,655 - INFO - 🔥 Loaded 50 verified 50x symbols
+2025-08-18 03:13:36,655 - INFO - 🔥 AGGRESSIVE LIVE TRADING SETTINGS:
+2025-08-18 03:13:36,655 - INFO -    Live Trading: ENABLED
+2025-08-18 03:13:36,655 - INFO -    Max Leverage: 50.0x
+2025-08-18 03:13:36,655 - INFO -    Risk per trade: 0.5%
+2025-08-18 03:13:36,655 - INFO -    Max positions: 5
+2025-08-18 03:13:36,655 - INFO -    Score threshold: 85 (LOWERED for more trades)
+2025-08-18 03:13:36,655 - INFO -    Min trade size: $5.0
+2025-08-18 03:13:36,655 - INFO - 🔥 AGGRESSIVE LIVE TRADING - 50X LEVERAGE
+2025-08-18 03:13:36,655 - INFO - ============================================================
+2025-08-18 03:13:36,655 - INFO - ⚠️  HIGH RISK - HIGH REWARD TRADING MODE
+2025-08-18 03:13:36,656 - INFO - 🎯 Optimized for immediate execution
+2025-08-18 03:13:36,656 - INFO - ============================================================
+2025-08-18 03:13:40,521 - INFO - ✅ Exchange connected successfully
+2025-08-18 03:13:40,521 - INFO - 💰 Account Balance: $43.05 USDT
+2025-08-18 03:13:40,521 - INFO - 💰 Available Balance: $8.96 USDT
+2025-08-18 03:13:40,521 - INFO - ✅ SUFFICIENT FUNDS: Ready for aggressive trading
+2025-08-18 03:13:40,521 - INFO - 🚀 STARTING AGGRESSIVE 50X TRADING LOOP
+2025-08-18 03:13:40,522 - INFO - ============================================================
+2025-08-18 03:13:40,522 - INFO - 
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 AGGRESSIVE SCAN #1 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+2025-08-18 03:13:40,522 - INFO - ⏰ 03:13:40
+2025-08-18 03:13:44,634 - INFO - 💰 Account: $43.05 USDT | Available: $8.96 | Positions: 0
+2025-08-18 03:13:44,635 - INFO - 🔍 AGGRESSIVE SCAN: Looking for 50x opportunities...
+2025-08-18 03:13:44,991 - ERROR - ❌ Data fetch failed for BTC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:45,826 - ERROR - ❌ Data fetch failed for ETH/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:46,661 - ERROR - ❌ Data fetch failed for XRP/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:47,492 - ERROR - ❌ Data fetch failed for ADA/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:48,327 - ERROR - ❌ Data fetch failed for SOL/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:49,168 - ERROR - ❌ Data fetch failed for UNI/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:49,997 - ERROR - ❌ Data fetch failed for DOT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:50,837 - ERROR - ❌ Data fetch failed for LINK/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:51,668 - ERROR - ❌ Data fetch failed for ATOM/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:52,504 - ERROR - ❌ Data fetch failed for LTC/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:53,335 - ERROR - ❌ Data fetch failed for DOGE/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:54,165 - ERROR - ❌ Data fetch failed for HOOK/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:54,999 - ERROR - ❌ Data fetch failed for TWT/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:55,837 - ERROR - ❌ Data fetch failed for BNB/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:56,683 - ERROR - ❌ Data fetch failed for MANA/USDT:USDT: phemex {"code":30000,"msg":"Please double check input arguments","data":null}
+2025-08-18 03:13:56,683 - INFO - ✅ AGGRESSIVE SCAN COMPLETE: 0 opportunities found
+2025-08-18 03:13:56,683 - INFO - ⏰ Next aggressive scan in 15s...
