@@ -1,0 +1,67 @@
+2025-08-18 01:56:14,107 - INFO - ✅ Loaded 50 verified 50x symbols
+2025-08-18 01:56:14,107 - INFO - 🔥 Live Trading: ENABLED
+2025-08-18 01:56:14,107 - INFO - 🎯 Max Leverage: 50.0x
+2025-08-18 01:56:14,108 - INFO - 🛡️ Risk per trade: 0.5%
+2025-08-18 01:56:14,108 - INFO - 📊 Max positions: 5
+2025-08-18 01:56:14,108 - INFO - 🚀 STARTING LIVE TRADING SYSTEM - 50X LEVERAGE
+2025-08-18 01:56:14,108 - INFO - ============================================================
+2025-08-18 01:56:17,915 - INFO - ✅ Exchange connected successfully
+2025-08-18 01:56:17,915 - INFO - 💰 Account Balance: $27.05 USDT
+2025-08-18 01:56:17,915 - INFO - 💰 Available Balance: $-9.79 USDT
+2025-08-18 01:56:17,916 - INFO - 🚀 Starting 50x leverage trading loop...
+2025-08-18 01:56:17,916 - INFO - 
+============================================================
+2025-08-18 01:56:17,916 - INFO - 🔄 Trading Loop #1 - 01:56:17
+2025-08-18 01:56:17,916 - INFO - ============================================================
+2025-08-18 01:56:19,766 - INFO - 📊 Open Positions: 0
+2025-08-18 01:56:19,767 - INFO - 🔍 Scanning 50 symbols for 50x opportunities...
+2025-08-18 01:56:21,179 - INFO - 📊 BTC/USDT:USDT        Score:  50 Price: $116371.3000
+2025-08-18 01:56:23,837 - INFO - 📊 ETH/USDT:USDT        Score:  50 Price: $ 4403.2100
+2025-08-18 01:56:25,595 - INFO - 📊 XRP/USDT:USDT        Score:  50 Price: $    3.0444
+2025-08-18 01:56:27,697 - INFO - 📊 ADA/USDT:USDT        Score:  50 Price: $    0.9408
+2025-08-18 01:56:29,460 - INFO - 📊 SOL/USDT:USDT        Score:  50 Price: $  187.5100
+2025-08-18 01:56:32,136 - INFO - 📊 UNI/USDT:USDT        Score:  50 Price: $   10.8850
+2025-08-18 01:56:33,902 - INFO - 📊 DOT/USDT:USDT        Score:  50 Price: $    3.9820
+2025-08-18 01:56:35,882 - INFO - 📊 LINK/USDT:USDT       Score:  75 Price: $   25.7820
+2025-08-18 01:56:37,635 - INFO - 📊 ATOM/USDT:USDT       Score:  50 Price: $    4.5510
+2025-08-18 01:56:39,408 - INFO - 📊 LTC/USDT:USDT        Score:  50 Price: $  119.1200
+2025-08-18 01:56:41,175 - INFO - 📊 DOGE/USDT:USDT       Score:  50 Price: $    0.2290
+2025-08-18 01:56:43,121 - INFO - 📊 HOOK/USDT:USDT       Score:  60 Price: $    0.1089
+2025-08-18 01:56:44,874 - INFO - 📊 TWT/USDT:USDT        Score:  50 Price: $    0.7787
+2025-08-18 01:56:46,664 - INFO - 📊 BNB/USDT:USDT        Score:  60 Price: $  845.8900
+2025-08-18 01:56:48,423 - INFO - 📊 MANA/USDT:USDT       Score:  50 Price: $    0.2895
+2025-08-18 01:56:50,773 - INFO - 📊 APE/USDT:USDT        Score:  50 Price: $    0.6187
+2025-08-18 01:56:52,542 - INFO - 📊 LUNC/USDT:USDT       Score:  50 Price: $    0.0001
+2025-08-18 01:56:54,310 - INFO - 📊 FLOW/USDT:USDT       Score:  60 Price: $    0.3920
+2025-08-18 01:56:56,077 - INFO - 📊 NEO/USDT:USDT        Score:  50 Price: $    6.1810
+2025-08-18 01:56:57,836 - INFO - 📊 ACH/USDT:USDT        Score:  50 Price: $    0.0214
+2025-08-18 01:56:57,937 - INFO - ✅ Scan complete: 0 opportunities found
+2025-08-18 01:56:57,937 - INFO - ⏰ Waiting 30s before next scan...
+2025-08-18 01:57:27,971 - INFO - 
+============================================================
+2025-08-18 01:57:27,972 - INFO - 🔄 Trading Loop #2 - 01:57:27
+2025-08-18 01:57:27,972 - INFO - ============================================================
+2025-08-18 01:57:34,058 - INFO - 📊 Open Positions: 0
+2025-08-18 01:57:34,058 - INFO - 🔍 Scanning 50 symbols for 50x opportunities...
+2025-08-18 01:57:35,510 - INFO - 📊 BTC/USDT:USDT        Score:  50 Price: $116241.0000
+2025-08-18 01:57:37,561 - INFO - 📊 ETH/USDT:USDT        Score:  50 Price: $ 4390.7200
+2025-08-18 01:57:39,365 - INFO - 📊 XRP/USDT:USDT        Score:  50 Price: $    3.0376
+2025-08-18 01:57:41,186 - INFO - 📊 ADA/USDT:USDT        Score:  50 Price: $    0.9376
+2025-08-18 01:57:43,230 - INFO - 📊 SOL/USDT:USDT        Score:  50 Price: $  186.6800
+2025-08-18 01:57:45,042 - INFO - 📊 UNI/USDT:USDT        Score:  50 Price: $   10.8520
+2025-08-18 01:57:46,869 - INFO - 📊 DOT/USDT:USDT        Score:  50 Price: $    3.9750
+2025-08-18 01:57:48,758 - INFO - 📊 LINK/USDT:USDT       Score:  75 Price: $   25.6930
+2025-08-18 01:57:50,574 - INFO - 📊 ATOM/USDT:USDT       Score:  50 Price: $    4.5440
+2025-08-18 01:57:52,397 - INFO - 📊 LTC/USDT:USDT        Score:  50 Price: $  118.7900
+2025-08-18 01:57:54,220 - INFO - 📊 DOGE/USDT:USDT       Score:  50 Price: $    0.2281
+2025-08-18 01:57:56,037 - INFO - 📊 HOOK/USDT:USDT       Score:  60 Price: $    0.1085
+2025-08-18 01:57:57,842 - INFO - 📊 TWT/USDT:USDT        Score:  50 Price: $    0.7782
+2025-08-18 01:57:59,862 - INFO - 📊 BNB/USDT:USDT        Score:  60 Price: $  844.8800
+2025-08-18 01:58:01,898 - INFO - 📊 MANA/USDT:USDT       Score:  50 Price: $    0.2891
+2025-08-18 01:58:03,925 - INFO - 📊 APE/USDT:USDT        Score:  50 Price: $    0.6171
+2025-08-18 01:58:05,738 - INFO - 📊 LUNC/USDT:USDT       Score:  50 Price: $    0.0001
+2025-08-18 01:58:07,541 - INFO - 📊 FLOW/USDT:USDT       Score:  50 Price: $    0.3910
+2025-08-18 01:58:09,355 - INFO - 📊 NEO/USDT:USDT        Score:  50 Price: $    6.1800
+2025-08-18 01:58:11,197 - INFO - 📊 ACH/USDT:USDT        Score:  50 Price: $    0.0214
+2025-08-18 01:58:11,297 - INFO - ✅ Scan complete: 0 opportunities found
+2025-08-18 01:58:11,297 - INFO - ⏰ Waiting 30s before next scan...
