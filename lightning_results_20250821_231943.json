@@ -1,0 +1,91 @@
+{
+  "final_lightning_optimization": {
+    "timestamp": "20250821_231943",
+    "optimization_time_seconds": 1.1771585941314697,
+    "speed_improvement": "60x+ faster than original",
+    "configurations_tested": 24,
+    "symbols_tested": 12
+  },
+  "ultimate_configurations": [
+    {
+      "rank": 1,
+      "ultimate_score": 76913.77546731048,
+      "config": {
+        "length": 160,
+        "mult": 4.0,
+        "trend_len": 40,
+        "use_strong_only": false
+      },
+      "performance": {
+        "win_rate": 54.17195253220896,
+        "return": 23.5654820673203,
+        "trades": 3630,
+        "profit_factor": 2.3795900149299682
+      }
+    },
+    {
+      "rank": 2,
+      "ultimate_score": 76706.75002283353,
+      "config": {
+        "length": 160,
+        "mult": 4.0,
+        "trend_len": 60,
+        "use_strong_only": false
+      },
+      "performance": {
+        "win_rate": 54.24444103597174,
+        "return": 23.470645380275197,
+        "trades": 3630,
+        "profit_factor": 2.401173316560053
+      }
+    },
+    {
+      "rank": 3,
+      "ultimate_score": 69138.7033012783,
+      "config": {
+        "length": 160,
+        "mult": 4.0,
+        "trend_len": 60,
+        "use_strong_only": true
+      },
+      "performance": {
+        "win_rate": 53.89895131837099,
+        "return": 25.852163286375298,
+        "trades": 2462,
+        "profit_factor": 2.4461129619569553
+      }
+    },
+    {
+      "rank": 4,
+      "ultimate_score": 67421.93996296938,
+      "config": {
+        "length": 120,
+        "mult": 4.0,
+        "trend_len": 60,
+        "use_strong_only": false
+      },
+      "performance": {
+        "win_rate": 53.94584270675201,
+        "return": 20.74387803249476,
+        "trades": 3630,
+        "profit_factor": 2.436784605016522
+      }
+    },
+    {
+      "rank": 5,
+      "ultimate_score": 65314.53516482283,
+      "config": {
+        "length": 160,
+        "mult": 4.0,
+        "trend_len": 40,
+        "use_strong_only": true
+      },
+      "performance": {
+        "win_rate": 51.67154619827414,
+        "return": 24.676096936297814,
+        "trades": 2624,
+        "profit_factor": 2.3521491654000237
+      }
+    }
+  ]
+}
