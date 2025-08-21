@@ -9,6 +9,13 @@ import time
 import os
 warnings.filterwarnings('ignore')
 
+try:
+    import ccxt
+    CCXT_AVAILABLE = True
+except ImportError:
+    CCXT_AVAILABLE = False
+    print("Warning: ccxt not available. Install with: pip install ccxt")
+
 class UltraFastPredictiveRangesStrategy:
     """Ultra Fast Predictive Ranges Strategy - Maximum Speed"""
     
@@ -135,87 +142,110 @@ class UltraFastPredictiveRangesStrategy:
             'final_balance': initial_balance + (initial_balance * total_return / 100)
         }
 
-class UltraFastSampleDataGenerator:
-    """Generate realistic sample market data for optimization testing"""
+class UltraFastPhemexDataFetcher:
+    """Ultra fast Phemex mainnet data fetcher with credentials"""
     
     def __init__(self):
-        self.symbols = [
-            'BTC/USDT', 'ETH/USDT', 'BNB/USDT', 'XRP/USDT', 'ADA/USDT', 
-            'SOL/USDT', 'DOT/USDT', 'DOGE/USDT', 'AVAX/USDT', 'MATIC/USDT',
-            'LINK/USDT', 'UNI/USDT'
-        ]
+        if not CCXT_AVAILABLE:
+            raise ImportError("ccxt library required for real market data")
+            
+        # Phemex mainnet credentials
+        self.api_key = "47a52259-6ee5-4096-9f26-fb206fefa4ea"
+        self.api_secret = "8u4nIrfP8C1z-7ioxzd_3k4S4iPE2Y5XiXv8ShfNTr4yODA4NTEyZi05YjBjLTRlYmItYmRiMy1lNDZiMTBhNzc0NTk"
         
-        # Base prices for realism
-        self.base_prices = {
-            'BTC/USDT': 65000, 'ETH/USDT': 3200, 'BNB/USDT': 520, 'XRP/USDT': 0.85,
-            'ADA/USDT': 0.45, 'SOL/USDT': 180, 'DOT/USDT': 8.5, 'DOGE/USDT': 0.12,
-            'AVAX/USDT': 35, 'MATIC/USDT': 0.95, 'LINK/USDT': 18, 'UNI/USDT': 12
-        }
+        self.cache = {}
         
-        # Different volatility profiles
-        self.volatilities = {
-            'BTC/USDT': 0.015, 'ETH/USDT': 0.020, 'BNB/USDT': 0.025, 'XRP/USDT': 0.035,
-            'ADA/USDT': 0.040, 'SOL/USDT': 0.030, 'DOT/USDT': 0.030, 'DOGE/USDT': 0.050,
-            'AVAX/USDT': 0.035, 'MATIC/USDT': 0.040, 'LINK/USDT': 0.025, 'UNI/USDT': 0.030
-        }
+        # Initialize Phemex mainnet exchange
+        self.exchange = ccxt.phemex({
+            'apiKey': self.api_key,
+            'secret': self.api_secret,
+            'sandbox': False,  # MAINNET
+            'enableRateLimit': True,
+            'timeout': 10000,
+        })
+        
+        print("✅ Connected to Phemex MAINNET")
     
-    def generate_realistic_ohlcv(self, symbol: str, periods: int = 200) -> pd.DataFrame:
-        """Generate realistic OHLCV data with varying market conditions"""
-        base_price = self.base_prices[symbol]
-        volatility = self.volatilities[symbol]
+    def fetch_ohlcv_ultra_fast(self, symbol: str, timeframe: str = '15m', limit: int = 300) -> pd.DataFrame:
+        """Ultra fast OHLCV fetch from Phemex mainnet"""
+        cache_key = f"{symbol}_{timeframe}_{limit}"
         
-        # Generate timestamps (15m intervals)
-        end_time = datetime.now()
-        start_time = end_time - timedelta(minutes=15 * periods)
-        timestamps = pd.date_range(start=start_time, end=end_time, freq='15T')[:periods]
+        if cache_key in self.cache:
+            return self.cache[cache_key]
         
-        # Generate realistic price movements
-        np.random.seed(hash(symbol) % 2**32)  # Reproducible but different per symbol
-        
-        # Create trending and ranging periods
-        trend_changes = np.random.randint(20, 60, size=periods//40)  # Trend changes every 40-60 periods
-        trends = np.repeat(np.random.choice([-1, 0, 1], size=len(trend_changes)), 40)[:periods]
-        
-        # Generate price series with trends
-        returns = np.random.normal(0, volatility, periods)
-        trend_component = trends * volatility * 0.3  # Add trend bias
-        returns += trend_component
-        
-        # Create cumulative price
-        prices = base_price * np.exp(np.cumsum(returns))
-        
-        # Generate OHLC from close prices
-        close_prices = prices
-        
-        # Create realistic OHLC spreads
-        daily_range = volatility * close_prices * np.random.uniform(0.5, 2.0, periods)
-        
-        opens = close_prices + np.random.normal(0, daily_range * 0.1)
-        highs = np.maximum(opens, close_prices) + np.random.exponential(daily_range * 0.3)
-        lows = np.minimum(opens, close_prices) - np.random.exponential(daily_range * 0.3)
-        
-        # Ensure OHLC relationships
-        highs = np.maximum(highs, np.maximum(opens, close_prices))
-        lows = np.minimum(lows, np.minimum(opens, close_prices))
-        
-        # Generate volume
-        volumes = np.random.exponential(1000000) * (base_price / 1000)
-        
-        df = pd.DataFrame({
-            'open': opens,
-            'high': highs,
-            'low': lows,
-            'close': close_prices,
-            'volume': volumes
-        }, index=timestamps)
-        
-        return df
+        try:
+            # Fetch real mainnet data
+            ohlcv = self.exchange.fetch_ohlcv(symbol, timeframe, limit=limit)
+            
+            if not ohlcv:
+                return None
+            
+            # Quick DataFrame creation
+            df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+            df.set_index('timestamp', inplace=True)
+            
+            # Cache immediately
+            self.cache[cache_key] = df
+            print(f"✅ {symbol}: {len(df)} candles loaded")
+            return df
+            
+        except Exception as e:
+            print(f"⚠️  Error fetching {symbol}: {str(e)[:60]}...")
+            return None
+    
+    def get_top_symbols_fast(self) -> List[str]:
+        """Get top Phemex trading symbols"""
+        try:
+            print("🔍 Loading Phemex markets...")
+            markets = self.exchange.load_markets()
+            print(f"📊 Total markets found: {len(markets)}")
+            
+            # Debug: Show first 10 market symbols to understand format
+            market_symbols = list(markets.keys())[:10]
+            print(f"🔍 Sample market symbols: {market_symbols}")
+            
+            # Try multiple Phemex symbol formats
+            phemex_formats = [
+                # Standard spot format
+                'BTC/USDT', 'ETH/USDT', 'BNB/USDT', 'XRP/USDT', 'ADA/USDT',
+                'SOL/USDT', 'DOT/USDT', 'DOGE/USDT', 'AVAX/USDT', 'MATIC/USDT',
+                # Perpetual contract format
+                'BTCUSD', 'ETHUSD', 'BNBUSD', 'XRPUSD', 'ADAUSD',
+                'SOLUSD', 'DOTUSD', 'DOGEUSD', 'AVAXUSD', 'MATICUSD',
+                # USDT perpetual format
+                'BTC/USD:BTC', 'ETH/USD:ETH', 'BNB/USD:BNB', 'XRP/USD:XRP', 'ADA/USD:ADA',
+                # Another common format
+                'sBTCUSDT', 'sETHUSDT', 'sBNBUSDT', 'sXRPUSDT', 'sADAUSDT'
+            ]
+            
+            # Find matching symbols
+            available_symbols = []
+            for symbol in phemex_formats:
+                if symbol in markets:
+                    available_symbols.append(symbol)
+                    print(f"✅ Found: {symbol}")
+            
+            # If no matches, use any USDT pairs found
+            if not available_symbols:
+                usdt_symbols = [s for s in markets.keys() if 'USDT' in s and '/' in s]
+                available_symbols = usdt_symbols[:12]
+                print(f"🔍 Using found USDT pairs: {available_symbols[:5]}...")
+            
+            return available_symbols[:12]  # Top 12 for speed
+            
+        except Exception as e:
+            print(f"❌ Error loading markets: {e}")
+            import traceback
+            traceback.print_exc()
+            # Emergency fallback
+            return []
 
 class UltraFastPredictiveRangesOptimizer:
-    """Ultra Fast optimizer with realistic sample data - 60x+ speed improvement"""
+    """Ultra Fast optimizer with real Phemex mainnet data - 60x+ speed improvement"""
     
     def __init__(self):
-        self.data_generator = UltraFastSampleDataGenerator()
+        self.data_fetcher = UltraFastPhemexDataFetcher()
         self.start_time = time.time()
         
         # ULTRA REDUCED parameter ranges (2048 -> 32 combinations = 60x+ speed)
@@ -257,16 +287,16 @@ class UltraFastPredictiveRangesOptimizer:
         configs_per_sec = current_config / elapsed if elapsed > 0 else 0
         eta_seconds = (total_configs - current_config) / configs_per_sec if configs_per_sec > 0 else 0
         
-        print("🚀 ULTRA FAST PREDICTIVE RANGES OPTIMIZER")
-        print("=" * 60)
+        print("🚀 ULTRA FAST PREDICTIVE RANGES OPTIMIZER - PHEMEX MAINNET")
+        print("=" * 65)
         print(f"⚡ Progress: {current_config}/{total_configs} ({current_config/total_configs*100:.1f}%)")
         print(f"🕐 Speed: {configs_per_sec:.1f} configs/sec | ETA: {eta_seconds:.0f} seconds")
-        print(f"📊 Testing 12 crypto pairs with realistic sample data")
-        print("=" * 60)
+        print(f"📊 Testing 12 crypto pairs with REAL Phemex mainnet data")
+        print("=" * 65)
         
         if results:
             print("\n🏆 LIVE LEADERBOARD - TOP 5 CONFIGS:")
-            print("-" * 60)
+            print("-" * 65)
             
             # Sort by combined score (win rate * return * trade count)
             sorted_results = sorted(results, 
@@ -279,28 +309,38 @@ class UltraFastPredictiveRangesOptimizer:
                 print(f"     Length: {result['config']['length']} | Mult: {result['config']['mult']:.1f} | Mode: {result['config']['mode']}")
                 print()
         
-        print("=" * 60)
+        print("=" * 65)
     
     def optimize_ultra_fast(self, top_n: int = 5) -> List[Dict]:
-        """Ultra fast optimization with sample data"""
+        """Ultra fast optimization with real Phemex mainnet data"""
         print("🚀 Starting ULTRA FAST Predictive Ranges optimization...")
         combinations = self.generate_combinations()
-        symbols = self.data_generator.symbols
         
         print(f"⚡ Testing {len(combinations)} parameter combinations (60x+ speed boost!)")
-        print(f"📊 Using {len(symbols)} crypto pairs with realistic sample data")
         
-        # Pre-generate all market data
-        print(f"📊 Generating realistic market data for {len(symbols)} symbols...")
+        # Get available symbols
+        print("🔍 Loading Phemex symbols...")
+        symbols = self.data_fetcher.get_top_symbols_fast()
+        print(f"📊 Found {len(symbols)} available symbols")
+        
+        # Pre-fetch all market data
+        print(f"📊 Fetching REAL market data from Phemex mainnet...")
         market_data = {}
         
         data_start = time.time()
         for symbol in symbols:
-            df = self.data_generator.generate_realistic_ohlcv(symbol, periods=200)
-            market_data[symbol] = df
+            df = self.data_fetcher.fetch_ohlcv_ultra_fast(symbol, '15m', limit=300)
+            if df is not None and len(df) >= 100:  # Minimum data requirement
+                market_data[symbol] = df
+            else:
+                print(f"⚠️  Skipping {symbol} - insufficient data")
         
         data_time = time.time() - data_start
-        print(f"✅ Generated {len(market_data)} datasets in {data_time:.2f} seconds")
+        print(f"✅ Loaded {len(market_data)} symbols in {data_time:.1f} seconds")
+        
+        if not market_data:
+            print("❌ No market data available!")
+            return []
         
         all_results = []
         
@@ -335,7 +375,7 @@ class UltraFastPredictiveRangesOptimizer:
                 total_trades = sum([m['total_trades'] for m in metrics])
                 
                 # Only keep configs with reasonable trade count
-                if total_trades >= 5:
+                if total_trades >= 10:
                     result_entry = {
                         'config': config,
                         'avg_win_rate': avg_win_rate,
@@ -357,7 +397,7 @@ class UltraFastPredictiveRangesOptimizer:
             # Early termination if we find excellent configs
             if len(all_results) >= 5:
                 best_score = max(r['avg_win_rate'] * r['avg_return'] * (r['total_trades']/100) for r in all_results)
-                if best_score > 400:  # Excellent performance threshold
+                if best_score > 500:  # Excellent performance threshold
                     print(f"\n🎯 Early termination - excellent config found (score: {best_score:.0f})")
                     break
         
@@ -399,17 +439,21 @@ class UltraFastPredictiveRangesOptimizer:
             pass  # Silently continue if save fails
 
 def main():
-    """Ultra fast main execution with sample data"""
-    print("🚀 ULTRA FAST PREDICTIVE RANGES OPTIMIZER")
-    print("=" * 60)
+    """Ultra fast main execution with real Phemex mainnet data"""
+    print("🚀 ULTRA FAST PREDICTIVE RANGES OPTIMIZER - PHEMEX MAINNET")
+    print("=" * 65)
     print("⚡ 60x+ SPEED IMPROVEMENT!")
-    print("📊 12 crypto pairs with realistic sample data")
+    print("📊 12 crypto pairs with REAL Phemex mainnet data")
     print("⏰ 15m timeframe optimized for signal frequency")
     print("🎯 32 smart parameter combinations (vs 2048)")
     print("📈 Real-time leaderboard display")
     print("💾 Progressive result saving")
-    print("🔥 Expected completion: 30-60 seconds!")
-    print("=" * 60)
+    print("🔥 Expected completion: 1-2 minutes!")
+    print("=" * 65)
+    
+    if not CCXT_AVAILABLE:
+        print("❌ ccxt library required. Please install: pip install ccxt")
+        return False
     
     try:
         # Initialize ultra fast optimizer
@@ -417,18 +461,16 @@ def main():
         
         # Show optimization plan
         total_combinations = len(optimizer.generate_combinations())
-        symbols = optimizer.data_generator.symbols
         
         print(f"\n⚡ OPTIMIZATION PLAN:")
         print(f"   • Parameter combinations: {total_combinations} (vs 2048 = 64x faster!)")
-        print(f"   • Symbols: {len(symbols)} top crypto pairs")
-        print(f"   • Data points: 200 per symbol (optimized)")
-        print(f"   • Total tests: {total_combinations * len(symbols):,}")
-        print(f"   • Expected time: 30-60 seconds")
+        print(f"   • Exchange: Phemex MAINNET (real data)")
+        print(f"   • Data points: 300 per symbol (5m timeframe)")
+        print(f"   • Expected time: 1-2 minutes")
         
         # Run ultra fast optimization
-        print(f"\n🚀 Starting optimization in 2 seconds...")
-        time.sleep(2)
+        print(f"\n🚀 Starting optimization in 3 seconds...")
+        time.sleep(3)
         
         top_configs = optimizer.optimize_ultra_fast(top_n=5)
         
@@ -437,7 +479,7 @@ def main():
             
             # Enhanced results display
             print("\n🏆 TOP 5 CONFIGURATIONS:")
-            print("=" * 80)
+            print("=" * 85)
             
             for i, result in enumerate(top_configs):
                 score = result['avg_win_rate'] * result['avg_return'] * (result['total_trades']/100)
@@ -450,7 +492,7 @@ def main():
                 print(f"   📊 Multiplier: {result['config']['mult']}")
                 print(f"   🎮 Mode: {result['config']['mode']}")
                 print(f"   💪 Strong Only: {result['config']['use_strong_only']}")
-                print("-" * 40)
+                print("-" * 45)
             
             # Save final results with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -460,8 +502,8 @@ def main():
             final_results = {
                 'optimization_summary': {
                     'timestamp': timestamp,
+                    'exchange': 'Phemex MAINNET',
                     'total_configurations_tested': total_combinations,
-                    'symbols_tested': symbols,
                     'timeframe': '15m',
                     'optimization_time_seconds': time.time() - optimizer.start_time,
                     'speed_improvement': '60x+ faster than original'
@@ -489,7 +531,7 @@ def main():
             print(f"\n💾 Results saved to: {results_file}")
             print(f"⏱️  Total optimization time: {(time.time() - optimizer.start_time):.1f} seconds")
             print(f"🔥 Speed improvement: 60x+ faster than original!")
-            print("\n✅ ULTRA FAST OPTIMIZATION COMPLETE!")
+            print("\n✅ ULTRA FAST OPTIMIZATION WITH REAL PHEMEX DATA COMPLETE!")
             
         else:
             print("\n❌ No valid configurations found")
@@ -505,6 +547,6 @@ def main():
 if __name__ == "__main__":
     success = main()
     if success:
-        print("\n🎉 Success! Ultra fast optimization completed!")
+        print("\n🎉 Success! Ultra fast optimization with real Phemex data completed!")
     else:
         print("\n💥 Optimization failed!")

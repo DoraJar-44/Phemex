@@ -1,0 +1,90 @@
+{
+  "spectacular_optimization": {
+    "timestamp": "20250821_230650",
+    "optimization_time_seconds": 1.5640826225280762,
+    "speed_improvement": "60x+ faster",
+    "configurations_tested": 36
+  },
+  "top_configurations": [
+    {
+      "rank": 1,
+      "score": 74309.6012127833,
+      "config": {
+        "length": 140,
+        "mult": 3.5,
+        "trend_len": 30,
+        "use_strong_only": true
+      },
+      "performance": {
+        "win_rate": 59.11807797584933,
+        "return": 42.30794906575381,
+        "trades": 2971,
+        "profit_factor": 2.2139123426259557
+      }
+    },
+    {
+      "rank": 2,
+      "score": 72414.63767955791,
+      "config": {
+        "length": 140,
+        "mult": 3.5,
+        "trend_len": 30,
+        "use_strong_only": false
+      },
+      "performance": {
+        "win_rate": 61.83747162985935,
+        "return": 38.2820477789511,
+        "trades": 3059,
+        "profit_factor": 1.7401337262549434
+      }
+    },
+    {
+      "rank": 3,
+      "score": 69262.18775233199,
+      "config": {
+        "length": 60,
+        "mult": 4.5,
+        "trend_len": 30,
+        "use_strong_only": false
+      },
+      "performance": {
+        "win_rate": 56.096529381563414,
+        "return": 44.702986490145,
+        "trades": 2762,
+        "profit_factor": 2.018010027465866
+      }
+    },
+    {
+      "rank": 4,
+      "score": 66102.47938600658,
+      "config": {
+        "length": 140,
+        "mult": 4.5,
+        "trend_len": 50,
+        "use_strong_only": false
+      },
+      "performance": {
+        "win_rate": 57.26419606286456,
+        "return": 41.793708293933285,
+        "trades": 2762,
+        "profit_factor": 2.1204075956002915
+      }
+    },
+    {
+      "rank": 5,
+      "score": 56257.79128116634,
+      "config": {
+        "length": 100,
+        "mult": 4.5,
+        "trend_len": 50,
+        "use_strong_only": false
+      },
+      "performance": {
+        "win_rate": 59.51101041472244,
+        "return": 34.226436062023645,
+        "trades": 2762,
+        "profit_factor": 1.9253650476720596
+      }
+    }
+  ]
+}
