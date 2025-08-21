@@ -1,0 +1,485 @@
+//@version=5
+indicator("🎯 Professional Bounce Indicator - OPTIMIZED", overlay=true, max_boxes_count=200, max_lines_count=200)
+
+// =====================================================
+// CONFIGURATION PRESETS
+// =====================================================
+
+preset = input.string("Scalping", "Trading Style Preset", options=["Scalping", "Day Trading", "Swing Trading", "Custom"], group="⚙️ PRESETS")
+
+// =====================================================
+// OPTIMIZED INPUT PARAMETERS
+// =====================================================
+
+// Dynamic parameters based on preset
+getPresetValues(parameter) =>
+    switch parameter
+        "confluence" => preset == "Scalping" ? 2 : preset == "Day Trading" ? 3 : preset == "Swing Trading" ? 4 : 3
+        "rsi_length" => preset == "Scalping" ? 9 : preset == "Day Trading" ? 14 : preset == "Swing Trading" ? 21 : 14
+        "rsi_oversold" => preset == "Scalping" ? 25 : preset == "Day Trading" ? 30 : preset == "Swing Trading" ? 35 : 30
+        "ma1_length" => preset == "Scalping" ? 9 : preset == "Day Trading" ? 21 : preset == "Swing Trading" ? 34 : 21
+        "ma2_length" => preset == "Scalping" ? 21 : preset == "Day Trading" ? 50 : preset == "Swing Trading" ? 89 : 50
+        "volume_threshold" => preset == "Scalping" ? 1.3 : preset == "Day Trading" ? 1.5 : preset == "Swing Trading" ? 2.0 : 1.5
+        => 0
+
+// Order Blocks Settings (Optimized)
+orderBlockLength = input.int(preset == "Scalping" ? 7 : preset == "Swing Trading" ? 15 : 10, 
+                           "Order Block Detection Length", minval=5, maxval=30, group="📦 Order Blocks")
+showOrderBlocks = input.bool(true, "Show Order Blocks", group="📦 Order Blocks")
+orderBlockStrength = input.float(0.618, "Order Block Strength Filter", minval=0.1, maxval=1.0, step=0.1, group="📦 Order Blocks")
+
+// Smart Money Concepts (Enhanced)
+smcLength = input.int(preset == "Scalping" ? 15 : preset == "Swing Trading" ? 30 : 20, 
+                     "Smart Money Structure Length", minval=10, maxval=50, group="🧠 Smart Money")
+showLiquidity = input.bool(true, "Show Liquidity Zones", group="🧠 Smart Money")
+liquidityTolerance = input.float(0.001, "Liquidity Detection Tolerance", minval=0.0005, maxval=0.01, step=0.0005, group="🧠 Smart Money")
+
+// Volume Analysis (Professional Grade)
+volumeMA = input.int(preset == "Scalping" ? 14 : 20, "Volume Moving Average", minval=5, maxval=50, group="📊 Volume")
+volumeThreshold = input.float(getPresetValues("volume_threshold"), "Volume Spike Threshold", minval=1.0, maxval=3.0, step=0.1, group="📊 Volume")
+volumeConfirmation = input.bool(true, "Require Volume Confirmation", group="📊 Volume")
+
+// RSI Settings (Optimized)
+rsiLength = input.int(getPresetValues("rsi_length"), "RSI Length", minval=7, maxval=30, group="📈 RSI")
+rsiOversold = input.int(getPresetValues("rsi_oversold"), "RSI Oversold Level", minval=15, maxval=40, group="📈 RSI")
+rsiMomentum = input.bool(true, "Require RSI Momentum Shift", group="📈 RSI")
+
+// Moving Average Support (Golden Ratios)
+maType = input.string("EMA", "MA Type", options=["SMA", "EMA", "WMA", "VWMA"], group="📊 Moving Averages")
+ma1Length = input.int(getPresetValues("ma1_length"), "MA1 Length (Primary)", minval=5, maxval=100, group="📊 Moving Averages")
+ma2Length = input.int(getPresetValues("ma2_length"), "MA2 Length (Secondary)", minval=20, maxval=200, group="📊 Moving Averages")
+ma3Length = input.int(preset == "Scalping" ? 89 : preset == "Day Trading" ? 200 : 233, 
+                     "MA3 Length (Trend)", minval=50, maxval=500, group="📊 Moving Averages")
+
+// Advanced Alert Settings
+alertOnSignal = input.bool(true, "Enable Entry Alerts", group="🔔 Alerts")
+alertOnConfluence = input.bool(true, "Alert on High Confluence (4+ factors)", group="🔔 Alerts")
+alertOnVolumeSpike = input.bool(false, "Alert on Volume Spikes Only", group="🔔 Alerts")
+confluenceRequired = input.int(getPresetValues("confluence"), "Minimum Confluence Factors", minval=2, maxval=6, group="🔔 Alerts")
+
+// Advanced Filters
+useTimeFilter = input.bool(false, "Use Time Filter", group="🕐 Advanced Filters")
+startHour = input.int(9, "Start Hour (24h format)", minval=0, maxval=23, group="🕐 Advanced Filters")
+endHour = input.int(17, "End Hour (24h format)", minval=0, maxval=23, group="🕐 Advanced Filters")
+avoidNews = input.bool(true, "Avoid High-Impact News Times", group="🕐 Advanced Filters")
+
+// =====================================================
+// ENHANCED FUNCTIONS
+// =====================================================
+
+// Enhanced Moving Average Function
+getMa(source, length, maType) =>
+    switch maType
+        "SMA" => ta.sma(source, length)
+        "EMA" => ta.ema(source, length)
+        "WMA" => ta.wma(source, length)
+        "VWMA" => ta.vwma(source, length)
+        => ta.ema(source, length)
+
+// Enhanced Order Block Detection
+isEnhancedOrderBlock(index) =>
+    if index >= orderBlockLength and index < bar_index - 5
+        // Check for significant price movement
+        priceMove = math.abs(close[index] - open[index]) / open[index]
+        volumeStrength = volume[index] > ta.sma(volume, volumeMA) * volumeThreshold
+        
+        // Bullish order block criteria
+        bullishOB = close[index] > open[index] and
+                    low[index] > high[index+1] and
+                    priceMove > orderBlockStrength * 0.01 and
+                    volumeStrength
+        
+        // Bearish order block criteria  
+        bearishOB = close[index] < open[index] and
+                    high[index] < low[index+1] and
+                    priceMove > orderBlockStrength * 0.01 and
+                    volumeStrength
+        
+        [bullishOB, bearishOB]
+    else
+        [false, false]
+
+// Enhanced Liquidity Detection
+detectEnhancedLiquidity() =>
+    tolerance = liquidityTolerance
+    
+    // Equal lows (liquidity below) - more precise
+    equalLows = false
+    equalHighs = false
+    
+    if bar_index > 10
+        // Check for 3-touch equal lows
+        currentLow = low
+        prevLow1 = low[1]
+        prevLow2 = low[2]
+        
+        equalLows := math.abs(currentLow - prevLow1) <= (high - low) * tolerance and
+                     math.abs(prevLow1 - prevLow2) <= (high[1] - low[1]) * tolerance
+        
+        // Check for 3-touch equal highs
+        currentHigh = high
+        prevHigh1 = high[1]
+        prevHigh2 = high[2]
+        
+        equalHighs := math.abs(currentHigh - prevHigh1) <= (high - low) * tolerance and
+                      math.abs(prevHigh1 - prevHigh2) <= (high[1] - low[1]) * tolerance
+    
+    [equalLows, equalHighs]
+
+// Enhanced Market Structure
+getEnhancedMarketStructure() =>
+    // More sophisticated structure analysis
+    lookback = smcLength
+    
+    // Recent swing highs and lows
+    swingHigh = ta.highest(high, lookback)
+    swingLow = ta.lowest(low, lookback)
+    
+    // Structure breaks
+    higherHigh = high > ta.highest(high[1], lookback/2)
+    higherLow = low > ta.lowest(low[1], lookback/2)
+    
+    lowerHigh = high < ta.highest(high[1], lookback/2)
+    lowerLow = low < ta.lowest(low[1], lookback/2)
+    
+    // Trend classification
+    strongUptrend = higherHigh and higherLow
+    weakUptrend = higherHigh or higherLow
+    strongDowntrend = lowerHigh and lowerLow
+    weakDowntrend = lowerHigh or lowerLow
+    sideways = not strongUptrend and not weakUptrend and not strongDowntrend and not weakDowntrend
+    
+    [strongUptrend, weakUptrend, strongDowntrend, weakDowntrend, sideways]
+
+// Enhanced Volume Analysis
+getVolumeAnalysis() =>
+    avgVol = ta.sma(volume, volumeMA)
+    currentVol = volume
+    
+    // Different volume spike levels
+    moderateSpike = currentVol > avgVol * volumeThreshold
+    strongSpike = currentVol > avgVol * (volumeThreshold * 1.5)
+    extremeSpike = currentVol > avgVol * (volumeThreshold * 2.0)
+    
+    // Volume trend
+    volTrend = ta.sma(volume, 5) > ta.sma(volume, 20)
+    
+    [moderateSpike, strongSpike, extremeSpike, volTrend]
+
+// Enhanced Candlestick Patterns
+isBullishReversalEnhanced() =>
+    bodySize = math.abs(close - open)
+    upperWick = high - math.max(close, open)
+    lowerWick = math.min(close, open) - low
+    totalRange = high - low
+    
+    // Hammer (optimized ratios)
+    hammer = lowerWick > bodySize * 1.5 and upperWick < bodySize * 0.3 and totalRange > 0 and close > open
+    
+    // Bullish engulfing (stricter criteria)
+    bullishEngulfing = close > open and close[1] < open[1] and 
+                       close > open[1] and open < close[1] and
+                       bodySize > math.abs(close[1] - open[1]) * 1.2
+    
+    // Doji at support (refined)
+    doji = bodySize < totalRange * 0.05 and totalRange > ta.atr(14) * 0.5 and lowerWick > upperWick
+    
+    // Piercing pattern
+    piercing = close[1] < open[1] and close > open and 
+               close > (open[1] + close[1]) / 2 and open < close[1]
+    
+    hammer or bullishEngulfing or doji or piercing
+
+// Time Filter Function
+isValidTime() =>
+    if useTimeFilter
+        currentHour = hour(time)
+        currentHour >= startHour and currentHour <= endHour
+    else
+        true
+
+// =====================================================
+// CALCULATIONS
+// =====================================================
+
+// Moving Averages
+ma1 = getMa(close, ma1Length, maType)
+ma2 = getMa(close, ma2Length, maType)
+ma3 = getMa(close, ma3Length, maType)
+
+// RSI
+rsi = ta.rsi(close, rsiLength)
+rsiSlope = rsi - rsi[1]
+
+// Market Structure
+[strongUptrend, weakUptrend, strongDowntrend, weakDowntrend, sideways] = getEnhancedMarketStructure()
+
+// Liquidity Detection
+[liquidityBelow, liquidityAbove] = detectEnhancedLiquidity()
+
+// Volume Analysis
+[moderateVolumeSpike, strongVolumeSpike, extremeVolumeSpike, volumeTrend] = getVolumeAnalysis()
+
+// Support/Resistance Levels
+dynamicSupport = ta.lowest(low, ma1Length)
+majorSupport = ta.lowest(low, ma2Length)
+trendSupport = ta.lowest(low, ma3Length)
+
+// ATR for dynamic thresholds
+atr = ta.atr(14)
+
+// =====================================================
+// ENHANCED CONFLUENCE FACTORS
+// =====================================================
+
+// Factor 1: Multi-Level MA Support (Enhanced)
+maDistance1 = math.abs(close - ma1) / atr
+maDistance2 = math.abs(close - ma2) / atr
+factor1_MASupport = (maDistance1 < 0.5 and close > ma1[1]) or (maDistance2 < 0.8 and close > ma2[1])
+
+// Factor 2: RSI Oversold with Momentum (Enhanced)
+rsiMomentumShift = rsiMomentum ? (rsi < rsiOversold and rsiSlope > 0) : (rsi < rsiOversold)
+factor2_RSIOversold = rsiMomentumShift
+
+// Factor 3: Volume Confirmation (Enhanced)
+volumeConfirmed = volumeConfirmation ? strongVolumeSpike : moderateVolumeSpike
+factor3_VolumeSpike = volumeConfirmed and close > open
+
+// Factor 4: Enhanced Bullish Reversal Pattern
+factor4_BullishPattern = isBullishReversalEnhanced()
+
+// Factor 5: Multi-Level Support (Enhanced)
+supportDistance1 = math.abs(close - dynamicSupport) / atr
+supportDistance2 = math.abs(close - majorSupport) / atr
+factor5_Support = supportDistance1 < 0.3 or supportDistance2 < 0.5
+
+// Factor 6: Enhanced Market Structure
+factor6_Structure = strongUptrend or (weakUptrend and not strongDowntrend)
+
+// Factor 7: NEW - Order Block Interaction
+[bullishOB, bearishOB] = isEnhancedOrderBlock(1)
+factor7_OrderBlock = bullishOB or (close <= ta.highest(high, orderBlockLength) * 1.002 and close >= ta.lowest(low, orderBlockLength) * 0.998)
+
+// Factor 8: NEW - Liquidity Zone Interaction
+factor8_Liquidity = liquidityBelow and close > low[1]
+
+// Count Enhanced Confluence Factors
+confluenceCount = (factor1_MASupport ? 1 : 0) + 
+                  (factor2_RSIOversold ? 1 : 0) + 
+                  (factor3_VolumeSpike ? 1 : 0) + 
+                  (factor4_BullishPattern ? 1 : 0) + 
+                  (factor5_Support ? 1 : 0) + 
+                  (factor6_Structure ? 1 : 0) + 
+                  (factor7_OrderBlock ? 1 : 0) + 
+                  (factor8_Liquidity ? 1 : 0)
+
+// =====================================================
+// SIGNAL GENERATION
+// =====================================================
+
+// Time filter
+validTime = isValidTime()
+
+// Primary bounce signal
+bounceSignal = confluenceCount >= confluenceRequired and validTime and factor6_Structure
+
+// Signal strength levels
+weakSignal = confluenceCount >= confluenceRequired and confluenceCount < (confluenceRequired + 1)
+moderateSignal = confluenceCount >= (confluenceRequired + 1) and confluenceCount < (confluenceRequired + 2)
+strongSignal = confluenceCount >= (confluenceRequired + 2)
+
+// Entry confirmation (price action confirmation)
+entryConfirmation = bounceSignal and (close > high[1] or close > open + (high - low) * 0.5)
+
+// =====================================================
+// ADVANCED PLOTTING
+// =====================================================
+
+// Dynamic color coding for MAs based on trend strength
+ma1Color = strongUptrend ? color.lime : weakUptrend ? color.blue : color.gray
+ma2Color = strongUptrend ? color.orange : weakUptrend ? color.yellow : color.gray
+ma3Color = strongUptrend ? color.green : weakUptrend ? color.red : color.maroon
+
+// Plot Moving Averages
+plot(ma1, "MA1 (Primary)", color=ma1Color, linewidth=2)
+plot(ma2, "MA2 (Secondary)", color=ma2Color, linewidth=1)
+plot(ma3, "MA3 (Trend)", color=ma3Color, linewidth=1)
+
+// Enhanced Order Blocks with strength indication
+var orderBlocks = array.new<box>()
+if showOrderBlocks and barstate.isconfirmed
+    for i = 1 to math.min(15, bar_index)
+        [bullOB, bearOB] = isEnhancedOrderBlock(i)
+        if bullOB
+            strength = volume[i] / ta.sma(volume, volumeMA)
+            boxColor = strength > 2.0 ? color.new(color.lime, 70) : color.new(color.green, 85)
+            orderBlock = box.new(bar_index - i, low[i], bar_index + 10, high[i], 
+                               bgcolor=boxColor, border_color=color.green, border_width=2)
+            array.push(orderBlocks, orderBlock)
+        if bearOB
+            strength = volume[i] / ta.sma(volume, volumeMA)
+            boxColor = strength > 2.0 ? color.new(color.red, 70) : color.new(color.red, 85)
+            orderBlock = box.new(bar_index - i, low[i], bar_index + 10, high[i], 
+                               bgcolor=boxColor, border_color=color.red, border_width=2)
+            array.push(orderBlocks, orderBlock)
+
+// Enhanced Liquidity Zones
+if showLiquidity
+    if liquidityBelow
+        line.new(bar_index - 3, low, bar_index + 5, low, color=color.yellow, width=3, style=line.style_dashed)
+        label.new(bar_index, low, "LIQ", color=color.yellow, style=label.style_label_up, size=size.tiny)
+    if liquidityAbove
+        line.new(bar_index - 3, high, bar_index + 5, high, color=color.yellow, width=3, style=line.style_dashed)
+        label.new(bar_index, high, "LIQ", color=color.yellow, style=label.style_label_down, size=size.tiny)
+
+// Enhanced Signal Plotting
+plotshape(strongSignal, "🔥 STRONG Signal", shape.triangleup, location.belowbar, 
+          color=color.lime, size=size.large, text="🔥")
+plotshape(moderateSignal and not strongSignal, "⚡ MODERATE Signal", shape.triangleup, location.belowbar, 
+          color=color.green, size=size.normal, text="⚡")
+plotshape(weakSignal and not moderateSignal and not strongSignal, "⚠️ WEAK Signal", shape.triangleup, location.belowbar, 
+          color=color.yellow, size=size.small, text="⚠️")
+
+// Entry confirmation signal
+plotshape(entryConfirmation, "✅ ENTRY", shape.arrowup, location.belowbar, 
+          color=color.white, size=size.large, text="ENTER")
+
+// Background coloring based on signal strength
+signalBgColor = strongSignal ? color.new(color.lime, 95) : 
+                moderateSignal ? color.new(color.green, 97) : 
+                weakSignal ? color.new(color.yellow, 98) : na
+bgcolor(signalBgColor)
+
+// =====================================================
+// ADVANCED ALERT SYSTEM
+// =====================================================
+
+// Entry Signal Alerts
+if alertOnSignal and bounceSignal and barstate.isconfirmed
+    alertMessage = "🎯 BOUNCE ENTRY SIGNAL DETECTED!\n" + 
+                   "═════════════════════════════\n" +
+                   "📊 Symbol: " + syminfo.ticker + "\n" +
+                   "💰 Price: $" + str.tostring(close, "#.####") + "\n" +
+                   "📈 Confluence: " + str.tostring(confluenceCount) + "/8 factors\n" +
+                   "🔥 Signal Strength: " + (strongSignal ? "STRONG 🔥" : moderateSignal ? "MODERATE ⚡" : "WEAK ⚠️") + "\n" +
+                   "📊 RSI: " + str.tostring(rsi, "#.#") + (rsi < rsiOversold ? " (OVERSOLD)" : "") + "\n" +
+                   "📊 Volume: " + str.tostring(volume/ta.sma(volume, volumeMA), "#.#") + "x avg" + 
+                   (extremeVolumeSpike ? " (EXTREME)" : strongVolumeSpike ? " (STRONG)" : "") + "\n" +
+                   "📈 Trend: " + (strongUptrend ? "STRONG UP" : weakUptrend ? "WEAK UP" : "SIDEWAYS") + "\n" +
+                   "⏰ Time: " + str.tostring(hour(time)) + ":" + str.tostring(minute(time)) + "\n" +
+                   "═════════════════════════════\n" +
+                   "🎯 ENTRY STRATEGY:\n" +
+                   "• Entry: Above $" + str.tostring(high, "#.####") + "\n" +
+                   "• Stop: Below $" + str.tostring(low - atr * 0.5, "#.####") + "\n" +
+                   "• Target: $" + str.tostring(close + (close - low) * 2, "#.####") + " (2:1 RR)"
+    
+    alert(alertMessage, alert.freq_once_per_bar)
+
+// High Confluence Alert
+if alertOnConfluence and confluenceCount >= 4 and barstate.isconfirmed
+    alert("🔥 HIGH CONFLUENCE BOUNCE SIGNAL!\n" +
+          "Symbol: " + syminfo.ticker + "\n" +
+          "Factors: " + str.tostring(confluenceCount) + "/8\n" +
+          "This is a HIGH-PROBABILITY setup!", alert.freq_once_per_bar)
+
+// Volume Spike Alert
+if alertOnVolumeSpike and extremeVolumeSpike and close > open and barstate.isconfirmed
+    alert("💥 EXTREME VOLUME SPIKE DETECTED!\n" +
+          "Symbol: " + syminfo.ticker + "\n" +
+          "Volume: " + str.tostring(volume/ta.sma(volume, volumeMA), "#.#") + "x average\n" +
+          "Smart money may be entering!", alert.freq_once_per_bar)
+
+// Entry Confirmation Alert
+if entryConfirmation and barstate.isconfirmed
+    alert("✅ ENTRY CONFIRMATION!\n" +
+          "Symbol: " + syminfo.ticker + "\n" +
+          "Price broke above signal candle!\n" +
+          "Consider entering long position now.", alert.freq_once_per_bar)
+
+// =====================================================
+// ENHANCED INFORMATION TABLE
+// =====================================================
+
+var table infoTable = table.new(position.top_right, 3, 12, bgcolor=color.new(color.white, 20), border_width=2, border_color=color.gray)
+
+if barstate.islast
+    // Header
+    table.cell(infoTable, 0, 0, "📊 SIGNAL ANALYSIS", text_color=color.white, bgcolor=color.new(color.blue, 20), text_size=size.small)
+    table.cell(infoTable, 1, 0, "STATUS", text_color=color.white, bgcolor=color.new(color.blue, 20), text_size=size.small)
+    table.cell(infoTable, 2, 0, "VALUE", text_color=color.white, bgcolor=color.new(color.blue, 20), text_size=size.small)
+    
+    // Signal strength
+    strengthText = strongSignal ? "🔥 STRONG" : moderateSignal ? "⚡ MODERATE" : weakSignal ? "⚠️ WEAK" : "❌ NO SIGNAL"
+    strengthColor = strongSignal ? color.lime : moderateSignal ? color.green : weakSignal ? color.yellow : color.red
+    table.cell(infoTable, 0, 1, "Signal Strength", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 1, strengthText, text_color=strengthColor, text_size=size.tiny)
+    table.cell(infoTable, 2, 1, str.tostring(confluenceCount) + "/8", text_color=color.black, text_size=size.tiny)
+    
+    // Individual factors
+    table.cell(infoTable, 0, 2, "MA Support", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 2, factor1_MASupport ? "✅" : "❌", 
+               text_color=factor1_MASupport ? color.green : color.red, text_size=size.tiny)
+    table.cell(infoTable, 2, 2, str.tostring(math.abs(close - ma1)/atr, "#.#") + " ATR", text_color=color.black, text_size=size.tiny)
+    
+    table.cell(infoTable, 0, 3, "RSI Oversold", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 3, factor2_RSIOversold ? "✅" : "❌", 
+               text_color=factor2_RSIOversold ? color.green : color.red, text_size=size.tiny)
+    table.cell(infoTable, 2, 3, str.tostring(rsi, "#.#"), text_color=color.black, text_size=size.tiny)
+    
+    table.cell(infoTable, 0, 4, "Volume Spike", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 4, factor3_VolumeSpike ? "✅" : "❌", 
+               text_color=factor3_VolumeSpike ? color.green : color.red, text_size=size.tiny)
+    table.cell(infoTable, 2, 4, str.tostring(volume/ta.sma(volume, volumeMA), "#.#") + "x", text_color=color.black, text_size=size.tiny)
+    
+    table.cell(infoTable, 0, 5, "Bullish Pattern", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 5, factor4_BullishPattern ? "✅" : "❌", 
+               text_color=factor4_BullishPattern ? color.green : color.red, text_size=size.tiny)
+    table.cell(infoTable, 2, 5, factor4_BullishPattern ? "DETECTED" : "NONE", text_color=color.black, text_size=size.tiny)
+    
+    table.cell(infoTable, 0, 6, "Support Level", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 6, factor5_Support ? "✅" : "❌", 
+               text_color=factor5_Support ? color.green : color.red, text_size=size.tiny)
+    table.cell(infoTable, 2, 6, str.tostring(math.min(supportDistance1, supportDistance2), "#.#") + " ATR", text_color=color.black, text_size=size.tiny)
+    
+    table.cell(infoTable, 0, 7, "Market Structure", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 7, factor6_Structure ? "✅" : "❌", 
+               text_color=factor6_Structure ? color.green : color.red, text_size=size.tiny)
+    table.cell(infoTable, 2, 7, strongUptrend ? "STRONG UP" : weakUptrend ? "WEAK UP" : "BEARISH", text_color=color.black, text_size=size.tiny)
+    
+    table.cell(infoTable, 0, 8, "Order Block", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 8, factor7_OrderBlock ? "✅" : "❌", 
+               text_color=factor7_OrderBlock ? color.green : color.red, text_size=size.tiny)
+    table.cell(infoTable, 2, 8, factor7_OrderBlock ? "ACTIVE" : "NONE", text_color=color.black, text_size=size.tiny)
+    
+    table.cell(infoTable, 0, 9, "Liquidity Zone", text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 1, 9, factor8_Liquidity ? "✅" : "❌", 
+               text_color=factor8_Liquidity ? color.green : color.red, text_size=size.tiny)
+    table.cell(infoTable, 2, 9, factor8_Liquidity ? "SWEPT" : "NONE", text_color=color.black, text_size=size.tiny)
+    
+    // Trading guidance
+    table.cell(infoTable, 0, 10, "🎯 ENTRY ZONE", text_color=color.white, bgcolor=color.new(color.blue, 20), text_size=size.tiny)
+    table.cell(infoTable, 1, 10, "$" + str.tostring(high, "#.####"), text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 2, 10, "BREAK ABOVE", text_color=color.black, text_size=size.tiny)
+    
+    table.cell(infoTable, 0, 11, "🛡️ STOP LOSS", text_color=color.white, bgcolor=color.new(color.red, 20), text_size=size.tiny)
+    table.cell(infoTable, 1, 11, "$" + str.tostring(low - atr * 0.5, "#.####"), text_color=color.black, text_size=size.tiny)
+    table.cell(infoTable, 2, 11, str.tostring((high - (low - atr * 0.5))/close * 100, "#.#") + "%", text_color=color.black, text_size=size.tiny)
+
+// =====================================================
+// CONFIGURATION PRESET DISPLAY
+// =====================================================
+
+var table presetTable = table.new(position.bottom_right, 2, 4, bgcolor=color.new(color.black, 80), border_width=1)
+
+if barstate.islast
+    table.cell(presetTable, 0, 0, "PRESET", text_color=color.white, text_size=size.tiny)
+    table.cell(presetTable, 1, 0, preset, text_color=color.lime, text_size=size.tiny)
+    
+    table.cell(presetTable, 0, 1, "Confluence", text_color=color.white, text_size=size.tiny)
+    table.cell(presetTable, 1, 1, str.tostring(confluenceRequired) + "/8", text_color=color.white, text_size=size.tiny)
+    
+    table.cell(presetTable, 0, 2, "RSI Period", text_color=color.white, text_size=size.tiny)
+    table.cell(presetTable, 1, 2, str.tostring(rsiLength), text_color=color.white, text_size=size.tiny)
+    
+    table.cell(presetTable, 0, 3, "Volume Thresh", text_color=color.white, text_size=size.tiny)
+    table.cell(presetTable, 1, 3, str.tostring(volumeThreshold, "#.#") + "x", text_color=color.white, text_size=size.tiny)
