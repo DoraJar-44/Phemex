@@ -1,0 +1,261 @@
+//@version=5
+indicator("Professional Bounce Indicator - Smart Money Edition", overlay=true, max_boxes_count=100, max_lines_count=100)
+
+// =====================================================
+// INPUT PARAMETERS
+// =====================================================
+
+// Order Blocks Settings
+orderBlockLength = input.int(10, "Order Block Detection Length", minval=5, maxval=50, group="Order Blocks")
+showOrderBlocks = input.bool(true, "Show Order Blocks", group="Order Blocks")
+
+// Smart Money Concepts
+smcLength = input.int(20, "Smart Money Structure Length", minval=10, maxval=100, group="Smart Money")
+showLiquidity = input.bool(true, "Show Liquidity Zones", group="Smart Money")
+
+// Volume Analysis
+volumeMA = input.int(20, "Volume Moving Average", minval=5, maxval=100, group="Volume")
+volumeThreshold = input.float(1.5, "Volume Spike Threshold", minval=1.0, maxval=5.0, step=0.1, group="Volume")
+
+// RSI Settings
+rsiLength = input.int(14, "RSI Length", minval=2, maxval=50, group="RSI")
+rsiOversold = input.int(30, "RSI Oversold Level", minval=10, maxval=40, group="RSI")
+
+// Moving Average Support
+maType = input.string("EMA", "MA Type", options=["SMA", "EMA", "WMA"], group="Moving Average")
+ma1Length = input.int(21, "MA1 Length", minval=5, maxval=200, group="Moving Average")
+ma2Length = input.int(50, "MA2 Length", minval=10, maxval=200, group="Moving Average")
+ma3Length = input.int(200, "MA3 Length", minval=50, maxval=500, group="Moving Average")
+
+// Alert Settings
+alertOnSignal = input.bool(true, "Enable Alerts", group="Alerts")
+confluenceRequired = input.int(3, "Minimum Confluence Factors", minval=2, maxval=6, group="Alerts")
+
+// =====================================================
+// FUNCTIONS
+// =====================================================
+
+// Moving Average Function
+getMa(source, length, maType) =>
+    switch maType
+        "SMA" => ta.sma(source, length)
+        "EMA" => ta.ema(source, length)
+        "WMA" => ta.wma(source, length)
+        => ta.ema(source, length)
+
+// Order Block Detection
+isOrderBlock(index) =>
+    if index >= orderBlockLength
+        bullishOB = low[index] > high[index+1] and close[index] > open[index]
+        bearishOB = high[index] < low[index+1] and close[index] < open[index]
+        bullishOB or bearishOB
+    else
+        false
+
+// Liquidity Detection (Equal Highs/Lows)
+detectLiquidity() =>
+    // Equal lows (liquidity below)
+    equalLows = math.abs(low - low[1]) <= (high - low) * 0.002 and 
+                math.abs(low[1] - low[2]) <= (high[1] - low[1]) * 0.002
+    
+    // Equal highs (liquidity above)
+    equalHighs = math.abs(high - high[1]) <= (high - low) * 0.002 and 
+                 math.abs(high[1] - high[2]) <= (high[1] - low[1]) * 0.002
+    
+    [equalLows, equalHighs]
+
+// Smart Money Structure
+getMarketStructure() =>
+    // Higher highs and higher lows for uptrend
+    hh = high > ta.highest(high[1], smcLength)
+    hl = low > ta.lowest(low[1], smcLength)
+    
+    // Lower highs and lower lows for downtrend
+    lh = high < ta.highest(high[1], smcLength)
+    ll = low < ta.lowest(low[1], smcLength)
+    
+    uptrend = hh and hl
+    downtrend = lh and ll
+    sideways = not uptrend and not downtrend
+    
+    [uptrend, downtrend, sideways]
+
+// Volume Spike Detection
+isVolumeSpike() =>
+    avgVolume = ta.sma(volume, volumeMA)
+    volume > avgVolume * volumeThreshold
+
+// Candlestick Pattern Recognition
+isBullishReversal() =>
+    // Hammer pattern
+    bodySize = math.abs(close - open)
+    upperWick = high - math.max(close, open)
+    lowerWick = math.min(close, open) - low
+    totalRange = high - low
+    
+    hammer = lowerWick > bodySize * 2 and upperWick < bodySize * 0.5 and totalRange > 0
+    
+    // Engulfing pattern
+    bullishEngulfing = close > open and close[1] < open[1] and 
+                       close > open[1] and open < close[1]
+    
+    // Doji at support
+    doji = bodySize < totalRange * 0.1 and totalRange > 0
+    
+    hammer or bullishEngulfing or doji
+
+// =====================================================
+// CALCULATIONS
+// =====================================================
+
+// Moving Averages
+ma1 = getMa(close, ma1Length, maType)
+ma2 = getMa(close, ma2Length, maType)
+ma3 = getMa(close, ma3Length, maType)
+
+// RSI
+rsi = ta.rsi(close, rsiLength)
+
+// Market Structure
+[uptrend, downtrend, sideways] = getMarketStructure()
+
+// Liquidity Detection
+[liquidityBelow, liquidityAbove] = detectLiquidity()
+
+// Volume Analysis
+volumeSpike = isVolumeSpike()
+avgVolume = ta.sma(volume, volumeMA)
+
+// Support Levels
+supportLevel1 = ta.lowest(low, 20)
+supportLevel2 = ta.lowest(low, 50)
+
+// =====================================================
+// CONFLUENCE FACTORS
+// =====================================================
+
+// Factor 1: Price near Moving Average Support
+factor1_MASupport = close <= ma1 * 1.01 and close >= ma1 * 0.99 and close > ma1[1]
+
+// Factor 2: RSI Oversold
+factor2_RSIOversold = rsi < rsiOversold and rsi > rsi[1]
+
+// Factor 3: Volume Spike
+factor3_VolumeSpike = volumeSpike and close > open
+
+// Factor 4: Bullish Reversal Pattern
+factor4_BullishPattern = isBullishReversal()
+
+// Factor 5: Price at Support Level
+factor5_Support = (math.abs(close - supportLevel1) / close) < 0.005 or 
+                   (math.abs(close - supportLevel2) / close) < 0.005
+
+// Factor 6: Market Structure Favorable
+factor6_Structure = uptrend or sideways
+
+// Count Confluence Factors
+confluenceCount = (factor1_MASupport ? 1 : 0) + 
+                  (factor2_RSIOversold ? 1 : 0) + 
+                  (factor3_VolumeSpike ? 1 : 0) + 
+                  (factor4_BullishPattern ? 1 : 0) + 
+                  (factor5_Support ? 1 : 0) + 
+                  (factor6_Structure ? 1 : 0)
+
+// =====================================================
+// BOUNCE SIGNAL
+// =====================================================
+
+bounceSignal = confluenceCount >= confluenceRequired and uptrend
+
+// =====================================================
+// PLOTTING
+// =====================================================
+
+// Moving Averages
+plot(ma1, "MA1", color=color.blue, linewidth=2)
+plot(ma2, "MA2", color=color.orange, linewidth=1)
+plot(ma3, "MA3", color=color.red, linewidth=1)
+
+// Support Levels
+plot(supportLevel1, "Support 1", color=color.gray, style=plot.style_circles)
+plot(supportLevel2, "Support 2", color=color.gray, style=plot.style_cross)
+
+// Order Blocks
+var orderBlocks = array.new<box>()
+if showOrderBlocks and barstate.isconfirmed
+    for i = 1 to math.min(10, bar_index)
+        if isOrderBlock(i)
+            if close[i] > open[i]  // Bullish order block
+                orderBlock = box.new(bar_index - i, low[i], bar_index, high[i], 
+                                   bgcolor=color.new(color.green, 85), 
+                                   border_color=color.green)
+                array.push(orderBlocks, orderBlock)
+            else  // Bearish order block
+                orderBlock = box.new(bar_index - i, low[i], bar_index, high[i], 
+                                   bgcolor=color.new(color.red, 85), 
+                                   border_color=color.red)
+                array.push(orderBlocks, orderBlock)
+
+// Liquidity Zones
+if showLiquidity
+    if liquidityBelow
+        line.new(bar_index - 2, low, bar_index, low, color=color.yellow, width=2, style=line.style_dashed)
+    if liquidityAbove
+        line.new(bar_index - 2, high, bar_index, high, color=color.yellow, width=2, style=line.style_dashed)
+
+// Bounce Signals
+plotshape(bounceSignal, "Bounce Signal", shape.triangleup, location.belowbar, 
+          color=color.lime, size=size.large)
+
+// Background Color for Strong Signals
+bgcolor(confluenceCount >= confluenceRequired ? color.new(color.green, 95) : na)
+
+// =====================================================
+// ALERTS
+// =====================================================
+
+if alertOnSignal and bounceSignal
+    alert("Professional Bounce Signal Detected!\n" + 
+          "Symbol: " + syminfo.ticker + "\n" +
+          "Price: " + str.tostring(close) + "\n" +
+          "Confluence Factors: " + str.tostring(confluenceCount) + "/" + str.tostring(6) + "\n" +
+          "RSI: " + str.tostring(rsi, "#.##") + "\n" +
+          "Volume: " + str.tostring(volume/avgVolume, "#.##") + "x avg", 
+          alert.freq_once_per_bar)
+
+// =====================================================
+// TABLE - SIGNAL STRENGTH
+// =====================================================
+
+var table infoTable = table.new(position.top_right, 2, 8, bgcolor=color.white, border_width=1)
+
+if barstate.islast
+    table.cell(infoTable, 0, 0, "Signal Strength", text_color=color.black, text_size=size.small)
+    table.cell(infoTable, 1, 0, str.tostring(confluenceCount) + "/6", text_color=color.black, text_size=size.small)
+    
+    table.cell(infoTable, 0, 1, "MA Support", text_color=color.black, text_size=size.small)
+    table.cell(infoTable, 1, 1, factor1_MASupport ? "✓" : "✗", 
+               text_color=factor1_MASupport ? color.green : color.red, text_size=size.small)
+    
+    table.cell(infoTable, 0, 2, "RSI Oversold", text_color=color.black, text_size=size.small)
+    table.cell(infoTable, 1, 2, factor2_RSIOversold ? "✓" : "✗", 
+               text_color=factor2_RSIOversold ? color.green : color.red, text_size=size.small)
+    
+    table.cell(infoTable, 0, 3, "Volume Spike", text_color=color.black, text_size=size.small)
+    table.cell(infoTable, 1, 3, factor3_VolumeSpike ? "✓" : "✗", 
+               text_color=factor3_VolumeSpike ? color.green : color.red, text_size=size.small)
+    
+    table.cell(infoTable, 0, 4, "Bullish Pattern", text_color=color.black, text_size=size.small)
+    table.cell(infoTable, 1, 4, factor4_BullishPattern ? "✓" : "✗", 
+               text_color=factor4_BullishPattern ? color.green : color.red, text_size=size.small)
+    
+    table.cell(infoTable, 0, 5, "Support Level", text_color=color.black, text_size=size.small)
+    table.cell(infoTable, 1, 5, factor5_Support ? "✓" : "✗", 
+               text_color=factor5_Support ? color.green : color.red, text_size=size.small)
+    
+    table.cell(infoTable, 0, 6, "Market Structure", text_color=color.black, text_size=size.small)
+    table.cell(infoTable, 1, 6, factor6_Structure ? "✓" : "✗", 
+               text_color=factor6_Structure ? color.green : color.red, text_size=size.small)
+    
+    table.cell(infoTable, 0, 7, "Current RSI", text_color=color.black, text_size=size.small)
+    table.cell(infoTable, 1, 7, str.tostring(rsi, "#.#"), text_color=color.black, text_size=size.small)
